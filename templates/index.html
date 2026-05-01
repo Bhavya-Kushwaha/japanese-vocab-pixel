@@ -101,6 +101,13 @@
                 wordInput.value = "";
             }
         }
+        // This listens for the "Enter" key inside the input field
+document.getElementById("wordInput").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevents the page from refreshing
+    addWord(); // Triggers your collection logic
+  }
+});
     </script>
 </body>
 </html>
