@@ -3,117 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vocab Quest v2.0</title>
+    <title>Vocab Quest v3.0</title>
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Press Start 2P', cursive; background-color: #212529; color: white; }
-        .pixel-card { margin-top: 15px; transition: transform 0.2s; }
-        .pixel-card:hover { transform: scale(1.02); }
+        body { font-family: 'Press Start 2P', cursive; background-color: #212529; color: white; scroll-behavior: smooth; }
+        .pixel-card { margin-top: 15px; transition: transform 0.2s; position: relative; }
+        .pixel-card:hover { transform: scale(1.01); }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         .nes-btn.is-active { background-color: #209cee; color: white; }
+        .delete-btn { position: absolute; top: -10px; right: -10px; z-index: 10; scale: 0.7; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #212529; }
+        ::-webkit-scrollbar-thumb { background: #fff; border: 2px solid #212529; }
     </style>
 </head>
 <body class="p-4 md:p-10">
+
     <!-- Floating Pixel Radio -->
-<div class="fixed top-4 right-4 z-50">
-    <div class="nes-container is-dark is-rounded p-2 flex flex-col items-center gap-2" style="max-width: 200px;">
-        <div class="flex items-center gap-2">
-            <i class="nes-icon music is-small"></i>
-            <span style="font-size: 8px;" id="trackName">Lofi Track 1</span>
-        </div>
-        
-        <audio id="bgMusic">
-            <source id="musicSource" src="" type="audio/mpeg">
-        </audio>
-
-        <div class="flex gap-1">
-            <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 10px;">PLAY</button>
-            <button onclick="nextTrack()" class="nes-btn is-warning p-1" style="font-size: 10px;">NEXT</button>
+    <div class="fixed top-4 right-4 z-50">
+        <div class="nes-container is-dark is-rounded p-2 flex flex-col items-center gap-2" style="max-width: 180px;">
+            <div class="flex items-center gap-2">
+                <i class="nes-icon music is-small"></i>
+                <span style="font-size: 7px;" id="trackName">Lofi Track 1</span>
+            </div>
+            <audio id="bgMusic" loop><source id="musicSource" src="" type="audio/mpeg"></audio>
+            <div class="flex gap-1">
+                <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 8px;">PLAY</button>
+                <button onclick="nextTrack()" class="nes-btn is-warning p-1" style="font-size: 8px;">NEXT</button>
+            </div>
         </div>
     </div>
-</div>
+
     <div class="max-w-4xl mx-auto">
-        <!-- Retro Radio Section -->
+        <h1 class="text-xl md:text-3xl mb-4 nes-text is-primary text-center uppercase">Vocab Quest v3.0</h1>
+        
+        <!-- Gamification: Quest Progress -->
+        <div class="nes-container is-dark mb-6">
+            <p style="font-size: 9px;" class="mb-2">RANK: <span id="rankText" class="nes-text is-warning">NOVICE</span> | TOTAL: <span id="totalCount">0</span></p>
+            <progress id="questBar" class="nes-progress is-success" value="0" max="50"></progress>
+        </div>
 
-        <!-- Using a Royalty Free Lofi/8-bit Stream -->
-        <audio id="bgMusic" loop>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        </audio>
-        
-    </div>
-</div>
-        <h1 class="text-xl md:text-3xl mb-8 nes-text is-primary text-center">VOCAB QUEST v2.0</h1>
-        
         <!-- Input Section -->
         <div class="nes-container with-title is-dark mb-10">
-            <p class="title">Add New Vocab</p>
+            <p class="title">New Discovery</p>
             <div class="flex flex-col md:flex-row gap-4">
-                <input type="text" id="wordInput" class="nes-input is-dark" placeholder="Kanji or Hiragana...">
+                <input type="text" id="wordInput" class="nes-input is-dark" placeholder="Kanji / Hiragana..." autofocus>
                 <button type="button" onclick="addWord()" class="nes-btn is-success">COLLECT</button>
             </div>
         </div>
 
-        <!-- JLPT Tabs -->
-        <div class="flex flex-wrap gap-2 mb-4 justify-center">
-            <button class="nes-btn tab-btn is-active" onclick="showTab('ALL')">ALL</button>
-            <button class="nes-btn tab-btn" onclick="showTab('N5')">N5</button>
-            <button class="nes-btn tab-btn" onclick="showTab('N4')">N4</button>
-            <button class="nes-btn tab-btn" onclick="showTab('N3')">N3</button>
-            <button class="nes-btn tab-btn" onclick="showTab('N2')">N2</button>
-            <button class="nes-btn tab-btn" onclick="showTab('N1')">N1</button>
+        <!-- Toolbar -->
+        <div class="flex justify-between items-center mb-6">
+            <div class="flex flex-wrap gap-2 justify-center" id="tabBar">
+                <button class="nes-btn tab-btn is-active is-small" onclick="showTab('ALL')">ALL</button>
+                <button class="nes-btn tab-btn is-small" onclick="showTab('N5')">N5</button>
+                <button class="nes-btn tab-btn is-small" onclick="showTab('N4')">N4</button>
+                <button class="nes-btn tab-btn is-small" onclick="showTab('N3')">N3</button>
+                <button class="nes-btn tab-btn is-small" onclick="showTab('N2')">N2</button>
+                <button class="nes-btn tab-btn is-small" onclick="showTab('N1')">N1</button>
+            </div>
+            <button onclick="exportToCSV()" class="nes-btn is-primary is-small">EXPORT</button>
         </div>
 
-        <!-- Tabbed Containers -->
+        <!-- Containers -->
         <div id="ALL" class="tab-content active"><div class="grid grid-cols-1 gap-4" id="list-ALL"></div></div>
         <div id="N5" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N5"></div></div>
         <div id="N4" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N4"></div></div>
         <div id="N3" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N3"></div></div>
         <div id="N2" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N2"></div></div>
         <div id="N1" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N1"></div></div>
+        
+        <button onclick="clearStorage()" class="nes-btn is-error is-small mt-10 w-full">RESET ALL DATA</button>
     </div>
 
     <script>
+        // --- 1. DATA INITIALIZATION ---
+        let myVocab = JSON.parse(localStorage.getItem('vocabData')) || [];
         const playlist = [
-    { name: "Tokyo Night", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-    { name: "Akihabara 8-Bit", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-    { name: "Kyoto Lofi", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }
-];
+            { name: "Tokyo Night", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+            { name: "Akihabara 8-Bit", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
+            { name: "Kyoto Lofi", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }
+        ];
 
-let currentTrackIndex = 0;
-const audio = document.getElementById('bgMusic');
-const trackLabel = document.getElementById('trackName');
-const playBtn = document.getElementById('playBtn');
+        let currentTrackIndex = 0;
+        const audio = document.getElementById('bgMusic');
+        const trackLabel = document.getElementById('trackName');
+        const playBtn = document.getElementById('playBtn');
 
-// Initialize first track
-document.getElementById('musicSource').src = playlist[currentTrackIndex].url;
-trackLabel.innerText = playlist[currentTrackIndex].name;
-audio.load();
+        window.onload = () => {
+            renderAll();
+            initRadio();
+        };
 
-function toggleMusic() {
-    if (audio.paused) {
-        audio.play();
-        playBtn.innerText = "STOP";
-        playBtn.classList.replace('is-primary', 'is-error');
-    } else {
-        audio.pause();
-        playBtn.innerText = "PLAY";
-        playBtn.classList.replace('is-error', 'is-primary');
-    }
-}
+        // --- 2. RADIO LOGIC ---
+        function initRadio() {
+            document.getElementById('musicSource').src = playlist[currentTrackIndex].url;
+            trackLabel.innerText = playlist[currentTrackIndex].name;
+            audio.load();
+        }
 
-function nextTrack() {
-    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-    audio.pause();
-    document.getElementById('musicSource').src = playlist[currentTrackIndex].url;
-    trackLabel.innerText = playlist[currentTrackIndex].name;
-    audio.load();
-    audio.play();
-    playBtn.innerText = "STOP";
-    playBtn.classList.replace('is-primary', 'is-error');
-}
+        function toggleMusic() {
+            if (audio.paused) { audio.play(); playBtn.innerText = "STOP"; playBtn.classList.replace('is-primary', 'is-error'); }
+            else { audio.pause(); playBtn.innerText = "PLAY"; playBtn.classList.replace('is-error', 'is-primary'); }
+        }
+
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            initRadio();
+            audio.play();
+            playBtn.innerText = "STOP";
+            playBtn.classList.replace('is-primary', 'is-error');
+        }
+
+        // --- 3. VOCAB LOGIC (CRUD) ---
+        async function addWord() {
+            const wordInput = document.getElementById('wordInput');
+            const word = wordInput.value.trim();
+            if(!word) return;
+
+            const res = await fetch('/fetch', { method: 'POST', body: new URLSearchParams({'word': word}) });
+            const data = await res.json();
+
+            if(data.success) {
+                const newEntry = {
+                    id: Date.now(),
+                    kanji: data.kanji,
+                    reading: data.reading,
+                    meaning: data.meaning,
+                    level: data.level
+                };
+                myVocab.unshift(newEntry);
+                saveData();
+                renderAll();
+                wordInput.value = "";
+            }
+        }
+
+        function deleteWord(id) {
+            myVocab = myVocab.filter(item => item.id !== id);
+            saveData();
+            renderAll();
+        }
+
+        function saveData() {
+            localStorage.setItem('vocabData', JSON.stringify(myVocab));
+        }
+
+        function clearStorage() {
+            if(confirm("Delete all your progress?")) {
+                localStorage.clear();
+                myVocab = [];
+                renderAll();
+            }
+        }
+
+        // --- 4. UI RENDERING ---
+        function renderAll() {
+            const levels = ['ALL', 'N5', 'N4', 'N3', 'N2', 'N1'];
+            levels.forEach(lvl => document.getElementById('list-' + lvl).innerHTML = '');
+
+            myVocab.forEach(item => {
+                let colorClass = "is-dark";
+                let textClass = "";
+
+                if (item.level === "N5") { colorClass = "is-success"; textClass = "is-success"; }
+                else if (item.level === "N4" || item.level === "N2") { colorClass = "is-primary"; textClass = "is-primary"; }
+                else if (item.level === "N3") { colorClass = "is-warning"; textClass = "is-warning"; }
+                else if (item.level === "N1") { colorClass = "is-error"; textClass = "is-error"; }
+
+                const html = `
+                <div class="nes-container with-title ${colorClass} is-dark pixel-card">
+                    <button class="nes-btn is-error delete-btn" onclick="deleteWord(${item.id})">X</button>
+                    <p class="title ${textClass}">LVL: ${item.level}</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-xl md:text-2xl">${item.kanji}</span>
+                            <span class="text-xs text-gray-400 mt-1">${item.reading}</span>
+                        </div>
+                        <div class="text-right"><span class="nes-text ${textClass} text-sm">${item.meaning}</span></div>
+                    </div>
+                </div>`;
+
+                document.getElementById('list-ALL').insertAdjacentHTML('beforeend', html);
+                if(item.level !== "???" && document.getElementById('list-' + item.level)) {
+                    document.getElementById('list-' + item.level).insertAdjacentHTML('beforeend', html);
+                }
+            });
+            updateStats();
+        }
+
+        function updateStats() {
+            const count = myVocab.length;
+            document.getElementById('totalCount').innerText = count;
+            const bar = document.getElementById('questBar');
+            bar.value = count;
+            
+            let rank = "NOVICE";
+            if(count > 10) rank = "APPRENTICE";
+            if(count > 30) rank = "WARRIOR";
+            if(count > 50) rank = "MASTER";
+            document.getElementById('rankText').innerText = rank;
+        }
+
         function showTab(level) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('is-active'));
@@ -121,58 +215,21 @@ function nextTrack() {
             event.currentTarget.classList.add('is-active');
         }
 
-        async function addWord() {
-            const wordInput = document.getElementById('wordInput');
-            const word = wordInput.value;
-            if(!word) return;
-
-            const formData = new FormData();
-            formData.append('word', word);
-
-            const res = await fetch('/fetch', { method: 'POST', body: formData });
-            const data = await res.json();
-
-            if(data.success) {
-                // Determine color based on level rarity
-                let colorClass = "is-dark"; 
-                let textClass = "";
-
-                if (data.level === "N5") { colorClass = "is-success"; textClass = "is-success"; }
-                else if (data.level === "N4") { colorClass = "is-primary"; textClass = "is-primary"; }
-                else if (data.level === "N3") { colorClass = "is-warning"; textClass = "is-warning"; }
-                else if (data.level === "N2") { colorClass = "is-primary"; textClass = "is-primary"; }
-                else if (data.level === "N1") { colorClass = "is-error"; textClass = "is-error"; }
-
-
-                const cardHtml = `
-<div class="nes-container with-title ${colorClass} is-dark pixel-card">
-    <p class="title ${textClass}">LVL: ${data.level}</p>
-    <div class="flex justify-between items-center">
-        <div class="flex flex-col">
-            <span class="text-2xl">${data.kanji}</span>
-            <span class="text-xs text-gray-400 mt-1">${data.reading}</span>
-        </div>
-        <div class="text-right">
-            <span class="nes-text ${textClass} text-sm">${data.meaning}</span>
-        </div>
-    </div>
-</div>`;
-
-                // Update ALL tab and Specific JLPT tab
-                document.getElementById('list-ALL').insertAdjacentHTML('afterbegin', cardHtml);
-                const specificList = document.getElementById('list-' + data.level);
-                if(specificList) specificList.insertAdjacentHTML('afterbegin', cardHtml);
-                
-                wordInput.value = "";
-            }
+        function exportToCSV() {
+            if(myVocab.length === 0) return alert("No data to export!");
+            let csv = "Kanji,Reading,Meaning,Level\n";
+            myVocab.forEach(i => csv += `"${i.kanji}","${i.reading}","${i.meaning}","${i.level}"\n`);
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'vocab_quest_export.csv';
+            a.click();
         }
-        // This listens for the "Enter" key inside the input field
-document.getElementById("wordInput").addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault(); // Prevents the page from refreshing
-    addWord(); // Triggers your collection logic
-  }
-});
+
+        document.getElementById("wordInput").addEventListener("keypress", (e) => {
+            if (e.key === "Enter") addWord();
+        });
     </script>
 </body>
 </html>
