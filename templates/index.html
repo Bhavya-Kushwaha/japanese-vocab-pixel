@@ -85,6 +85,44 @@
     </div>
 
     <script>
+        const playlist = [
+    { name: "Tokyo Night", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+    { name: "Akihabara 8-Bit", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
+    { name: "Kyoto Lofi", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }
+];
+
+let currentTrackIndex = 0;
+const audio = document.getElementById('bgMusic');
+const trackLabel = document.getElementById('trackName');
+const playBtn = document.getElementById('playBtn');
+
+// Initialize first track
+document.getElementById('musicSource').src = playlist[currentTrackIndex].url;
+trackLabel.innerText = playlist[currentTrackIndex].name;
+audio.load();
+
+function toggleMusic() {
+    if (audio.paused) {
+        audio.play();
+        playBtn.innerText = "STOP";
+        playBtn.classList.replace('is-primary', 'is-error');
+    } else {
+        audio.pause();
+        playBtn.innerText = "PLAY";
+        playBtn.classList.replace('is-error', 'is-primary');
+    }
+}
+
+function nextTrack() {
+    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    audio.pause();
+    document.getElementById('musicSource').src = playlist[currentTrackIndex].url;
+    trackLabel.innerText = playlist[currentTrackIndex].name;
+    audio.load();
+    audio.play();
+    playBtn.innerText = "STOP";
+    playBtn.classList.replace('is-primary', 'is-error');
+}
         function showTab(level) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('is-active'));
