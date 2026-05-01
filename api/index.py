@@ -31,3 +31,5 @@ def fetch_vocab():
 
 # Necessary for Vercel
 app.index = app
+if __name__ == "__main__":
+    app.run()
