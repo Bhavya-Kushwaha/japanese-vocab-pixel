@@ -17,6 +17,24 @@
     </style>
 </head>
 <body class="p-4 md:p-10">
+    <!-- Floating Pixel Radio -->
+<div class="fixed top-4 right-4 z-50">
+    <div class="nes-container is-dark is-rounded p-2 flex flex-col items-center gap-2" style="max-width: 200px;">
+        <div class="flex items-center gap-2">
+            <i class="nes-icon music is-small"></i>
+            <span style="font-size: 8px;" id="trackName">Lofi Track 1</span>
+        </div>
+        
+        <audio id="bgMusic">
+            <source id="musicSource" src="" type="audio/mpeg">
+        </audio>
+
+        <div class="flex gap-1">
+            <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 10px;">PLAY</button>
+            <button onclick="nextTrack()" class="nes-btn is-warning p-1" style="font-size: 10px;">NEXT</button>
+        </div>
+    </div>
+</div>
     <div class="max-w-4xl mx-auto">
         <!-- Retro Radio Section -->
 <div class="nes-container with-title is-dark mb-6">
