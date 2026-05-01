@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, jsonify
 import requests
+import os
 
-app = Flask(__name__)
+# Updated line to point to the correct templates folder location
+app = Flask(__name__, template_folder='../templates')
 
 @app.route('/')
 def home():
@@ -31,5 +33,6 @@ def fetch_vocab():
 
 # Necessary for Vercel
 app.index = app
+
 if __name__ == "__main__":
     app.run()
