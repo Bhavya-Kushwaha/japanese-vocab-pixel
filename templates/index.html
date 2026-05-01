@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Press Start 2P', cursive; background-color: #212529; color: white; }
+        .pixel-card { margin-top: 20px; }
+    </style>
+</head>
+<body class="p-10">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-2xl mb-8 nes-text is-primary text-center">VOCAB QUEST v1.0</h1>
+        
+        <div class="nes-container with-title is-dark">
+            <p class="title">Input Kanji</p>
+            <div class="flex gap-4">
+                <input type="text" id="wordInput" class="nes-input is-dark" placeholder="Enter word...">
+                <button type="button" onclick="addWord()" class="nes-btn is-success">ADD</button>
+            </div>
+        </div>
+
+        <div id="vocabList" class="mt-10 grid grid-cols-1 gap-6">
+            <!-- Cards will appear here -->
+        </div>
+    </div>
+
+    <script>
+        async function addWord() {
+            const word = document.getElementById('wordInput').value;
+            const formData = new FormData();
+            formData.append('word', word);
+
+            const res = await fetch('/fetch', { method: 'POST', body: formData });
+            const data = await res.json();
+
+            if(data.success) {
+                const card = `
+                <div class="nes-container with-title is-dark pixel-card">
+                    <p class="title">LVL: ${data.level}</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-xl">${data.kanji}</h2>
+                            <p class="text-sm text-gray-400">${data.reading}</p>
+                        </div>
+                        <p class="is-warning">${data.meaning}</p>
+                    </div>
+                </div>`;
+                document.getElementById('vocabList').innerHTML += card;
+                document.getElementById('wordInput').value = "";
+            }
+        }
+    </script>
+</body>
+</html>
