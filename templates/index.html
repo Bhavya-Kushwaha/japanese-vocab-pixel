@@ -18,6 +18,24 @@
 </head>
 <body class="p-4 md:p-10">
     <div class="max-w-4xl mx-auto">
+        <!-- Retro Radio Section -->
+<div class="nes-container with-title is-dark mb-6">
+    <p class="title">8-BIT RADIO</p>
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <i class="nes-icon music is-medium"></i>
+            <span class="text-xs">Now Playing: Retro Chills</span>
+        </div>
+        <!-- Using a Royalty Free Lofi/8-bit Stream -->
+        <audio id="bgMusic" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+        <div class="flex gap-2">
+            <button onclick="document.getElementById('bgMusic').play()" class="nes-btn is-primary is-small">PLAY</button>
+            <button onclick="document.getElementById('bgMusic').pause()" class="nes-btn is-error is-small">STOP</button>
+        </div>
+    </div>
+</div>
         <h1 class="text-xl md:text-3xl mb-8 nes-text is-primary text-center">VOCAB QUEST v2.0</h1>
         
         <!-- Input Section -->
