@@ -2,34 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab Quest v2.0</title>
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Press Start 2P', cursive; background-color: #212529; color: white; }
-        .pixel-card { margin-top: 20px; }
+        .pixel-card { margin-top: 15px; transition: transform 0.2s; }
+        .pixel-card:hover { transform: scale(1.02); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .nes-btn.is-active { background-color: #209cee; color: white; }
     </style>
 </head>
-<body class="p-10">
-    <div class="max-w-2xl mx-auto">
-        <h1 class="text-2xl mb-8 nes-text is-primary text-center">VOCAB QUEST v1.0</h1>
+<body class="p-4 md:p-10">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-xl md:text-3xl mb-8 nes-text is-primary text-center">VOCAB QUEST v2.0</h1>
         
-        <div class="nes-container with-title is-dark">
-            <p class="title">Input Kanji</p>
-            <div class="flex gap-4">
-                <input type="text" id="wordInput" class="nes-input is-dark" placeholder="Enter word...">
-                <button type="button" onclick="addWord()" class="nes-btn is-success">ADD</button>
+        <!-- Input Section -->
+        <div class="nes-container with-title is-dark mb-10">
+            <p class="title">Add New Vocab</p>
+            <div class="flex flex-col md:flex-row gap-4">
+                <input type="text" id="wordInput" class="nes-input is-dark" placeholder="Kanji or Hiragana...">
+                <button type="button" onclick="addWord()" class="nes-btn is-success">COLLECT</button>
             </div>
         </div>
 
-        <div id="vocabList" class="mt-10 grid grid-cols-1 gap-6">
-            <!-- Cards will appear here -->
+        <!-- JLPT Tabs -->
+        <div class="flex flex-wrap gap-2 mb-4 justify-center">
+            <button class="nes-btn tab-btn is-active" onclick="showTab('ALL')">ALL</button>
+            <button class="nes-btn tab-btn" onclick="showTab('N5')">N5</button>
+            <button class="nes-btn tab-btn" onclick="showTab('N4')">N4</button>
+            <button class="nes-btn tab-btn" onclick="showTab('N3')">N3</button>
+            <button class="nes-btn tab-btn" onclick="showTab('N2')">N2</button>
+            <button class="nes-btn tab-btn" onclick="showTab('N1')">N1</button>
         </div>
+
+        <!-- Tabbed Containers -->
+        <div id="ALL" class="tab-content active"><div class="grid grid-cols-1 gap-4" id="list-ALL"></div></div>
+        <div id="N5" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N5"></div></div>
+        <div id="N4" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N4"></div></div>
+        <div id="N3" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N3"></div></div>
+        <div id="N2" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N2"></div></div>
+        <div id="N1" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N1"></div></div>
     </div>
 
     <script>
+        function showTab(level) {
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('is-active'));
+            
+            // Show selected tab
+            document.getElementById(level).classList.add('active');
+            event.currentTarget.classList.add('is-active');
+        }
+
         async function addWord() {
-            const word = document.getElementById('wordInput').value;
+            const wordInput = document.getElementById('wordInput');
+            const word = wordInput.value;
+            if(!word) return;
+
             const formData = new FormData();
             formData.append('word', word);
 
@@ -37,19 +71,35 @@
             const data = await res.json();
 
             if(data.success) {
-                const card = `
-                <div class="nes-container with-title is-dark pixel-card">
+                // Determine card color based on level
+                let colorClass = "is-dark";
+                if(data.level === "N5") colorClass = "is-success";
+                if(data.level === "N1") colorClass = "is-error";
+                if(data.level === "N3") colorClass = "is-warning";
+
+                const cardHtml = `
+                <div class="nes-container with-title ${colorClass} pixel-card is-dark">
                     <p class="title">LVL: ${data.level}</p>
                     <div class="flex justify-between items-center">
-                        <div>
-                            <h2 class="text-xl">${data.kanji}</h2>
-                            <p class="text-sm text-gray-400">${data.reading}</p>
+                        <div class="flex flex-col">
+                            <span class="text-2xl">${data.kanji}</span>
+                            <span class="text-xs text-gray-400 mt-1">${data.reading}</span>
                         </div>
-                        <p class="is-warning">${data.meaning}</p>
+                        <div class="text-right">
+                            <span class="text-sm">${data.meaning}</span>
+                        </div>
                     </div>
                 </div>`;
-                document.getElementById('vocabList').innerHTML += card;
-                document.getElementById('wordInput').value = "";
+
+                // Add to the "ALL" list AND the specific JLPT list
+                document.getElementById('list-ALL').innerHTML = cardHtml + document.getElementById('list-ALL').innerHTML;
+                
+                const specificList = document.getElementById('list-' + data.level);
+                if(specificList) {
+                    specificList.innerHTML = cardHtml + specificList.innerHTML;
+                }
+                
+                wordInput.value = "";
             }
         }
     </script>
