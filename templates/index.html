@@ -8,17 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Press Start 2P', cursive; background-color: #212529; color: white; scroll-behavior: smooth; }
-        .pixel-card { margin-top: 15px; transition: transform 0.2s; position: relative; }
-        .pixel-card:hover { transform: scale(1.01); }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-        .nes-btn.is-active { background-color: #209cee; color: white; }
-        .delete-btn { position: absolute; top: -10px; right: -10px; z-index: 10; scale: 0.7; }
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #212529; }
-        ::-webkit-scrollbar-thumb { background: #fff; border: 2px solid #212529; }
-    </style>
+    body { 
+        /* 1. REPLACE THE GRAY WITH THE PAGODA GARDEN */
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                    url('/static/background.gif');
+        
+        /* 2. PIXEL-PERFECT SCALING */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+
+        /* 3. KEEP YOUR ORIGINAL SETTINGS */
+        font-family: 'Press Start 2P', cursive; 
+        color: white; 
+        scroll-behavior: smooth; 
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 4. MAKE CONTAINERS SEMI-TRANSPARENT (Optional but looks great) */
+    .nes-container.is-dark {
+        background-color: rgba(33, 37, 41, 0.85) !important;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    /* KEEP ALL YOUR CARD & TAB LOGIC UNTOUCHED */
+    .pixel-card { margin-top: 15px; transition: transform 0.2s; position: relative; }
+    .pixel-card:hover { transform: scale(1.01); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .nes-btn.is-active { background-color: #209cee; color: white; }
+    .delete-btn { position: absolute; top: -10px; right: -10px; z-index: 10; scale: 0.7; }
+    
+    /* KEEP YOUR CUSTOM SCROLLBAR */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #212529; }
+    ::-webkit-scrollbar-thumb { background: #fff; border: 2px solid #212529; }
+</style>
 </head>
 <body class="p-4 md:p-10">
 
