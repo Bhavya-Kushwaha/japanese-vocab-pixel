@@ -3,7 +3,7 @@ from supabase import create_client, Client
 import requests
 import os
 
-app = Flask(__name__, template_folder='../templates')
+app = Flask(__name__, static_folder='../static', static_url_path='/static')
 
 # These pull the values you just saved in Vercel
 url = os.environ.get("SUPABASE_URL")
