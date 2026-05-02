@@ -3,7 +3,21 @@ from supabase import create_client, Client
 import requests
 import os
 
-app = Flask(__name__, static_folder='../static', static_url_path='/static')
+import os
+from flask import Flask, render_template, request, jsonify
+from supabase import create_client, Client
+
+app = Flask(
+    __name__,
+    static_folder='../static',
+    static_url_path='/static',
+    template_folder='../templates'
+)
+
+# Move these inside your functions later or keep them here 
+# ONLY if you are 100% sure the Vercel Env Vars are set.
+url = os.environ.get("SUPABASE_URL")
+key = os.environ.get("SUPABASE_KEY")
 
 # These pull the values you just saved in Vercel
 url = os.environ.get("SUPABASE_URL")
