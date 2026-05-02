@@ -90,6 +90,39 @@
     </div>
 
     <script>
+        async function cloudBackup() {
+    const email = document.getElementById('userEmail').value;
+    if(!email || !email.includes('@')) return alert("Please enter a valid email!");
+
+    const formData = new URLSearchParams();
+    formData.append('email', email);
+    formData.append('vocab_list', JSON.stringify(myVocab));
+
+    const res = await fetch('/sync', { method: 'POST', body: formData });
+    const result = await res.json();
+    if(result.success) alert("Quest data synced to cloud! ☁️");
+    else alert("Error: " + result.error);
+}
+
+async function cloudLoad() {
+    const email = document.getElementById('userEmail').value;
+    if(!email) return alert("Enter email to load backup!");
+
+    const formData = new URLSearchParams();
+    formData.append('email', email);
+
+    const res = await fetch('/load-backup', { method: 'POST', body: formData });
+    const result = await res.json();
+    
+    if(result.success) {
+        myVocab = JSON.parse(result.data);
+        saveData(); // Updates LocalStorage
+        renderAll(); // Updates UI
+        alert("Quest progress restored! 📥");
+    } else {
+        alert("No backup found for this email.");
+    }
+}
         // --- 1. DATA INITIALIZATION ---
         let myVocab = JSON.parse(localStorage.getItem('vocabData')) || [];
         const playlist = [
