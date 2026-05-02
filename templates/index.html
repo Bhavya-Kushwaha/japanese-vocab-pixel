@@ -48,6 +48,16 @@
 
         <!-- Input Section -->
         <div class="nes-container with-title is-dark mb-10">
+            <div class="nes-container with-title is-dark mb-6">
+    <p class="title">Cloud Sync</p>
+    <div class="flex flex-col md:flex-row gap-2">
+        <input type="email" id="userEmail" class="nes-input is-dark is-small" placeholder="Your email for backup...">
+        <div class="flex gap-2">
+            <button onclick="cloudBackup()" class="nes-btn is-primary is-small">BACKUP</button>
+            <button onclick="cloudLoad()" class="nes-btn is-warning is-small">LOAD</button>
+        </div>
+    </div>
+</div>
             <p class="title">New Discovery</p>
             <div class="flex flex-col md:flex-row gap-4">
                 <input type="text" id="wordInput" class="nes-input is-dark" placeholder="Kanji / Hiragana..." autofocus>
