@@ -11,7 +11,7 @@
 ## 🚀 Key Features
 
 *   **Real-time JLPT Tagging:** Automatically fetches Kanji, Reading, Meaning, and JLPT levels (N5-N1) via the Jisho API.
-*   **Gamified Progress:** Integrated "Adventurer Rank" system (Novice to Master) with a visual XP/Progress bar.
+*   **Gamified Progress:** Integrated "Adventurer Rank" system (Novice to Master) with a visual XP/Progress bar!
 *   **Keyboard Optimized:** High-speed workflow using `Enter` key listeners and `autofocus` inputs for rapid-fire collection.
 *   **Data Persistence:** Uses `localStorage` to ensure your vocabulary "inventory" persists across browser sessions.
 *   **Export for Anki/Notion:** One-click CSV export to bridge your quest data with professional SRS tools.
