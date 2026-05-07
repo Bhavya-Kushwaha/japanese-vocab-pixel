@@ -167,6 +167,12 @@
             <button onclick="exportToCSV()" class="nes-btn is-primary is-small">EXPORT</button>
         </div>
 
+        <!-- Search Bar -->
+        <div class="nes-field is-inline mb-6 relative" id="searchContainer" style="position: relative;">
+            <input type="text" id="searchInput" class="nes-input is-dark" placeholder="Search vocab..." oninput="handleSearch(this.value)">
+            <button class="nes-btn is-error" id="clearSearchBtn" onclick="clearSearch()" style="display: none; position: absolute; right: 0; padding: 0 10px;">X</button>
+        </div>
+
         <!-- Containers -->
         <div id="ALL" class="tab-content active"><div class="grid grid-cols-1 gap-4" id="list-ALL"></div></div>
         <div id="N5" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N5"></div></div>
@@ -224,8 +230,33 @@ async function cloudLoad() {
         const playBtn = document.getElementById('playBtn');
 
         window.onload = () => {
-            renderAll();
+            const urlParams = new URLSearchParams(window.location.search);
+            const q = urlParams.get('q');
+            if (q) {
+                document.getElementById('searchInput').value = q;
+                document.getElementById('clearSearchBtn').style.display = 'inline-block';
+                renderAll(q);
+            } else {
+                renderAll();
+            }
         };
+
+        // --- SEARCH LOGIC ---
+        function handleSearch(query) {
+            const clearBtn = document.getElementById('clearSearchBtn');
+            clearBtn.style.display = query ? 'inline-block' : 'none';
+            
+            const newUrl = query ? `?q=${encodeURIComponent(query)}` : window.location.pathname;
+            window.history.pushState({ path: newUrl }, '', newUrl);
+            
+            renderAll(query);
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('searchInput');
+            input.value = '';
+            handleSearch('');
+        }
 
         // --- 2. RADIO LOGIC ---
         function toggleMusic() {
@@ -288,11 +319,23 @@ async function cloudLoad() {
         }
 
         // --- 4. UI RENDERING ---
-        function renderAll() {
+        function renderAll(query = "") {
             const levels = ['ALL', 'N5', 'N4', 'N3', 'N2', 'N1'];
             levels.forEach(lvl => document.getElementById('list-' + lvl).innerHTML = '');
 
-            myVocab.forEach(item => {
+            const lowerQuery = query.toLowerCase().trim();
+            const filteredVocab = myVocab.filter(item => {
+                if (!lowerQuery) return true;
+                return (item.kanji && item.kanji.toLowerCase().includes(lowerQuery)) ||
+                       (item.reading && item.reading.toLowerCase().includes(lowerQuery)) ||
+                       (item.meaning && item.meaning.toLowerCase().includes(lowerQuery));
+            });
+
+            if (filteredVocab.length === 0 && myVocab.length > 0 && lowerQuery) {
+                document.getElementById('list-ALL').innerHTML = `<p class="nes-text is-error text-center mt-4" style="grid-column: 1 / -1;">No words found for "${query}"</p>`;
+            }
+
+            filteredVocab.forEach(item => {
                 let colorClass = "is-dark";
                 let textClass = "";
 
