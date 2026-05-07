@@ -108,12 +108,11 @@
         <div class="nes-container is-dark is-rounded p-2 flex flex-col items-center gap-2" style="max-width: 180px;">
             <div class="flex items-center gap-2">
                 <i class="nes-icon music is-small"></i>
-                <span style="font-size: 7px;" id="trackName">Lofi Track 1</span>
+                <span style="font-size: 7px;" id="trackName">Lofi Track</span>
             </div>
-            <audio id="bgMusic" loop><source id="musicSource" src="" type="audio/mpeg"></audio>
-            <div class="flex gap-1">
-                <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 8px;">PLAY</button>
-                <button onclick="nextTrack()" class="nes-btn is-warning p-1" style="font-size: 8px;">NEXT</button>
+            <audio id="bgMusic" loop><source id="musicSource" src="/static/bg-music.webm" type="audio/webm"></audio>
+            <div class="flex gap-1 w-full justify-center">
+                <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 8px; width: 100%;">PLAY</button>
             </div>
         </div>
     </div>
@@ -213,40 +212,25 @@ async function cloudLoad() {
 }
         // --- 1. DATA INITIALIZATION ---
         let myVocab = JSON.parse(localStorage.getItem('vocabData')) || [];
-        const playlist = [
-            { name: "Tokyo Night", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-            { name: "Akihabara 8-Bit", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-            { name: "Kyoto Lofi", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }
-        ];
-
-        let currentTrackIndex = 0;
         const audio = document.getElementById('bgMusic');
-        const trackLabel = document.getElementById('trackName');
         const playBtn = document.getElementById('playBtn');
 
         window.onload = () => {
             renderAll();
-            initRadio();
         };
 
         // --- 2. RADIO LOGIC ---
-        function initRadio() {
-            document.getElementById('musicSource').src = playlist[currentTrackIndex].url;
-            trackLabel.innerText = playlist[currentTrackIndex].name;
-            audio.load();
-        }
-
         function toggleMusic() {
-            if (audio.paused) { audio.play(); playBtn.innerText = "STOP"; playBtn.classList.replace('is-primary', 'is-error'); }
-            else { audio.pause(); playBtn.innerText = "PLAY"; playBtn.classList.replace('is-error', 'is-primary'); }
-        }
-
-        function nextTrack() {
-            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-            initRadio();
-            audio.play();
-            playBtn.innerText = "STOP";
-            playBtn.classList.replace('is-primary', 'is-error');
+            if (audio.paused) { 
+                audio.play(); 
+                playBtn.innerText = "STOP"; 
+                playBtn.classList.replace('is-primary', 'is-error'); 
+            }
+            else { 
+                audio.pause(); 
+                playBtn.innerText = "PLAY"; 
+                playBtn.classList.replace('is-error', 'is-primary'); 
+            }
         }
 
         // --- 3. VOCAB LOGIC (CRUD) ---
