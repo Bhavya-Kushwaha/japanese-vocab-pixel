@@ -14,15 +14,11 @@ app = Flask(
     template_folder='../templates'
 )
 
-# Move these inside your functions later or keep them here 
-# ONLY if you are 100% sure the Vercel Env Vars are set.
 url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
-
-# These pull the values you just saved in Vercel
-url = os.environ.get("SUPABASE_URL")
-key = os.environ.get("SUPABASE_KEY")
-supabase: Client = create_client(url, key)
+supabase: Client | None = None
+if url and key:
+    supabase = create_client(url, key)
 
 @app.route('/')
 def home():
@@ -60,6 +56,8 @@ def sync_cloud():
     email = request.form.get('email')
     vocab_json = request.form.get('vocab_list')
     try:
+        if not supabase:
+            return jsonify({"success": False, "error": "Supabase not configured"})
         # This saves data to your 'user_vocab' table
         supabase.table('user_vocab').upsert({
             "email": email, 
@@ -73,6 +71,8 @@ def sync_cloud():
 def load_backup():
     email = request.form.get('email')
     try:
+        if not supabase:
+            return jsonify({"success": False, "error": "Supabase not configured"})
         response = supabase.table('user_vocab').select("vocab_data").eq("email", email).execute()
         if response.data:
             return jsonify({"success": True, "data": response.data[0]['vocab_data']})
