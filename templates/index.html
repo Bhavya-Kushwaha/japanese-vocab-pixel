@@ -453,8 +453,11 @@ async function cloudLoad() {
 
         function showAchievementToast(label, desc, xp) {
             const toast = document.getElementById('achievementToast');
+            const inner = toast.querySelector('.toast-inner');
             document.getElementById('toastBody').innerText = label + ' — ' + desc;
-            document.getElementById('toastXp').innerText   = '+' + xp + ' XP';
+            document.getElementById('toastXp').innerText   = xp > 0 ? '+' + xp + ' XP' : '';
+            // Warning style for duplicates, purple for achievements
+            inner.style.borderColor = label.includes('⚠️') ? '#f97316' : '#a855f7';
             toast.classList.add('show');
             clearTimeout(toastTimer);
             toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
@@ -531,6 +534,16 @@ async function cloudLoad() {
             const data = await res.json();
 
             if(data.success) {
+                // --- DUPLICATE CHECK ---
+                const isDuplicate = myVocab.some(w =>
+                    w.kanji === data.kanji || w.reading === data.reading
+                );
+                if (isDuplicate) {
+                    showAchievementToast('⚠️ Already Collected!', `"${data.kanji}" is already in your quest log.`, 0);
+                    wordInput.value = "";
+                    return;
+                }
+
                 const newEntry = {
                     id: Date.now(),
                     kanji: data.kanji,
