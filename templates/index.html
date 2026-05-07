@@ -57,6 +57,12 @@
     .nes-btn.is-active { background-color: #209cee; color: white; }
     .delete-btn { position: absolute; top: -10px; right: -10px; z-index: 10; scale: 0.7; }
     
+    /* CUSTOM MAROON RANK STYLES */
+    .nes-progress.is-maroon::-webkit-progress-value { background-color: #8b0000; }
+    .nes-progress.is-maroon::-moz-progress-bar { background-color: #8b0000; }
+    .nes-progress.is-maroon::-ms-fill { background-color: #8b0000; }
+    .nes-text.is-maroon { color: #8b0000 !important; }
+
     /* FLASHCARD STYLES */
     .flashcard-container {
         display: flex;
@@ -320,13 +326,42 @@ async function cloudLoad() {
             const count = myVocab.length;
             document.getElementById('totalCount').innerText = count;
             const bar = document.getElementById('questBar');
-            bar.value = count;
+            const rankText = document.getElementById('rankText');
             
             let rank = "NOVICE";
-            if(count > 10) rank = "APPRENTICE";
-            if(count > 30) rank = "WARRIOR";
-            if(count > 50) rank = "MASTER";
-            document.getElementById('rankText').innerText = rank;
+            let max = 10;
+            let value = count;
+            let theme = "is-primary"; // Blue
+
+            if (count >= 100) {
+                rank = "LEGEND";
+                max = 100;
+                value = count - 100;
+                if (value > 100) value = 100; // Cap visual progress at +100
+                theme = "is-maroon"; // Deep Red
+            } else if (count >= 50) {
+                rank = "MASTER";
+                max = 50; // Next goal is 100 (100 - 50 = 50)
+                value = count - 50;
+                theme = "is-error"; // Red
+            } else if (count >= 30) {
+                rank = "WARRIOR";
+                max = 20; // 50 - 30 = 20
+                value = count - 30;
+                theme = "is-warning"; // Yellow
+            } else if (count >= 10) {
+                rank = "APPRENTICE";
+                max = 20; // 30 - 10 = 20
+                value = count - 10;
+                theme = "is-success"; // Green
+            }
+
+            bar.max = max;
+            bar.value = value;
+            bar.className = `nes-progress ${theme}`;
+            
+            rankText.innerText = rank;
+            rankText.className = `nes-text ${theme}`;
         }
 
         function showTab(level) {
