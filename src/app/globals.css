@@ -1,0 +1,30 @@
+@import 'nes.css/css/nes.min.css';
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html, body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #1a202c;
+    background-image: url('https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da971ab8baa_w200.gif');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+
+/* Tailwind utility classes for NES to prevent conflicts if needed */
+.nes-container.is-dark {
+    background-color: #212529 !important;
+}
+
+/* Base custom styles */
+.quiz-option {
+    transition: all 0.2s ease-in-out;
+}
+.quiz-option:hover:not(:disabled) {
+    transform: translateX(5px);
+}

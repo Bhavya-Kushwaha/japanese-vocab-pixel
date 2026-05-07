@@ -28,7 +28,7 @@ supabase: Client = create_client(url, key)
 def home():
     return render_template('index.html')
 
-@app.route('/fetch', methods=['POST'])
+@app.route('/api/fetch', methods=['POST'])
 def fetch_vocab():
     word = request.form.get('word')
     if not word: return jsonify({"success": False})
@@ -55,7 +55,7 @@ def fetch_vocab():
     return jsonify({"success": False})
 
 # --- CLOUD SYNC LOGIC ---
-@app.route('/sync', methods=['POST'])
+@app.route('/api/sync', methods=['POST'])
 def sync_cloud():
     email = request.form.get('email')
     vocab_json = request.form.get('vocab_list')
@@ -69,7 +69,7 @@ def sync_cloud():
     except Exception as e:
         return jsonify({"success": False, "error": str(e)})
 
-@app.route('/load-backup', methods=['POST'])
+@app.route('/api/load-backup', methods=['POST'])
 def load_backup():
     email = request.form.get('email')
     try:
