@@ -105,6 +105,59 @@
     ::-webkit-scrollbar { width: 10px; }
     ::-webkit-scrollbar-track { background: #212529; }
     ::-webkit-scrollbar-thumb { background: #fff; border: 2px solid #212529; }
+
+    /* ===== GAMIFICATION STYLES ===== */
+
+    /* XP Bar */
+    .xp-bar-wrap { margin-top: 6px; }
+    .xp-label { font-size: 7px; color: #d1d5db; display: flex; justify-content: space-between; margin-bottom: 3px; }
+    .nes-progress.is-xp::-webkit-progress-value { background-color: #a855f7; }
+    .nes-progress.is-xp::-moz-progress-bar { background-color: #a855f7; }
+
+    /* Streak Badge */
+    #streakBadge {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 8px; padding: 4px 8px;
+        background: rgba(234,88,12,0.2); border: 2px solid #ea580c;
+        color: #fb923c; margin-top: 6px;
+    }
+    #streakBadge.is-frozen { border-color: #3b82f6; color: #93c5fd; background: rgba(59,130,246,0.15); }
+
+    /* Achievement Toast */
+    #achievementToast {
+        position: fixed; bottom: -120px; right: 20px; z-index: 9999;
+        max-width: 260px; transition: bottom 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        pointer-events: none;
+    }
+    #achievementToast.show { bottom: 20px; }
+    .toast-inner {
+        background: rgba(15,15,25,0.97); border: 3px solid #a855f7;
+        padding: 12px 16px; image-rendering: pixelated;
+    }
+    .toast-title { font-size: 7px; color: #a855f7; margin-bottom: 4px; }
+    .toast-body { font-size: 9px; color: #fff; }
+    .toast-xp { font-size: 7px; color: #facc15; margin-top: 4px; }
+
+    /* Level-Up Overlay */
+    #levelUpOverlay {
+        position: fixed; inset: 0; z-index: 9998; display: none;
+        align-items: center; justify-content: center;
+        background: rgba(0,0,0,0.85); animation: none;
+    }
+    #levelUpOverlay.show { display: flex; animation: flashIn 0.1s ease; }
+    @keyframes flashIn { 0%{opacity:0;transform:scale(0.8)} 100%{opacity:1;transform:scale(1)} }
+    .levelup-content { text-align: center; }
+    .levelup-stars { font-size: 2.5rem; animation: spinStars 1s linear infinite; }
+    @keyframes spinStars { 0%{letter-spacing:0px} 50%{letter-spacing:8px} 100%{letter-spacing:0px} }
+    .levelup-rank { font-size: 1.6rem; color: #facc15; margin: 12px 0; text-shadow: 0 0 20px #facc15; }
+    .levelup-sub { font-size: 0.55rem; color: #d1d5db; }
+
+    /* Quiz Score Screen */
+    .score-screen { text-align: center; width: 100%; }
+    .score-row { display: flex; justify-content: space-between; font-size: 8px; padding: 6px 0; border-bottom: 1px solid #374151; }
+    .score-accuracy { font-size: 2rem; color: #22c55e; margin: 16px 0; }
+    .score-accuracy.mid { color: #facc15; }
+    .score-accuracy.low { color: #ef4444; }
 </style>
 </head>
 <body class="p-4 md:p-10">
@@ -128,8 +181,17 @@
         
         <!-- Gamification: Quest Progress -->
         <div class="nes-container is-dark mb-6">
-            <p style="font-size: 9px;" class="mb-2">RANK: <span id="rankText" class="nes-text is-warning">NOVICE</span> | TOTAL: <span id="totalCount">0</span></p>
-            <progress id="questBar" class="nes-progress is-success" value="0" max="50"></progress>
+            <div class="flex justify-between items-start flex-wrap gap-2">
+                <div class="flex-1">
+                    <p style="font-size: 9px;" class="mb-2">RANK: <span id="rankText" class="nes-text is-warning">NOVICE</span> | WORDS: <span id="totalCount">0</span></p>
+                    <progress id="questBar" class="nes-progress is-success" value="0" max="50"></progress>
+                    <div class="xp-bar-wrap">
+                        <div class="xp-label"><span>⚡ XP</span><span><span id="xpCount">0</span> / <span id="xpMax">100</span></span></div>
+                        <progress id="xpBar" class="nes-progress is-xp" value="0" max="100"></progress>
+                    </div>
+                </div>
+                <div id="streakBadge">🔥 <span id="streakCount">0</span> DAY STREAK</div>
+            </div>
         </div>
 
         <!-- Cloud Sync Section -->
@@ -227,6 +289,26 @@
         <button onclick="clearStorage()" class="nes-btn is-error is-small mt-10 w-full">RESET ALL DATA</button>
     </div>
 
+    <!-- Achievement Toast -->
+    <div id="achievementToast">
+        <div class="toast-inner">
+            <div class="toast-title">🏅 ACHIEVEMENT UNLOCKED</div>
+            <div class="toast-body" id="toastBody">First Steps!</div>
+            <div class="toast-xp" id="toastXp">+10 XP</div>
+        </div>
+    </div>
+
+    <!-- Level-Up Overlay -->
+    <div id="levelUpOverlay" onclick="closeLevelUp()">
+        <div class="levelup-content nes-container is-dark" style="max-width:340px;">
+            <div class="levelup-stars">✨⭐✨</div>
+            <p class="levelup-sub">RANK UP!</p>
+            <div class="levelup-rank" id="levelUpRankName">APPRENTICE</div>
+            <p class="levelup-sub" style="margin-bottom:16px;">Tap anywhere to continue</p>
+            <div class="nes-text is-warning" style="font-size:8px;">+50 BONUS XP</div>
+        </div>
+    </div>
+
     <script>
         async function cloudBackup() {
     const email = document.getElementById('userEmail').value;
@@ -266,7 +348,137 @@ async function cloudLoad() {
         const audio = document.getElementById('bgMusic');
         const playBtn = document.getElementById('playBtn');
 
+        // ===== GAMIFICATION DATA =====
+        let totalXP       = parseInt(localStorage.getItem('totalXP') || '0');
+        let xpLevel       = parseInt(localStorage.getItem('xpLevel') || '1');
+        let streakCount   = parseInt(localStorage.getItem('streakCount') || '0');
+        let lastStudyDate = localStorage.getItem('lastStudyDate') || '';
+        let unlockedAchievements = JSON.parse(localStorage.getItem('unlockedAchievements') || '[]');
+        let quizScore     = { correct: 0, wrong: 0, xpGained: 0 };
+        let previousRank  = '';
+
+        // XP thresholds per level (level 1 needs 100xp, level 2 needs 150, etc.)
+        const XP_PER_LEVEL = 100;
+
+        // Achievement definitions
+        const ACHIEVEMENTS = [
+            { id: 'first_word',    label: '🌱 First Steps',    desc: 'Collected your first word!',      xp: 10,  check: () => myVocab.length >= 1  },
+            { id: 'ten_words',     label: '📚 Bookworm',       desc: 'Collected 10 words!',             xp: 25,  check: () => myVocab.length >= 10 },
+            { id: 'fifty_words',   label: '🌟 Word Master',    desc: 'Collected 50 words!',             xp: 100, check: () => myVocab.length >= 50 },
+            { id: 'hundred_words', label: '👑 LEGEND',          desc: 'Collected 100 words!',            xp: 250, check: () => myVocab.length >= 100},
+            { id: 'streak_3',      label: '🔥 On Fire',        desc: 'Studied 3 days in a row!',        xp: 30,  check: () => streakCount >= 3     },
+            { id: 'streak_7',      label: '⚡ Unstoppable',    desc: 'Studied 7 days in a row!',        xp: 75,  check: () => streakCount >= 7     },
+            { id: 'quiz_10',       label: '⚔️ Quiz Warrior',   desc: 'Answered 10 quiz questions!',     xp: 20,  check: () => {
+                const total = parseInt(localStorage.getItem('totalQuizAnswers') || '0');
+                return total >= 10;
+            }},
+        ];
+
+        function saveGamificationData() {
+            localStorage.setItem('totalXP', totalXP);
+            localStorage.setItem('xpLevel', xpLevel);
+            localStorage.setItem('streakCount', streakCount);
+            localStorage.setItem('lastStudyDate', lastStudyDate);
+            localStorage.setItem('unlockedAchievements', JSON.stringify(unlockedAchievements));
+        }
+
+        function grantXP(amount) {
+            totalXP += amount;
+            // Level up check (every XP_PER_LEVEL * level XP)
+            const xpNeeded = xpLevel * XP_PER_LEVEL;
+            if (totalXP >= xpNeeded) {
+                totalXP -= xpNeeded;
+                xpLevel++;
+            }
+            saveGamificationData();
+            updateXPBar();
+        }
+
+        function updateXPBar() {
+            const xpNeeded = xpLevel * XP_PER_LEVEL;
+            const xpBarEl  = document.getElementById('xpBar');
+            const xpCountEl= document.getElementById('xpCount');
+            const xpMaxEl  = document.getElementById('xpMax');
+            if (xpBarEl) {
+                xpBarEl.max   = xpNeeded;
+                xpBarEl.value = totalXP;
+                xpCountEl.innerText = totalXP;
+                xpMaxEl.innerText   = xpNeeded;
+            }
+        }
+
+        // ===== STREAK LOGIC =====
+        function updateStreak() {
+            const today = new Date().toDateString();
+            const yesterday = new Date(Date.now() - 86400000).toDateString();
+            if (lastStudyDate === today) {
+                // already counted today
+            } else if (lastStudyDate === yesterday) {
+                streakCount++;
+                lastStudyDate = today;
+            } else {
+                // streak broken or first time
+                streakCount = 1;
+                lastStudyDate = today;
+            }
+            saveGamificationData();
+            renderStreak();
+            checkAchievements();
+        }
+
+        function renderStreak() {
+            const el = document.getElementById('streakCount');
+            if (el) el.innerText = streakCount;
+            const badge = document.getElementById('streakBadge');
+            if (badge) {
+                badge.classList.toggle('is-frozen', streakCount === 0);
+                badge.innerHTML = streakCount > 0
+                    ? `🔥 <span id="streakCount">${streakCount}</span> DAY STREAK`
+                    : `❄️ <span id="streakCount">0</span> DAY STREAK`;
+            }
+        }
+
+        // ===== ACHIEVEMENTS =====
+        let toastTimer = null;
+        function checkAchievements() {
+            ACHIEVEMENTS.forEach(a => {
+                if (!unlockedAchievements.includes(a.id) && a.check()) {
+                    unlockedAchievements.push(a.id);
+                    saveGamificationData();
+                    grantXP(a.xp);
+                    showAchievementToast(a.label, a.desc, a.xp);
+                }
+            });
+        }
+
+        function showAchievementToast(label, desc, xp) {
+            const toast = document.getElementById('achievementToast');
+            document.getElementById('toastBody').innerText = label + ' — ' + desc;
+            document.getElementById('toastXp').innerText   = '+' + xp + ' XP';
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        // ===== LEVEL-UP OVERLAY =====
+        function checkRankUp(newRank) {
+            if (previousRank && newRank !== previousRank) {
+                document.getElementById('levelUpRankName').innerText = newRank;
+                const overlay = document.getElementById('levelUpOverlay');
+                overlay.classList.add('show');
+                grantXP(50); // Bonus XP for rank-up
+            }
+            previousRank = newRank;
+        }
+
+        function closeLevelUp() {
+            document.getElementById('levelUpOverlay').classList.remove('show');
+        }
+        // ===== END GAMIFICATION =====
+
         window.onload = () => {
+            updateStreak();
+            updateXPBar();
             const urlParams = new URLSearchParams(window.location.search);
             const q = urlParams.get('q');
             if (q) {
@@ -334,6 +546,10 @@ async function cloudLoad() {
                 saveData();
                 renderAll();
                 wordInput.value = "";
+                // Gamification: grant XP + check achievements
+                grantXP(10);
+                updateStreak();
+                checkAchievements();
             }
         }
 
@@ -482,6 +698,11 @@ async function cloudLoad() {
             
             rankText.innerText = rank;
             rankText.className = `nes-text ${theme}`;
+
+            // Check for rank-up animation
+            checkRankUp(rank);
+            // Always keep XP bar updated
+            updateXPBar();
         }
 
         function showTab(level) {
@@ -517,6 +738,7 @@ async function cloudLoad() {
         let reviewQueue = [];
         let currentReviewIndex = 0;
         let sessionConfig = { mode: 'flashcard', dir: 'K2M' };
+        let quizSessionScore = { correct: 0, wrong: 0, xpGained: 0 };
 
         function startSession() {
             const mode = document.getElementById('sessionMode').value;
@@ -569,6 +791,7 @@ async function cloudLoad() {
             }
 
             currentReviewIndex = 0;
+            quizSessionScore = { correct: 0, wrong: 0, xpGained: 0 };
             document.getElementById('reviewSetup').style.display = 'none';
             document.getElementById('reviewContainer').style.display = 'flex';
             
@@ -658,6 +881,9 @@ async function cloudLoad() {
                 }
             }
 
+            // Grant XP for reviewing
+            grantXP(quality >= 3 ? 7 : 3);
+
             currentReviewIndex++;
             renderFlashcard();
         }
@@ -665,7 +891,21 @@ async function cloudLoad() {
         // --- QUIZ LOGIC ---
         function renderQuiz() {
             if (currentReviewIndex >= reviewQueue.length) {
-                document.getElementById('reviewContainer').innerHTML = '<p class="nes-text is-success text-center">Quiz Complete! 🎉</p><button class="nes-btn is-primary w-full mt-4" onclick="showTab(\'REVIEW\')">Back to Setup</button>';
+                const total = quizSessionScore.correct + quizSessionScore.wrong;
+                const pct   = total > 0 ? Math.round((quizSessionScore.correct / total) * 100) : 0;
+                const accClass = pct >= 80 ? '' : pct >= 50 ? 'mid' : 'low';
+                const emoji = pct >= 80 ? '🌟' : pct >= 50 ? '👍' : '💪';
+                document.getElementById('reviewContainer').innerHTML = `
+                    <div class="nes-container is-dark score-screen">
+                        <p class="nes-text is-success mb-4" style="font-size:0.8rem;">QUEST COMPLETE ${emoji}</p>
+                        <div class="score-accuracy ${accClass}">${pct}%</div>
+                        <div style="font-size:7px;color:#9ca3af;margin-bottom:16px;">ACCURACY</div>
+                        <div class="score-row"><span>✅ Correct</span><span class="nes-text is-success">${quizSessionScore.correct}</span></div>
+                        <div class="score-row"><span>❌ Wrong</span><span class="nes-text is-error">${quizSessionScore.wrong}</span></div>
+                        <div class="score-row" style="border:none;"><span>⚡ XP Earned</span><span class="nes-text is-warning">+${quizSessionScore.xpGained}</span></div>
+                        <button class="nes-btn is-primary w-full mt-6" onclick="showTab('REVIEW')">BACK TO SETUP</button>
+                        <button class="nes-btn is-warning w-full mt-2" onclick="startSession()">PLAY AGAIN</button>
+                    </div>`;
                 return;
             }
             const item = reviewQueue[currentReviewIndex];
@@ -723,6 +963,18 @@ async function cloudLoad() {
                     b.classList.add('is-error');
                 }
             });
+
+            // Track quiz score + XP
+            const xpGain = isCorrect ? 15 : 2;
+            if (isCorrect) quizSessionScore.correct++;
+            else           quizSessionScore.wrong++;
+            quizSessionScore.xpGained += xpGain;
+            grantXP(xpGain);
+
+            // Track total quiz answers for achievement
+            const prev = parseInt(localStorage.getItem('totalQuizAnswers') || '0');
+            localStorage.setItem('totalQuizAnswers', prev + 1);
+            checkAchievements();
             
             setTimeout(() => {
                 currentReviewIndex++;
