@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { VocabProvider } from "@/context/VocabContext";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: "Vocab Quest | Japanese Pixel SRS",
@@ -23,6 +24,7 @@ export default function RootLayout({
             {children}
           </VocabProvider>
         </main>
+        <SpeedInsights />
       </body>
     </html>
   );
