@@ -7,6 +7,7 @@
     <!-- ADD THIS LINE FOR THE FAVICON -->
     <link rel="icon" type="image/png" href="/static/favicon.png">
     <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <script src="/static/jlpt_bank.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -158,6 +159,21 @@
     .score-accuracy { font-size: 2rem; color: #22c55e; margin: 16px 0; }
     .score-accuracy.mid { color: #facc15; }
     .score-accuracy.low { color: #ef4444; }
+
+    /* ===== JLPT BANK STYLES ===== */
+    .bank-level-btn { margin: 0 4px 8px; }
+    .bank-level-btn.is-active { background-color: #a855f7; color: white; }
+    .bank-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
+    .bank-card { background: rgba(33,37,41,0.9); border: 3px solid #374151; padding: 12px; position: relative; transition: border-color 0.2s; }
+    .bank-card:hover { border-color: #a855f7; }
+    .bank-card .bc-kanji { font-size: 1.4rem; margin-bottom: 6px; }
+    .bank-card .bc-reading { font-size: 7px; color: #9ca3af; margin-bottom: 4px; }
+    .bank-card .bc-meaning { font-size: 8px; color: #d1d5db; }
+    .bank-card .bc-add { position: absolute; top: 8px; right: 8px; font-size: 7px; padding: 2px 6px; }
+    .bank-card.is-added { border-color: #22c55e; }
+    .bank-card.is-added .bc-add { background: #22c55e; color: #000; pointer-events: none; }
+    .bank-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .bank-count { font-size: 7px; color: #9ca3af; }
 </style>
 </head>
 <body class="p-4 md:p-10">
@@ -220,6 +236,7 @@
             <div class="flex flex-wrap gap-2 justify-center" id="tabBar">
                 <button class="nes-btn tab-btn is-active is-small" onclick="showTab('ALL')">ALL</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('REVIEW')">REVIEW</button>
+                <button class="nes-btn tab-btn is-small" style="background:#a855f7;color:#fff;" onclick="showTab('BANK')">📖 BANK</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N5')">N5</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N4')">N4</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N3')">N3</button>
@@ -242,6 +259,32 @@
         <div id="N3" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N3"></div></div>
         <div id="N2" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N2"></div></div>
         <div id="N1" class="tab-content"><div class="grid grid-cols-1 gap-4" id="list-N1"></div></div>
+
+        <!-- JLPT Bank Tab -->
+        <div id="BANK" class="tab-content">
+            <div class="nes-container is-dark with-title">
+                <p class="title" style="color:#a855f7;">📖 JLPT Word Bank</p>
+                <p style="font-size:7px;color:#9ca3af;margin-bottom:10px;">Browse built-in N5 &amp; N4 vocab. Click ＋ to add to your quest log, or import an entire level at once.</p>
+
+                <!-- Level selector -->
+                <div style="margin-bottom:10px;">
+                    <button id="bankBtn-N5" class="nes-btn is-small bank-level-btn is-active" onclick="selectBankLevel('N5')">N5</button>
+                    <button id="bankBtn-N4" class="nes-btn is-small bank-level-btn" onclick="selectBankLevel('N4')">N4</button>
+                </div>
+
+                <!-- Search + stats + bulk add -->
+                <div class="bank-header">
+                    <div style="display:flex;gap:8px;align-items:center;flex:1;">
+                        <input id="bankSearch" type="text" class="nes-input is-dark" style="font-size:8px;max-width:220px;" placeholder="Search bank..." oninput="renderBank()">
+                        <span class="bank-count" id="bankCount">0 words</span>
+                    </div>
+                    <button class="nes-btn is-warning is-small" onclick="addAllFromLevel()" style="font-size:7px;">＋ ADD ALL</button>
+                </div>
+
+                <!-- Word grid -->
+                <div class="bank-grid" id="bankGrid"></div>
+            </div>
+        </div>
         
         <div id="REVIEW" class="tab-content">
             <div id="reviewSetup" class="nes-container is-dark mb-6">
@@ -251,6 +294,13 @@
                         <select required id="sessionMode">
                             <option value="flashcard" selected>Mode: Flashcards (SRS)</option>
                             <option value="quiz">Mode: Quiz (Fun)</option>
+                        </select>
+                    </div>
+                    <!-- Source selector (My Vocab vs JLPT Bank) -->
+                    <div class="nes-select is-dark">
+                        <select required id="sessionSource">
+                            <option value="myvocab" selected>Source: My Vocab</option>
+                            <option value="bank">Source: JLPT Bank</option>
                         </select>
                     </div>
                     <div class="nes-select is-dark">
@@ -729,7 +779,91 @@ async function cloudLoad() {
                 document.getElementById('reviewContainer').style.display = 'none';
                 document.getElementById('reviewContainer').innerHTML = '';
             }
+            if (level === 'BANK') {
+                renderBank();
+            }
         }
+
+        // ===== JLPT BANK LOGIC =====
+        let currentBankLevel = 'N5';
+
+        function selectBankLevel(lvl) {
+            currentBankLevel = lvl;
+            document.querySelectorAll('.bank-level-btn').forEach(b => b.classList.remove('is-active'));
+            document.getElementById('bankBtn-' + lvl).classList.add('is-active');
+            document.getElementById('bankSearch').value = '';
+            renderBank();
+        }
+
+        function renderBank() {
+            const query = (document.getElementById('bankSearch').value || '').toLowerCase().trim();
+            const words = (JLPT_BANK[currentBankLevel] || []).filter(w => {
+                if (!query) return true;
+                return w.kanji.toLowerCase().includes(query)
+                    || w.reading.toLowerCase().includes(query)
+                    || w.meaning.toLowerCase().includes(query);
+            });
+
+            document.getElementById('bankCount').innerText = words.length + ' words';
+            const grid = document.getElementById('bankGrid');
+            grid.innerHTML = '';
+
+            words.forEach(w => {
+                const alreadyAdded = myVocab.some(v => v.kanji === w.kanji || v.reading === w.reading);
+                const card = document.createElement('div');
+                card.className = 'bank-card' + (alreadyAdded ? ' is-added' : '');
+                card.id = 'bcard-' + encodeURIComponent(w.kanji);
+                card.innerHTML = `
+                    <div class="bc-kanji">${w.kanji}</div>
+                    <div class="bc-reading">${w.reading}</div>
+                    <div class="bc-meaning">${w.meaning}</div>
+                    <button class="nes-btn is-success bc-add"
+                        onclick="addFromBank('${w.kanji.replace(/'/g,"\\'")}')"
+                        ${alreadyAdded ? 'disabled' : ''}>
+                        ${alreadyAdded ? '✓' : '＋'}
+                    </button>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function addFromBank(kanji) {
+            const wordList = JLPT_BANK[currentBankLevel] || [];
+            const w = wordList.find(x => x.kanji === kanji);
+            if (!w) return;
+
+            const isDuplicate = myVocab.some(v => v.kanji === w.kanji || v.reading === w.reading);
+            if (isDuplicate) { renderBank(); return; }
+
+            myVocab.unshift({
+                id: Date.now() + Math.random(),
+                kanji: w.kanji, reading: w.reading, meaning: w.meaning,
+                level: currentBankLevel,
+                interval: 0, repetition: 0, efactor: 2.5, nextReviewDate: Date.now()
+            });
+            saveData(); renderAll(); renderBank();
+            grantXP(5); checkAchievements();
+        }
+
+        function addAllFromLevel() {
+            const wordList = JLPT_BANK[currentBankLevel] || [];
+            let added = 0;
+            wordList.forEach(w => {
+                const isDuplicate = myVocab.some(v => v.kanji === w.kanji || v.reading === w.reading);
+                if (!isDuplicate) {
+                    myVocab.unshift({
+                        id: Date.now() + Math.random(),
+                        kanji: w.kanji, reading: w.reading, meaning: w.meaning,
+                        level: currentBankLevel,
+                        interval: 0, repetition: 0, efactor: 2.5, nextReviewDate: Date.now()
+                    });
+                    added++;
+                }
+            });
+            saveData(); renderAll(); renderBank();
+            if (added > 0) { grantXP(added * 3); checkAchievements(); }
+            showAchievementToast('📥 Imported!', `Added ${added} ${currentBankLevel} words to your Quest Log.`, added * 3);
+        }
+        // ===== END JLPT BANK LOGIC =====
 
         function exportToCSV() {
             if(myVocab.length === 0) return alert("No data to export!");
@@ -761,9 +895,31 @@ async function cloudLoad() {
             
             sessionConfig = { mode, dir };
 
-            let pool = myVocab;
-            if (level !== "ALL") {
-                pool = pool.filter(w => w.level === level);
+            const source = document.getElementById('sessionSource').value;
+
+            let pool;
+            if (source === 'bank') {
+                // Use built-in JLPT Bank as the session pool
+                const bankData = level === 'ALL'
+                    ? [...(JLPT_BANK.N5 || []), ...(JLPT_BANK.N4 || [])]
+                    : (JLPT_BANK[level] || []);
+
+                if (bankData.length === 0) {
+                    alert('No words available in the JLPT Bank for that level yet!');
+                    return;
+                }
+                // Convert bank entries to session-compatible format
+                pool = bankData.map((w, i) => ({
+                    id: 'bank_' + i,
+                    kanji: w.kanji, reading: w.reading, meaning: w.meaning,
+                    level: level === 'ALL' ? (i < (JLPT_BANK.N5||[]).length ? 'N5' : 'N4') : level,
+                    interval: 0, repetition: 0, efactor: 2.5, nextReviewDate: Date.now()
+                }));
+            } else {
+                pool = myVocab;
+                if (level !== "ALL") {
+                    pool = pool.filter(w => w.level === level);
+                }
             }
 
             const now = Date.now();
