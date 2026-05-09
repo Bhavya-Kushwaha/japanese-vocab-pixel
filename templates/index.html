@@ -693,18 +693,14 @@ async function cloudLoad() {
         // Pre-load voices
         window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
 
-        function playWord(id) {
-            const wordObj = myVocab.find(w => w.id === id);
-            if (!wordObj) return;
+        function speakText(text, btnId = null, textId = null) {
+            const btnIcon = btnId ? document.getElementById(btnId) : null;
+            const textElement = textId ? document.getElementById(textId) : null;
             
-            const btnIcon = document.getElementById(`speaker-icon-${id}`);
-            const wordText = document.getElementById(`word-text-${id}`);
-            
-            // Visual feedback start
             if (btnIcon) btnIcon.innerText = "🎶";
-            if (wordText) wordText.classList.add("nes-text", "is-warning");
+            if (textElement) textElement.classList.add("nes-text", "is-warning");
 
-            const utterance = new SpeechSynthesisUtterance(wordObj.kanji);
+            const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'ja-JP';
 
             const voices = window.speechSynthesis.getVoices();
@@ -715,13 +711,19 @@ async function cloudLoad() {
 
             const resetVisuals = () => {
                 if (btnIcon) btnIcon.innerText = "🔊";
-                if (wordText) wordText.classList.remove("nes-text", "is-warning");
+                if (textElement) textElement.classList.remove("nes-text", "is-warning");
             };
 
             utterance.onend = resetVisuals;
             utterance.onerror = resetVisuals;
 
             window.speechSynthesis.speak(utterance);
+        }
+
+        function playWord(id) {
+            const wordObj = myVocab.find(w => w.id === id);
+            if (!wordObj) return;
+            speakText(wordObj.kanji, `speaker-icon-${id}`, `word-text-${id}`);
         }
 
         function updateStats() {
@@ -991,13 +993,31 @@ async function cloudLoad() {
 
             const html = `
                 <div class="nes-container is-dark is-rounded flashcard text-center w-full" style="padding: 1.5rem;">
-                    <div class="text-3xl mb-4">${frontText}</div>
-                    <button id="showAnswerBtn" class="nes-btn is-warning is-small w-full" onclick="showAnswer()">SHOW ANSWER</button>
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <div class="text-3xl">${frontText}</div>
+                        <button onclick="speakText('${item.kanji}', 'fc-word-btn', null)" class="nes-btn is-primary flex justify-center items-center" style="padding: 2px 6px; min-height: auto;">
+                            <span id="fc-word-btn" style="font-size: 12px; line-height: 1;">🔊</span>
+                        </button>
+                    </div>
+                    <button id="showAnswerBtn" class="nes-btn is-warning is-small w-full" onclick="showAnswer('${item.kanji}')">SHOW ANSWER</button>
                     
                     <div id="answerSection" style="display: none; margin-top: 15px;">
                         <hr class="mb-4">
                         <div class="text-xl text-gray-400">${backReading}</div>
                         <div class="text-2xl mt-2 nes-text is-primary">${backMeaning}</div>
+                        <div id="sentenceContainer" class="mt-4 text-left p-2 border-2 border-gray-600 border-dashed" style="display: none;">
+                            <div class="text-xs text-gray-400 mb-1">Example Sentence</div>
+                            <div id="sentenceLoading" class="text-sm">Fetching sentence...</div>
+                            <div id="sentenceContent" style="display: none;">
+                                <div class="flex items-start gap-2">
+                                    <div id="sentenceJp" class="text-sm nes-text is-success"></div>
+                                    <button id="fc-sentence-btn" onclick="speakText(document.getElementById('sentenceJp').innerText, 'fc-sentence-icon', 'sentenceJp')" class="nes-btn is-primary flex justify-center items-center" style="padding: 2px 4px; min-height: auto; margin-top: -2px;">
+                                        <span id="fc-sentence-icon" style="font-size: 8px; line-height: 1;">🔊</span>
+                                    </button>
+                                </div>
+                                <div id="sentenceEn" class="text-xs text-gray-400 mt-2"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="flashcardActions" class="flashcard-actions w-full flex justify-between gap-2 mt-4" style="display: none;">
@@ -1009,10 +1029,31 @@ async function cloudLoad() {
             document.getElementById('reviewContainer').innerHTML = html;
         }
 
-        function showAnswer() {
+        async function showAnswer(kanji) {
             document.getElementById('showAnswerBtn').style.display = 'none';
             document.getElementById('answerSection').style.display = 'block';
             document.getElementById('flashcardActions').style.display = 'flex';
+            
+            // Fetch Example Sentence
+            document.getElementById('sentenceContainer').style.display = 'block';
+            document.getElementById('sentenceLoading').style.display = 'block';
+            document.getElementById('sentenceContent').style.display = 'none';
+            
+            try {
+                const res = await fetch('/sentence', { method: 'POST', body: new URLSearchParams({'word': kanji}) });
+                const data = await res.json();
+                
+                if (data.success && data.jp) {
+                    document.getElementById('sentenceLoading').style.display = 'none';
+                    document.getElementById('sentenceContent').style.display = 'block';
+                    document.getElementById('sentenceJp').innerText = data.jp;
+                    document.getElementById('sentenceEn').innerText = data.en;
+                } else {
+                    document.getElementById('sentenceLoading').innerText = "No example sentence found.";
+                }
+            } catch (e) {
+                document.getElementById('sentenceLoading').innerText = "Error fetching sentence.";
+            }
         }
 
         function processReview(quality) {
@@ -1101,23 +1142,44 @@ async function cloudLoad() {
             let optionsHtml = options.map(opt => {
                 const escapedOpt = opt.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                 const isCorrect = opt === correctAnswer;
+                const escapedKanji = item.kanji.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                 return `
-                    <button class="nes-btn is-primary w-full mb-2 quiz-option" style="font-size: 0.9rem; text-align: left;" data-correct="${isCorrect}" onclick="handleQuizAnswer(this, ${isCorrect})">${opt}</button>
+                    <button class="nes-btn is-primary w-full mb-2 quiz-option" style="font-size: 0.9rem; text-align: left;" data-correct="${isCorrect}" onclick="handleQuizAnswer(this, ${isCorrect}, '${escapedKanji}')">${opt}</button>
                 `;
             }).join('');
 
             const html = `
                 <div class="nes-container is-dark is-rounded flashcard text-center w-full" style="padding: 1.5rem;">
-                    <div class="text-2xl mb-6">${frontText}</div>
+                    <div class="flex items-center justify-center gap-2 mb-6">
+                        <div class="text-2xl">${frontText}</div>
+                        <button onclick="speakText('${item.kanji}', 'qz-word-btn', null)" class="nes-btn is-primary flex justify-center items-center" style="padding: 2px 6px; min-height: auto;">
+                            <span id="qz-word-btn" style="font-size: 12px; line-height: 1;">🔊</span>
+                        </button>
+                    </div>
                     <div class="flex flex-col gap-2">
                         ${optionsHtml}
                     </div>
+                    
+                    <div id="quizSentenceContainer" class="mt-4 text-left p-2 border-2 border-gray-600 border-dashed" style="display: none;">
+                        <div class="text-xs text-gray-400 mb-1">Example Sentence</div>
+                        <div id="quizSentenceLoading" class="text-sm">Fetching sentence...</div>
+                        <div id="quizSentenceContent" style="display: none;">
+                            <div class="flex items-start gap-2">
+                                <div id="quizSentenceJp" class="text-sm nes-text is-success"></div>
+                                <button id="qz-sentence-btn" onclick="speakText(document.getElementById('quizSentenceJp').innerText, 'qz-sentence-icon', 'quizSentenceJp')" class="nes-btn is-primary flex justify-center items-center" style="padding: 2px 4px; min-height: auto; margin-top: -2px;">
+                                    <span id="qz-sentence-icon" style="font-size: 8px; line-height: 1;">🔊</span>
+                                </button>
+                            </div>
+                            <div id="quizSentenceEn" class="text-xs text-gray-400 mt-2"></div>
+                        </div>
+                    </div>
+                    <button id="quizNextBtn" class="nes-btn is-warning w-full mt-4" style="display: none;" onclick="nextQuizQuestion()">NEXT ➔</button>
                 </div>
             `;
             document.getElementById('reviewContainer').innerHTML = html;
         }
 
-        function handleQuizAnswer(btn, isCorrect) {
+        async function handleQuizAnswer(btn, isCorrect, kanji) {
             const allBtns = document.querySelectorAll('.quiz-option');
             allBtns.forEach(b => {
                 b.disabled = true;
@@ -1141,10 +1203,32 @@ async function cloudLoad() {
             localStorage.setItem('totalQuizAnswers', prev + 1);
             checkAchievements();
             
-            setTimeout(() => {
-                currentReviewIndex++;
-                renderQuiz();
-            }, 1000);
+            // Show next button and fetch sentence
+            document.getElementById('quizNextBtn').style.display = 'block';
+            document.getElementById('quizSentenceContainer').style.display = 'block';
+            document.getElementById('quizSentenceLoading').style.display = 'block';
+            document.getElementById('quizSentenceContent').style.display = 'none';
+
+            try {
+                const res = await fetch('/sentence', { method: 'POST', body: new URLSearchParams({'word': kanji}) });
+                const data = await res.json();
+                
+                if (data.success && data.jp) {
+                    document.getElementById('quizSentenceLoading').style.display = 'none';
+                    document.getElementById('quizSentenceContent').style.display = 'block';
+                    document.getElementById('quizSentenceJp').innerText = data.jp;
+                    document.getElementById('quizSentenceEn').innerText = data.en;
+                } else {
+                    document.getElementById('quizSentenceLoading').innerText = "No example sentence found.";
+                }
+            } catch (e) {
+                document.getElementById('quizSentenceLoading').innerText = "Error fetching sentence.";
+            }
+        }
+
+        function nextQuizQuestion() {
+            currentReviewIndex++;
+            renderQuiz();
         }
     </script>
 </body>

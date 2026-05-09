@@ -50,6 +50,39 @@ def fetch_vocab():
         })
     return jsonify({"success": False})
 
+@app.route('/sentence', methods=['POST'])
+def fetch_sentence():
+    word = request.form.get('word')
+    if not word: return jsonify({"success": False})
+    
+    try:
+        url = f"https://tatoeba.org/eng/api_v0/search?from=jpn&to=eng&query={word}"
+        response = requests.get(url, timeout=5)
+        data = response.json()
+        
+        if data.get('results') and len(data['results']) > 0:
+            top_result = data['results'][0]
+            jp_sentence = top_result.get('text', '')
+            
+            en_sentence = ''
+            translations = top_result.get('translations', [])
+            if translations and len(translations) > 0:
+                # translations usually lists arrays per language
+                for t_group in translations:
+                    if len(t_group) > 0 and t_group[0].get('text'):
+                        en_sentence = t_group[0]['text']
+                        break
+
+            return jsonify({
+                "success": True,
+                "jp": jp_sentence,
+                "en": en_sentence
+            })
+    except Exception as e:
+        print("Error fetching sentence:", e)
+        
+    return jsonify({"success": False})
+
 # --- CLOUD SYNC LOGIC ---
 @app.route('/sync', methods=['POST'])
 def sync_cloud():
