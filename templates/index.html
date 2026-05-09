@@ -10,6 +10,7 @@
     <script src="/static/jlpt_bank.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/wanakana"></script>
     
     <!-- Vercel Web Analytics -->
     <script>
@@ -297,6 +298,8 @@
                         <select required id="sessionMode">
                             <option value="flashcard" selected>Mode: Flashcards (SRS)</option>
                             <option value="quiz">Mode: Quiz (Fun)</option>
+                            <option value="typing">Mode: Hardcore Typing</option>
+                            <option value="boss">Mode: Boss Battle ⚔️ (Time Attack)</option>
                         </select>
                     </div>
                     <!-- Source selector (My Vocab vs JLPT Bank) -->
@@ -314,6 +317,11 @@
                             <option value="N3">Level: N3</option>
                             <option value="N2">Level: N2</option>
                             <option value="N1">Level: N1</option>
+                        </select>
+                    </div>
+                    <div class="nes-select is-dark">
+                        <select id="sessionTag">
+                            <option value="ALL" selected>Tag: All Tags</option>
                         </select>
                     </div>
                     <div class="nes-select is-dark">
@@ -603,6 +611,7 @@ async function cloudLoad() {
                     reading: data.reading,
                     meaning: data.meaning,
                     level: data.level,
+                    tags: [],
                     interval: 0,
                     repetition: 0,
                     efactor: 2.5,
@@ -612,7 +621,6 @@ async function cloudLoad() {
                 saveData();
                 renderAll();
                 wordInput.value = "";
-                // Gamification: grant XP + check achievements
                 grantXP(10);
                 updateStreak();
                 checkAchievements();
@@ -623,6 +631,22 @@ async function cloudLoad() {
             myVocab = myVocab.filter(item => item.id !== id);
             saveData();
             renderAll();
+        }
+
+        function addTag(id) {
+            const tag = prompt("Enter a tag (e.g. anime, food):");
+            if (tag) {
+                const item = myVocab.find(v => v.id === id);
+                if (item) {
+                    if (!item.tags) item.tags = [];
+                    const cleanTag = tag.trim().toLowerCase();
+                    if (cleanTag && !item.tags.includes(cleanTag)) {
+                        item.tags.push(cleanTag);
+                        saveData();
+                        renderAll();
+                    }
+                }
+            }
         }
 
         function saveData() {
@@ -676,6 +700,10 @@ async function cloudLoad() {
                                 </button>
                             </div>
                             <span class="text-xs text-gray-400 mt-1">${item.reading}</span>
+                            <div class="flex gap-1 mt-2 flex-wrap cursor-pointer" onclick="addTag(${item.id})" title="Click to add tag">
+                                <span class="nes-text is-disabled" style="font-size: 6px;">+ TAG</span>
+                                ${(item.tags || []).map(t => `<span class="nes-text is-warning" style="font-size: 6px;">#${t}</span>`).join('')}
+                            </div>
                         </div>
                         <div class="text-right"><span class="nes-text ${textClass} text-sm">${item.meaning}</span></div>
                     </div>
@@ -783,6 +811,17 @@ async function cloudLoad() {
                 document.getElementById('reviewSetup').style.display = 'block';
                 document.getElementById('reviewContainer').style.display = 'none';
                 document.getElementById('reviewContainer').innerHTML = '';
+                
+                // Populate tags dropdown
+                const tagSelect = document.getElementById('sessionTag');
+                const allTags = new Set();
+                myVocab.forEach(w => {
+                    if (w.tags) w.tags.forEach(t => allTags.add(t));
+                });
+                tagSelect.innerHTML = '<option value="ALL" selected>Tag: All Tags</option>';
+                Array.from(allTags).sort().forEach(t => {
+                    tagSelect.innerHTML += `<option value="${t}">Tag: #${t}</option>`;
+                });
             }
             if (level === 'BANK') {
                 renderBank();
@@ -894,6 +933,7 @@ async function cloudLoad() {
             const level = document.getElementById('sessionLevel').value;
             const sizeStr = document.getElementById('sessionSize').value;
             const dir = document.getElementById('sessionDirection').value;
+            const tagFilter = document.getElementById('sessionTag').value;
             
             sessionConfig = { mode, dir };
 
@@ -911,12 +951,16 @@ async function cloudLoad() {
                     id: 'bank_' + i,
                     kanji: w.kanji, reading: w.reading, meaning: w.meaning,
                     level: w.level || level,
+                    tags: [],
                     interval: 0, repetition: 0, efactor: 2.5, nextReviewDate: Date.now()
                 }));
             } else {
                 pool = myVocab;
                 if (level !== "ALL") {
                     pool = pool.filter(w => w.level === level);
+                }
+                if (tagFilter !== "ALL") {
+                    pool = pool.filter(w => w.tags && w.tags.includes(tagFilter));
                 }
             }
 
@@ -964,6 +1008,10 @@ async function cloudLoad() {
             
             if (mode === "flashcard") {
                 renderFlashcard();
+            } else if (mode === "typing") {
+                renderTypingCard();
+            } else if (mode === "boss") {
+                renderBossCard();
             } else {
                 renderQuiz();
             }
@@ -1229,6 +1277,201 @@ async function cloudLoad() {
         function nextQuizQuestion() {
             currentReviewIndex++;
             renderQuiz();
+        }
+
+        // --- TYPING MODE LOGIC ---
+        function renderTypingCard() {
+            if (currentReviewIndex >= reviewQueue.length) {
+                const total = quizSessionScore.correct + quizSessionScore.wrong;
+                const pct   = total > 0 ? Math.round((quizSessionScore.correct / total) * 100) : 0;
+                const accClass = pct >= 80 ? '' : pct >= 50 ? 'mid' : 'low';
+                const emoji = pct >= 80 ? '🌟' : pct >= 50 ? '👍' : '💪';
+                document.getElementById('reviewContainer').innerHTML = `
+                    <div class="nes-container is-dark score-screen">
+                        <p class="nes-text is-success mb-4" style="font-size:0.8rem;">QUEST COMPLETE ${emoji}</p>
+                        <div class="score-accuracy ${accClass}">${pct}%</div>
+                        <div style="font-size:7px;color:#9ca3af;margin-bottom:16px;">ACCURACY</div>
+                        <div class="score-row"><span>✅ Correct</span><span class="nes-text is-success">${quizSessionScore.correct}</span></div>
+                        <div class="score-row"><span>❌ Wrong</span><span class="nes-text is-error">${quizSessionScore.wrong}</span></div>
+                        <div class="score-row" style="border:none;"><span>⚡ XP Earned</span><span class="nes-text is-warning">+${quizSessionScore.xpGained}</span></div>
+                        <button class="nes-btn is-primary w-full mt-6" onclick="showTab('REVIEW')">BACK TO SETUP</button>
+                        <button class="nes-btn is-warning w-full mt-2" onclick="startSession()">PLAY AGAIN</button>
+                    </div>`;
+                return;
+            }
+            const item = reviewQueue[currentReviewIndex];
+            
+            let frontText = item.kanji;
+            let targetProperty = 'reading';
+
+            if (sessionConfig.dir === "M2K") {
+                frontText = item.meaning;
+            } else if (sessionConfig.dir === "R2M") {
+                frontText = item.reading;
+                targetProperty = 'meaning';
+            }
+
+            const html = `
+                <div class="nes-container is-dark is-rounded flashcard text-center w-full" style="padding: 1.5rem;">
+                    <div class="flex items-center justify-center gap-2 mb-6">
+                        <div class="text-2xl">${frontText}</div>
+                        <button onclick="speakText('${item.kanji}', 'tp-word-btn', null)" class="nes-btn is-primary flex justify-center items-center" style="padding: 2px 6px; min-height: auto;">
+                            <span id="tp-word-btn" style="font-size: 12px; line-height: 1;">🔊</span>
+                        </button>
+                    </div>
+                    <div class="nes-field">
+                        <input type="text" id="typingInput" class="nes-input is-dark" placeholder="Type answer...">
+                    </div>
+                    <button id="typingSubmitBtn" class="nes-btn is-success w-full mt-4" onclick="handleTypingAnswer('${item.kanji}', '${item[targetProperty].replace(/'/g, "\\'")}', '${targetProperty}')">SUBMIT</button>
+                    
+                    <div id="typingFeedback" class="mt-4 text-xl" style="display: none;"></div>
+                    
+                    <button id="typingNextBtn" class="nes-btn is-warning w-full mt-4" style="display: none;" onclick="nextTypingQuestion()">NEXT ➔</button>
+                </div>
+            `;
+            document.getElementById('reviewContainer').innerHTML = html;
+
+            const input = document.getElementById('typingInput');
+            input.focus();
+            
+            if (targetProperty === 'reading') {
+                wanakana.bind(input);
+            }
+
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('typingSubmitBtn').click();
+                }
+            });
+        }
+        
+        function handleTypingAnswer(kanji, correctAnswer, targetProperty) {
+            const input = document.getElementById('typingInput');
+            const submitBtn = document.getElementById('typingSubmitBtn');
+            const feedback = document.getElementById('typingFeedback');
+            const nextBtn = document.getElementById('typingNextBtn');
+            
+            const userAnswer = input.value.trim().toLowerCase();
+            const isCorrect = userAnswer === correctAnswer.toLowerCase();
+
+            input.disabled = true;
+            submitBtn.style.display = 'none';
+            feedback.style.display = 'block';
+            nextBtn.style.display = 'block';
+
+            if (isCorrect) {
+                feedback.innerHTML = '<span class="nes-text is-success">Correct! 🎉</span>';
+                input.classList.add('is-success');
+            } else {
+                feedback.innerHTML = `<span class="nes-text is-error">Wrong!</span><br><span style="font-size: 10px;">Correct: ${correctAnswer}</span>`;
+                input.classList.add('is-error');
+            }
+
+            const xpGain = isCorrect ? 25 : 5; 
+            if (isCorrect) quizSessionScore.correct++;
+            else           quizSessionScore.wrong++;
+            quizSessionScore.xpGained += xpGain;
+            grantXP(xpGain);
+            
+            const prev = parseInt(localStorage.getItem('totalQuizAnswers') || '0');
+            localStorage.setItem('totalQuizAnswers', prev + 1);
+            checkAchievements();
+            
+            nextBtn.focus();
+        }
+
+        function nextTypingQuestion() {
+            currentReviewIndex++;
+            renderTypingCard();
+        }
+
+        // --- BOSS BATTLE LOGIC ---
+        let bossTimer;
+        let timeLeft = 10;
+
+        function renderBossCard() {
+            clearInterval(bossTimer);
+            if (currentReviewIndex >= reviewQueue.length) {
+                const total = quizSessionScore.correct + quizSessionScore.wrong;
+                const won = quizSessionScore.wrong === 0 && total > 0;
+                document.getElementById('reviewContainer').innerHTML = `
+                    <div class="nes-container is-dark score-screen">
+                        <p class="nes-text ${won ? 'is-success' : 'is-error'} mb-4" style="font-size:0.8rem;">
+                            ${won ? 'BOSS DEFEATED! 🏆' : 'YOU DIED ☠️'}
+                        </p>
+                        <div class="score-row"><span>✅ Correct</span><span class="nes-text is-success">${quizSessionScore.correct}</span></div>
+                        <div class="score-row"><span>❌ Wrong</span><span class="nes-text is-error">${quizSessionScore.wrong}</span></div>
+                        <div class="score-row" style="border:none;"><span>⚡ XP Earned</span><span class="nes-text is-warning">+${quizSessionScore.xpGained}</span></div>
+                        ${won ? '<p class="nes-text is-warning" style="font-size:8px; margin-top:10px;">FLAWLESS VICTORY BONUS: +50 XP!</p>' : ''}
+                        <button class="nes-btn is-primary w-full mt-6" onclick="showTab('REVIEW')">RETREAT</button>
+                    </div>`;
+                if (won) grantXP(50);
+                return;
+            }
+            
+            timeLeft = 7; // 7 seconds per question in Boss Mode!
+            const item = reviewQueue[currentReviewIndex];
+            
+            let frontText = item.kanji;
+            let targetProperty = 'meaning';
+
+            if (sessionConfig.dir === "M2K") { frontText = item.meaning; targetProperty = 'kanji'; } 
+            else if (sessionConfig.dir === "R2M") { frontText = item.reading; targetProperty = 'meaning'; }
+
+            const correctAnswer = item[targetProperty];
+            let pool = myVocab.filter(w => w.id !== item.id && w.level === item.level);
+            if (pool.length < 3) pool = myVocab.filter(w => w.id !== item.id);
+            pool.sort(() => Math.random() - 0.5);
+            const distractors = pool.slice(0, 3).map(w => w[targetProperty] || w.kanji);
+
+            let options = [correctAnswer, ...distractors].sort(() => Math.random() - 0.5);
+
+            let optionsHtml = options.map(opt => {
+                const isCorrect = opt === correctAnswer;
+                const escapedKanji = item.kanji.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                return `<button class="nes-btn is-error w-full mb-2 boss-option" style="font-size: 0.9rem; text-align: left;" data-correct="${isCorrect}" onclick="handleBossAnswer(this, ${isCorrect}, '${escapedKanji}')">${opt}</button>`;
+            }).join('');
+
+            const html = `
+                <div class="nes-container is-dark is-rounded flashcard text-center w-full" style="padding: 1.5rem; border-color: #ef4444;">
+                    <p class="nes-text is-error mb-2" style="font-size:8px;">BOSS BATTLE</p>
+                    <progress class="nes-progress is-error mb-4" id="bossTimeBar" value="100" max="100"></progress>
+                    <div class="text-3xl mb-6 nes-text is-error" style="text-shadow: 2px 2px 0px #000;">${frontText}</div>
+                    <div class="flex flex-col gap-2">${optionsHtml}</div>
+                </div>
+            `;
+            document.getElementById('reviewContainer').innerHTML = html;
+
+            const bar = document.getElementById('bossTimeBar');
+            bossTimer = setInterval(() => {
+                timeLeft -= 0.1;
+                bar.value = (timeLeft / 7) * 100;
+                if (timeLeft <= 0) {
+                    clearInterval(bossTimer);
+                    handleBossAnswer(null, false, item.kanji); // Time out = wrong
+                }
+            }, 100);
+        }
+
+        function handleBossAnswer(btn, isCorrect, kanji) {
+            clearInterval(bossTimer);
+            const allBtns = document.querySelectorAll('.boss-option');
+            allBtns.forEach(b => {
+                b.disabled = true;
+                if (b.getAttribute('data-correct') === "true") b.classList.replace('is-error', 'is-success');
+                else if (b === btn && !isCorrect) b.classList.replace('is-error', 'is-disabled');
+            });
+
+            if (isCorrect) {
+                quizSessionScore.correct++;
+                quizSessionScore.xpGained += 25;
+                grantXP(25);
+                setTimeout(() => { currentReviewIndex++; renderBossCard(); }, 600);
+            } else {
+                // INSTANT LOSS IF WRONG OR TIMEOUT
+                quizSessionScore.wrong++;
+                setTimeout(() => { currentReviewIndex = reviewQueue.length; renderBossCard(); }, 1500);
+            }
         }
     </script>
 </body>
