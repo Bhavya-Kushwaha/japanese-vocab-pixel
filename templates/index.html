@@ -270,6 +270,9 @@
                 <div style="margin-bottom:10px;">
                     <button id="bankBtn-N5" class="nes-btn is-small bank-level-btn is-active" onclick="selectBankLevel('N5')">N5</button>
                     <button id="bankBtn-N4" class="nes-btn is-small bank-level-btn" onclick="selectBankLevel('N4')">N4</button>
+                    <button id="bankBtn-N3" class="nes-btn is-small bank-level-btn" onclick="selectBankLevel('N3')">N3</button>
+                    <button id="bankBtn-N2" class="nes-btn is-small bank-level-btn" onclick="selectBankLevel('N2')">N2</button>
+                    <button id="bankBtn-N1" class="nes-btn is-small bank-level-btn" onclick="selectBankLevel('N1')">N1</button>
                 </div>
 
                 <!-- Search + stats + bulk add -->
@@ -787,32 +790,31 @@ async function cloudLoad() {
         // ===== JLPT BANK LOGIC =====
         let currentBankLevel = 'N5';
 
-        function selectBankLevel(lvl) {
+        async function selectBankLevel(lvl) {
             currentBankLevel = lvl;
             document.querySelectorAll('.bank-level-btn').forEach(b => b.classList.remove('is-active'));
             document.getElementById('bankBtn-' + lvl).classList.add('is-active');
             document.getElementById('bankSearch').value = '';
-            renderBank();
+            await renderBank();
         }
 
-        function renderBank() {
+        async function renderBank() {
+            const grid = document.getElementById('bankGrid');
+            grid.innerHTML = '<p style="font-size:7px;color:#9ca3af;">Loading...</p>';
+            const allWords = await loadBankLevel(currentBankLevel);
             const query = (document.getElementById('bankSearch').value || '').toLowerCase().trim();
-            const words = (JLPT_BANK[currentBankLevel] || []).filter(w => {
+            const words = allWords.filter(w => {
                 if (!query) return true;
                 return w.kanji.toLowerCase().includes(query)
                     || w.reading.toLowerCase().includes(query)
                     || w.meaning.toLowerCase().includes(query);
             });
-
             document.getElementById('bankCount').innerText = words.length + ' words';
-            const grid = document.getElementById('bankGrid');
             grid.innerHTML = '';
-
             words.forEach(w => {
                 const alreadyAdded = myVocab.some(v => v.kanji === w.kanji || v.reading === w.reading);
                 const card = document.createElement('div');
                 card.className = 'bank-card' + (alreadyAdded ? ' is-added' : '');
-                card.id = 'bcard-' + encodeURIComponent(w.kanji);
                 card.innerHTML = `
                     <div class="bc-kanji">${w.kanji}</div>
                     <div class="bc-reading">${w.reading}</div>
@@ -826,14 +828,12 @@ async function cloudLoad() {
             });
         }
 
-        function addFromBank(kanji) {
-            const wordList = JLPT_BANK[currentBankLevel] || [];
+        async function addFromBank(kanji) {
+            const wordList = await loadBankLevel(currentBankLevel);
             const w = wordList.find(x => x.kanji === kanji);
             if (!w) return;
-
             const isDuplicate = myVocab.some(v => v.kanji === w.kanji || v.reading === w.reading);
             if (isDuplicate) { renderBank(); return; }
-
             myVocab.unshift({
                 id: Date.now() + Math.random(),
                 kanji: w.kanji, reading: w.reading, meaning: w.meaning,
@@ -844,8 +844,8 @@ async function cloudLoad() {
             grantXP(5); checkAchievements();
         }
 
-        function addAllFromLevel() {
-            const wordList = JLPT_BANK[currentBankLevel] || [];
+        async function addAllFromLevel() {
+            const wordList = await loadBankLevel(currentBankLevel);
             let added = 0;
             wordList.forEach(w => {
                 const isDuplicate = myVocab.some(v => v.kanji === w.kanji || v.reading === w.reading);
@@ -859,7 +859,7 @@ async function cloudLoad() {
                     added++;
                 }
             });
-            saveData(); renderAll(); renderBank();
+            saveData(); renderAll(); await renderBank();
             if (added > 0) { grantXP(added * 3); checkAchievements(); }
             showAchievementToast('📥 Imported!', `Added ${added} ${currentBankLevel} words to your Quest Log.`, added * 3);
         }
@@ -887,7 +887,7 @@ async function cloudLoad() {
         let sessionConfig = { mode: 'flashcard', dir: 'K2M' };
         let quizSessionScore = { correct: 0, wrong: 0, xpGained: 0 };
 
-        function startSession() {
+        async function startSession() {
             const mode = document.getElementById('sessionMode').value;
             const level = document.getElementById('sessionLevel').value;
             const sizeStr = document.getElementById('sessionSize').value;
@@ -899,20 +899,16 @@ async function cloudLoad() {
 
             let pool;
             if (source === 'bank') {
-                // Use built-in JLPT Bank as the session pool
-                const bankData = level === 'ALL'
-                    ? [...(JLPT_BANK.N5 || []), ...(JLPT_BANK.N4 || [])]
-                    : (JLPT_BANK[level] || []);
-
-                if (bankData.length === 0) {
+                const levels = level === 'ALL' ? ['N5','N4','N3','N2','N1'] : [level];
+                const allData = (await Promise.all(levels.map(l => loadBankLevel(l)))).flat();
+                if (allData.length === 0) {
                     alert('No words available in the JLPT Bank for that level yet!');
                     return;
                 }
-                // Convert bank entries to session-compatible format
-                pool = bankData.map((w, i) => ({
+                pool = allData.map((w, i) => ({
                     id: 'bank_' + i,
                     kanji: w.kanji, reading: w.reading, meaning: w.meaning,
-                    level: level === 'ALL' ? (i < (JLPT_BANK.N5||[]).length ? 'N5' : 'N4') : level,
+                    level: w.level || level,
                     interval: 0, repetition: 0, efactor: 2.5, nextReviewDate: Date.now()
                 }));
             } else {
