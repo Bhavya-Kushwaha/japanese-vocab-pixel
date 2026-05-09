@@ -1,121 +1,8607 @@
 [
-{"kanji":"以内","reading":"いない","meaning":"within, less than"},
-{"kanji":"印象","reading":"いんしょう","meaning":"impression"},
-{"kanji":"影響","reading":"えいきょう","meaning":"influence, effect"},
-{"kanji":"可能","reading":"かのう","meaning":"possible, feasible"},
-{"kanji":"完成","reading":"かんせい","meaning":"completion, perfection"},
-{"kanji":"関心","reading":"かんしん","meaning":"interest, concern"},
-{"kanji":"記録","reading":"きろく","meaning":"record, document"},
-{"kanji":"共通","reading":"きょうつう","meaning":"common, shared"},
-{"kanji":"緊張","reading":"きんちょう","meaning":"tension, nervousness"},
-{"kanji":"区別","reading":"くべつ","meaning":"distinction, difference"},
-{"kanji":"経済","reading":"けいざい","meaning":"economy, economics"},
-{"kanji":"行動","reading":"こうどう","meaning":"action, behavior"},
-{"kanji":"交通","reading":"こうつう","meaning":"traffic, transportation"},
-{"kanji":"効果","reading":"こうか","meaning":"effect, effectiveness"},
-{"kanji":"国際","reading":"こくさい","meaning":"international"},
-{"kanji":"最終","reading":"さいしゅう","meaning":"final, last"},
-{"kanji":"材料","reading":"ざいりょう","meaning":"material, ingredient"},
-{"kanji":"自由","reading":"じゆう","meaning":"freedom, liberty"},
-{"kanji":"実際","reading":"じっさい","meaning":"actually, in reality"},
-{"kanji":"収入","reading":"しゅうにゅう","meaning":"income, earnings"},
-{"kanji":"重要","reading":"じゅうよう","meaning":"important, significant"},
-{"kanji":"状況","reading":"じょうきょう","meaning":"situation, circumstances"},
-{"kanji":"職業","reading":"しょくぎょう","meaning":"occupation, job"},
-{"kanji":"信頼","reading":"しんらい","meaning":"trust, reliability"},
-{"kanji":"絶対","reading":"ぜったい","meaning":"absolutely, definitely"},
-{"kanji":"専門","reading":"せんもん","meaning":"specialty, expertise"},
-{"kanji":"素晴らしい","reading":"すばらしい","meaning":"wonderful, splendid"},
-{"kanji":"存在","reading":"そんざい","meaning":"existence, being"},
-{"kanji":"対象","reading":"たいしょう","meaning":"target, subject"},
-{"kanji":"担当","reading":"たんとう","meaning":"in charge of"},
-{"kanji":"地域","reading":"ちいき","meaning":"region, area"},
-{"kanji":"知識","reading":"ちしき","meaning":"knowledge"},
-{"kanji":"調査","reading":"ちょうさ","meaning":"investigation, survey"},
-{"kanji":"提案","reading":"ていあん","meaning":"proposal, suggestion"},
-{"kanji":"適切","reading":"てきせつ","meaning":"appropriate, suitable"},
-{"kanji":"展開","reading":"てんかい","meaning":"development, expansion"},
-{"kanji":"特徴","reading":"とくちょう","meaning":"characteristic, feature"},
-{"kanji":"努力","reading":"どりょく","meaning":"effort, hard work"},
-{"kanji":"内容","reading":"ないよう","meaning":"content, substance"},
-{"kanji":"日程","reading":"にってい","meaning":"schedule, itinerary"},
-{"kanji":"判断","reading":"はんだん","meaning":"judgment, decision"},
-{"kanji":"評価","reading":"ひょうか","meaning":"evaluation, assessment"},
-{"kanji":"理解","reading":"りかい","meaning":"understanding, comprehension"},
-{"kanji":"問い合わせ","reading":"といあわせ","meaning":"inquiry, question"},
-{"kanji":"不満","reading":"ふまん","meaning":"dissatisfaction, complaint"},
-{"kanji":"不安","reading":"ふあん","meaning":"anxiety, unease"},
-{"kanji":"期待","reading":"きたい","meaning":"expectation, hope"},
-{"kanji":"失望","reading":"しつぼう","meaning":"disappointment"},
-{"kanji":"感動","reading":"かんどう","meaning":"deep emotion, being moved"},
-{"kanji":"幸福","reading":"こうふく","meaning":"happiness, well-being"},
-{"kanji":"不幸","reading":"ふこう","meaning":"unhappiness, misfortune"},
-{"kanji":"平和","reading":"へいわ","meaning":"peace"},
-{"kanji":"安全","reading":"あんぜん","meaning":"safety, security"},
-{"kanji":"危険","reading":"きけん","meaning":"danger, risk"},
-{"kanji":"成長","reading":"せいちょう","meaning":"growth, development"},
-{"kanji":"変化","reading":"へんか","meaning":"change, transformation"},
-{"kanji":"発展","reading":"はってん","meaning":"development, progress"},
-{"kanji":"進歩","reading":"しんぽ","meaning":"progress, advancement"},
-{"kanji":"解決","reading":"かいけつ","meaning":"solution, resolution"},
-{"kanji":"協力","reading":"きょうりょく","meaning":"cooperation, collaboration"},
-{"kanji":"競争","reading":"きょうそう","meaning":"competition, rivalry"},
-{"kanji":"責任","reading":"せきにん","meaning":"responsibility"},
-{"kanji":"義務","reading":"ぎむ","meaning":"obligation, duty"},
-{"kanji":"権利","reading":"けんり","meaning":"right, privilege"},
-{"kanji":"立場","reading":"たちば","meaning":"standpoint, position"},
-{"kanji":"態度","reading":"たいど","meaning":"attitude, manner"},
-{"kanji":"観点","reading":"かんてん","meaning":"viewpoint, perspective"},
-{"kanji":"意見","reading":"いけん","meaning":"opinion, view"},
-{"kanji":"議論","reading":"ぎろん","meaning":"discussion, debate"},
-{"kanji":"批判","reading":"ひはん","meaning":"criticism"},
-{"kanji":"支持","reading":"しじ","meaning":"support, backing"},
-{"kanji":"否定","reading":"ひてい","meaning":"denial, negation"},
-{"kanji":"肯定","reading":"こうてい","meaning":"affirmation, positive"},
-{"kanji":"改善する","reading":"かいぜんする","meaning":"to improve"},
-{"kanji":"実現する","reading":"じつげんする","meaning":"to realize, achieve"},
-{"kanji":"集中する","reading":"しゅうちゅうする","meaning":"to concentrate"},
-{"kanji":"達成する","reading":"たっせいする","meaning":"to achieve, accomplish"},
-{"kanji":"提供する","reading":"ていきょうする","meaning":"to provide, offer"},
-{"kanji":"認める","reading":"みとめる","meaning":"to acknowledge, admit"},
-{"kanji":"表す","reading":"あらわす","meaning":"to express, represent"},
-{"kanji":"求める","reading":"もとめる","meaning":"to seek, request"},
-{"kanji":"保つ","reading":"たもつ","meaning":"to maintain, keep"},
-{"kanji":"生じる","reading":"しょうじる","meaning":"to arise, occur"},
-{"kanji":"与える","reading":"あたえる","meaning":"to give, grant"},
-{"kanji":"受け入れる","reading":"うけいれる","meaning":"to accept, receive"},
-{"kanji":"取り組む","reading":"とりくむ","meaning":"to tackle, work on"},
-{"kanji":"取り扱う","reading":"とりあつかう","meaning":"to handle, deal with"},
-{"kanji":"見直す","reading":"みなおす","meaning":"to reconsider, review"},
-{"kanji":"繰り返す","reading":"くりかえす","meaning":"to repeat"},
-{"kanji":"引き受ける","reading":"ひきうける","meaning":"to take on, undertake"},
-{"kanji":"打ち合わせ","reading":"うちあわせ","meaning":"meeting, briefing"},
-{"kanji":"申し込む","reading":"もうしこむ","meaning":"to apply, sign up"},
-{"kanji":"思い出す","reading":"おもいだす","meaning":"to recall, remember"},
-{"kanji":"思い込む","reading":"おもいこむ","meaning":"to be convinced, assume"},
-{"kanji":"気がつく","reading":"きがつく","meaning":"to notice, realize"},
-{"kanji":"気にする","reading":"きにする","meaning":"to mind, worry about"},
-{"kanji":"役に立つ","reading":"やくにたつ","meaning":"to be useful"},
-{"kanji":"慣れる","reading":"なれる","meaning":"to get used to"},
-{"kanji":"飽きる","reading":"あきる","meaning":"to get tired of, bored"},
-{"kanji":"疲れる","reading":"つかれる","meaning":"to get tired"},
-{"kanji":"驚かす","reading":"おどろかす","meaning":"to surprise (someone)"},
-{"kanji":"喜ぶ","reading":"よろこぶ","meaning":"to be happy, rejoice"},
-{"kanji":"怒る","reading":"おこる","meaning":"to get angry"},
-{"kanji":"心配","reading":"しんぱい","meaning":"worry, concern"},
-{"kanji":"残念","reading":"ざんねん","meaning":"regrettable, unfortunate"},
-{"kanji":"必要","reading":"ひつよう","meaning":"necessary, needed"},
-{"kanji":"十分","reading":"じゅうぶん","meaning":"enough, sufficient"},
-{"kanji":"様々","reading":"さまざま","meaning":"various, diverse"},
-{"kanji":"主に","reading":"おもに","meaning":"mainly, chiefly"},
-{"kanji":"特に","reading":"とくに","meaning":"especially, particularly"},
-{"kanji":"確かに","reading":"たしかに","meaning":"certainly, surely"},
-{"kanji":"実は","reading":"じつは","meaning":"actually, in fact"},
-{"kanji":"例えば","reading":"たとえば","meaning":"for example"},
-{"kanji":"つまり","reading":"つまり","meaning":"in other words, that is"},
-{"kanji":"しかし","reading":"しかし","meaning":"however, but"},
-{"kanji":"また","reading":"また","meaning":"also, moreover"},
-{"kanji":"さらに","reading":"さらに","meaning":"furthermore, even more"},
-{"kanji":"一方","reading":"いっぽう","meaning":"on the other hand"},
-{"kanji":"場所","reading":"ばしょ","meaning":"place, location"}
+  {
+    "kanji": "周り",
+    "reading": "まわり",
+    "meaning": "circumference"
+  },
+  {
+    "kanji": "川",
+    "reading": "かわ",
+    "meaning": "river"
+  },
+  {
+    "kanji": "夜",
+    "reading": "よる",
+    "meaning": "night"
+  },
+  {
+    "kanji": "散歩",
+    "reading": "さんぽ",
+    "meaning": "walk"
+  },
+  {
+    "kanji": "椅子",
+    "reading": "いす",
+    "meaning": "chair"
+  },
+  {
+    "kanji": "鍵",
+    "reading": "かぎ",
+    "meaning": "key"
+  },
+  {
+    "kanji": "風呂",
+    "reading": "ふろ",
+    "meaning": "bath"
+  },
+  {
+    "kanji": "曇り",
+    "reading": "くもり",
+    "meaning": "cloudiness"
+  },
+  {
+    "kanji": "成る",
+    "reading": "なる",
+    "meaning": "to become"
+  },
+  {
+    "kanji": "程",
+    "reading": "ほど",
+    "meaning": "extent"
+  },
+  {
+    "kanji": "船",
+    "reading": "ふね",
+    "meaning": "ship"
+  },
+  {
+    "kanji": "音",
+    "reading": "おと",
+    "meaning": "sound"
+  },
+  {
+    "kanji": "故障",
+    "reading": "こしょう",
+    "meaning": "fault"
+  },
+  {
+    "kanji": "生産",
+    "reading": "せいさん",
+    "meaning": "production"
+  },
+  {
+    "kanji": "入学",
+    "reading": "にゅうがく",
+    "meaning": "admission (to a school or university)"
+  },
+  {
+    "kanji": "喧嘩",
+    "reading": "けんか",
+    "meaning": "quarrel"
+  },
+  {
+    "kanji": "正直",
+    "reading": "しょうじき",
+    "meaning": "honest"
+  },
+  {
+    "kanji": "一致",
+    "reading": "いっち",
+    "meaning": "agreement"
+  },
+  {
+    "kanji": "博物館",
+    "reading": "はくぶつかん",
+    "meaning": "museum"
+  },
+  {
+    "kanji": "皿",
+    "reading": "さら",
+    "meaning": "plate"
+  },
+  {
+    "kanji": "舞台",
+    "reading": "ぶたい",
+    "meaning": "stage (of a theatre, concert hall, etc.)"
+  },
+  {
+    "kanji": "寄付",
+    "reading": "きふ",
+    "meaning": "contribution"
+  },
+  {
+    "kanji": "猿",
+    "reading": "さる",
+    "meaning": "monkey (esp. the Japanese macaque, Macaca fuscata)"
+  },
+  {
+    "kanji": "平等",
+    "reading": "びょうどう",
+    "meaning": "equality"
+  },
+  {
+    "kanji": "左右",
+    "reading": "さゆう",
+    "meaning": "left and right"
+  },
+  {
+    "kanji": "金属",
+    "reading": "きんぞく",
+    "meaning": "metal"
+  },
+  {
+    "kanji": "商人",
+    "reading": "しょうにん",
+    "meaning": "merchant"
+  },
+  {
+    "kanji": "国境",
+    "reading": "こっきょう",
+    "meaning": "border (between countries)"
+  },
+  {
+    "kanji": "集団",
+    "reading": "しゅうだん",
+    "meaning": "group"
+  },
+  {
+    "kanji": "根",
+    "reading": "ね",
+    "meaning": "root (of a plant)"
+  },
+  {
+    "kanji": "鎖",
+    "reading": "くさり",
+    "meaning": "chain"
+  },
+  {
+    "kanji": "一番",
+    "reading": "いちばん",
+    "meaning": "number one"
+  },
+  {
+    "kanji": "時",
+    "reading": "とき",
+    "meaning": "time"
+  },
+  {
+    "kanji": "元",
+    "reading": "もと",
+    "meaning": "origin"
+  },
+  {
+    "kanji": "計画",
+    "reading": "けいかく",
+    "meaning": "plan"
+  },
+  {
+    "kanji": "少年",
+    "reading": "しょうねん",
+    "meaning": "boy"
+  },
+  {
+    "kanji": "列車",
+    "reading": "れっしゃ",
+    "meaning": "train"
+  },
+  {
+    "kanji": "健康",
+    "reading": "けんこう",
+    "meaning": "health"
+  },
+  {
+    "kanji": "人間",
+    "reading": "にんげん",
+    "meaning": "human being"
+  },
+  {
+    "kanji": "結果",
+    "reading": "けっか",
+    "meaning": "result"
+  },
+  {
+    "kanji": "理解",
+    "reading": "りかい",
+    "meaning": "understanding"
+  },
+  {
+    "kanji": "少女",
+    "reading": "しょうじょ",
+    "meaning": "girl (usu. between 7 and 17)"
+  },
+  {
+    "kanji": "事実",
+    "reading": "じじつ",
+    "meaning": "fact"
+  },
+  {
+    "kanji": "食事",
+    "reading": "しょくじ",
+    "meaning": "meal (e.g. lunch, dinner)"
+  },
+  {
+    "kanji": "人生",
+    "reading": "じんせい",
+    "meaning": "(one's) life"
+  },
+  {
+    "kanji": "母親",
+    "reading": "ははおや",
+    "meaning": "mother"
+  },
+  {
+    "kanji": "行動",
+    "reading": "こうどう",
+    "meaning": "action"
+  },
+  {
+    "kanji": "父親",
+    "reading": "ちちおや",
+    "meaning": "father"
+  },
+  {
+    "kanji": "太陽",
+    "reading": "たいよう",
+    "meaning": "Sun"
+  },
+  {
+    "kanji": "幸福",
+    "reading": "こうふく",
+    "meaning": "happiness"
+  },
+  {
+    "kanji": "政府",
+    "reading": "せいふ",
+    "meaning": "government"
+  },
+  {
+    "kanji": "経験",
+    "reading": "けいけん",
+    "meaning": "experience"
+  },
+  {
+    "kanji": "責任",
+    "reading": "せきにん",
+    "meaning": "duty"
+  },
+  {
+    "kanji": "我慢",
+    "reading": "がまん",
+    "meaning": "endurance"
+  },
+  {
+    "kanji": "噂",
+    "reading": "うわさ",
+    "meaning": "rumour"
+  },
+  {
+    "kanji": "道路",
+    "reading": "どうろ",
+    "meaning": "road"
+  },
+  {
+    "kanji": "機械",
+    "reading": "きかい",
+    "meaning": "machine"
+  },
+  {
+    "kanji": "地球",
+    "reading": "ちきゅう",
+    "meaning": "Earth"
+  },
+  {
+    "kanji": "秘密",
+    "reading": "ひみつ",
+    "meaning": "secret"
+  },
+  {
+    "kanji": "偶然",
+    "reading": "ぐうぜん",
+    "meaning": "coincidence"
+  },
+  {
+    "kanji": "情報",
+    "reading": "じょうほう",
+    "meaning": "information"
+  },
+  {
+    "kanji": "現在",
+    "reading": "げんざい",
+    "meaning": "the present"
+  },
+  {
+    "kanji": "昼食",
+    "reading": "ちゅうしょく",
+    "meaning": "lunch"
+  },
+  {
+    "kanji": "期待",
+    "reading": "きたい",
+    "meaning": "expectation"
+  },
+  {
+    "kanji": "嵐",
+    "reading": "あらし",
+    "meaning": "storm"
+  },
+  {
+    "kanji": "丘",
+    "reading": "おか",
+    "meaning": "hill"
+  },
+  {
+    "kanji": "運動",
+    "reading": "うんどう",
+    "meaning": "exercise"
+  },
+  {
+    "kanji": "大統領",
+    "reading": "だいとうりょう",
+    "meaning": "president (of a country)"
+  },
+  {
+    "kanji": "演説",
+    "reading": "えんぜつ",
+    "meaning": "speech"
+  },
+  {
+    "kanji": "神",
+    "reading": "かみ",
+    "meaning": "god"
+  },
+  {
+    "kanji": "馬",
+    "reading": "うま",
+    "meaning": "horse"
+  },
+  {
+    "kanji": "読書",
+    "reading": "どくしょ",
+    "meaning": "reading (books)"
+  },
+  {
+    "kanji": "詩",
+    "reading": "し",
+    "meaning": "poem"
+  },
+  {
+    "kanji": "知識",
+    "reading": "ちしき",
+    "meaning": "knowledge"
+  },
+  {
+    "kanji": "都市",
+    "reading": "とし",
+    "meaning": "town"
+  },
+  {
+    "kanji": "収入",
+    "reading": "しゅうにゅう",
+    "meaning": "income"
+  },
+  {
+    "kanji": "嘘",
+    "reading": "うそ",
+    "meaning": "lie"
+  },
+  {
+    "kanji": "詩人",
+    "reading": "しじん",
+    "meaning": "poet"
+  },
+  {
+    "kanji": "涙",
+    "reading": "なみだ",
+    "meaning": "tear"
+  },
+  {
+    "kanji": "円",
+    "reading": "えん",
+    "meaning": "yen (currency of Japan)"
+  },
+  {
+    "kanji": "財産",
+    "reading": "ざいさん",
+    "meaning": "property"
+  },
+  {
+    "kanji": "酒",
+    "reading": "さけ",
+    "meaning": "alcohol"
+  },
+  {
+    "kanji": "発見",
+    "reading": "はっけん",
+    "meaning": "discovery"
+  },
+  {
+    "kanji": "勇気",
+    "reading": "ゆうき",
+    "meaning": "courage"
+  },
+  {
+    "kanji": "患者",
+    "reading": "かんじゃ",
+    "meaning": "patient"
+  },
+  {
+    "kanji": "学者",
+    "reading": "がくしゃ",
+    "meaning": "scholar"
+  },
+  {
+    "kanji": "解決",
+    "reading": "かいけつ",
+    "meaning": "settlement"
+  },
+  {
+    "kanji": "存在",
+    "reading": "そんざい",
+    "meaning": "existence"
+  },
+  {
+    "kanji": "言語",
+    "reading": "げんご",
+    "meaning": "language"
+  },
+  {
+    "kanji": "信頼",
+    "reading": "しんらい",
+    "meaning": "trust (in)"
+  },
+  {
+    "kanji": "作家",
+    "reading": "さっか",
+    "meaning": "author"
+  },
+  {
+    "kanji": "海外",
+    "reading": "かいがい",
+    "meaning": "foreign"
+  },
+  {
+    "kanji": "平和",
+    "reading": "へいわ",
+    "meaning": "peace"
+  },
+  {
+    "kanji": "希望",
+    "reading": "きぼう",
+    "meaning": "hope"
+  },
+  {
+    "kanji": "調査",
+    "reading": "ちょうさ",
+    "meaning": "investigation"
+  },
+  {
+    "kanji": "地域",
+    "reading": "ちいき",
+    "meaning": "area"
+  },
+  {
+    "kanji": "気候",
+    "reading": "きこう",
+    "meaning": "climate"
+  },
+  {
+    "kanji": "実験",
+    "reading": "じっけん",
+    "meaning": "experiment"
+  },
+  {
+    "kanji": "愛",
+    "reading": "あい",
+    "meaning": "love"
+  },
+  {
+    "kanji": "国民",
+    "reading": "こくみん",
+    "meaning": "people (of a country)"
+  },
+  {
+    "kanji": "騒音",
+    "reading": "そうおん",
+    "meaning": "noise"
+  },
+  {
+    "kanji": "義務",
+    "reading": "ぎむ",
+    "meaning": "duty"
+  },
+  {
+    "kanji": "釣り",
+    "reading": "つり",
+    "meaning": "fishing"
+  },
+  {
+    "kanji": "胸",
+    "reading": "むね",
+    "meaning": "chest"
+  },
+  {
+    "kanji": "物価",
+    "reading": "ぶっか",
+    "meaning": "prices of commodities"
+  },
+  {
+    "kanji": "過去",
+    "reading": "かこ",
+    "meaning": "the past"
+  },
+  {
+    "kanji": "利益",
+    "reading": "りえき",
+    "meaning": "profit"
+  },
+  {
+    "kanji": "植物",
+    "reading": "しょくぶつ",
+    "meaning": "plant"
+  },
+  {
+    "kanji": "教授",
+    "reading": "きょうじゅ",
+    "meaning": "professor"
+  },
+  {
+    "kanji": "発明",
+    "reading": "はつめい",
+    "meaning": "invention"
+  },
+  {
+    "kanji": "氷",
+    "reading": "こおり",
+    "meaning": "ice"
+  },
+  {
+    "kanji": "石油",
+    "reading": "せきゆ",
+    "meaning": "oil"
+  },
+  {
+    "kanji": "痛み",
+    "reading": "いたみ",
+    "meaning": "pain"
+  },
+  {
+    "kanji": "進歩",
+    "reading": "しんぽ",
+    "meaning": "progress"
+  },
+  {
+    "kanji": "物語",
+    "reading": "ものがたり",
+    "meaning": "story"
+  },
+  {
+    "kanji": "感情",
+    "reading": "かんじょう",
+    "meaning": "emotion"
+  },
+  {
+    "kanji": "週",
+    "reading": "しゅう",
+    "meaning": "week"
+  },
+  {
+    "kanji": "屋根",
+    "reading": "やね",
+    "meaning": "roof"
+  },
+  {
+    "kanji": "恐怖",
+    "reading": "きょうふ",
+    "meaning": "fear"
+  },
+  {
+    "kanji": "議長",
+    "reading": "ぎちょう",
+    "meaning": "chair"
+  },
+  {
+    "kanji": "否定",
+    "reading": "ひてい",
+    "meaning": "denial"
+  },
+  {
+    "kanji": "商品",
+    "reading": "しょうひん",
+    "meaning": "commodity"
+  },
+  {
+    "kanji": "費用",
+    "reading": "ひよう",
+    "meaning": "cost"
+  },
+  {
+    "kanji": "作品",
+    "reading": "さくひん",
+    "meaning": "work (e.g. book, film, painting, composition)"
+  },
+  {
+    "kanji": "賞",
+    "reading": "しょう",
+    "meaning": "prize"
+  },
+  {
+    "kanji": "城",
+    "reading": "しろ",
+    "meaning": "castle"
+  },
+  {
+    "kanji": "留学",
+    "reading": "りゅうがく",
+    "meaning": "studying abroad"
+  },
+  {
+    "kanji": "価格",
+    "reading": "かかく",
+    "meaning": "price"
+  },
+  {
+    "kanji": "犯罪",
+    "reading": "はんざい",
+    "meaning": "crime"
+  },
+  {
+    "kanji": "肩",
+    "reading": "かた",
+    "meaning": "shoulder"
+  },
+  {
+    "kanji": "意志",
+    "reading": "いし",
+    "meaning": "will"
+  },
+  {
+    "kanji": "正午",
+    "reading": "しょうご",
+    "meaning": "noon"
+  },
+  {
+    "kanji": "評価",
+    "reading": "ひょうか",
+    "meaning": "valuation"
+  },
+  {
+    "kanji": "職業",
+    "reading": "しょくぎょう",
+    "meaning": "occupation"
+  },
+  {
+    "kanji": "家具",
+    "reading": "かぐ",
+    "meaning": "furniture"
+  },
+  {
+    "kanji": "劇場",
+    "reading": "げきじょう",
+    "meaning": "theatre"
+  },
+  {
+    "kanji": "不安",
+    "reading": "ふあん",
+    "meaning": "anxiety"
+  },
+  {
+    "kanji": "首相",
+    "reading": "しゅしょう",
+    "meaning": "prime minister"
+  },
+  {
+    "kanji": "自然",
+    "reading": "しぜん",
+    "meaning": "nature"
+  },
+  {
+    "kanji": "自殺",
+    "reading": "じさつ",
+    "meaning": "suicide"
+  },
+  {
+    "kanji": "意識",
+    "reading": "いしき",
+    "meaning": "consciousness"
+  },
+  {
+    "kanji": "逮捕",
+    "reading": "たいほ",
+    "meaning": "arrest"
+  },
+  {
+    "kanji": "爆発",
+    "reading": "ばくはつ",
+    "meaning": "explosion"
+  },
+  {
+    "kanji": "論文",
+    "reading": "ろんぶん",
+    "meaning": "thesis"
+  },
+  {
+    "kanji": "記録",
+    "reading": "きろく",
+    "meaning": "record"
+  },
+  {
+    "kanji": "頭痛",
+    "reading": "ずつう",
+    "meaning": "headache"
+  },
+  {
+    "kanji": "世紀",
+    "reading": "せいき",
+    "meaning": "century"
+  },
+  {
+    "kanji": "契約",
+    "reading": "けいやく",
+    "meaning": "contract"
+  },
+  {
+    "kanji": "牛",
+    "reading": "うし",
+    "meaning": "cattle (Bos taurus)"
+  },
+  {
+    "kanji": "精神",
+    "reading": "せいしん",
+    "meaning": "mind"
+  },
+  {
+    "kanji": "優勝",
+    "reading": "ゆうしょう",
+    "meaning": "overall victory"
+  },
+  {
+    "kanji": "記憶",
+    "reading": "きおく",
+    "meaning": "memory"
+  },
+  {
+    "kanji": "俳優",
+    "reading": "はいゆう",
+    "meaning": "actor"
+  },
+  {
+    "kanji": "独立",
+    "reading": "どくりつ",
+    "meaning": "independence"
+  },
+  {
+    "kanji": "公平",
+    "reading": "こうへい",
+    "meaning": "fairness"
+  },
+  {
+    "kanji": "州",
+    "reading": "しゅう",
+    "meaning": "state (of the US, Australia, India, Germany, etc.)"
+  },
+  {
+    "kanji": "額",
+    "reading": "がく",
+    "meaning": "(picture) frame"
+  },
+  {
+    "kanji": "強盗",
+    "reading": "ごうとう",
+    "meaning": "robber"
+  },
+  {
+    "kanji": "生命",
+    "reading": "せいめい",
+    "meaning": "life"
+  },
+  {
+    "kanji": "輸入",
+    "reading": "ゆにゅう",
+    "meaning": "import"
+  },
+  {
+    "kanji": "命令",
+    "reading": "めいれい",
+    "meaning": "order"
+  },
+  {
+    "kanji": "霧",
+    "reading": "きり",
+    "meaning": "fog"
+  },
+  {
+    "kanji": "記事",
+    "reading": "きじ",
+    "meaning": "article"
+  },
+  {
+    "kanji": "宇宙",
+    "reading": "うちゅう",
+    "meaning": "universe"
+  },
+  {
+    "kanji": "計算",
+    "reading": "けいさん",
+    "meaning": "calculation"
+  },
+  {
+    "kanji": "医師",
+    "reading": "いし",
+    "meaning": "doctor"
+  },
+  {
+    "kanji": "合図",
+    "reading": "あいず",
+    "meaning": "sign"
+  },
+  {
+    "kanji": "銃",
+    "reading": "じゅう",
+    "meaning": "gun"
+  },
+  {
+    "kanji": "禁煙",
+    "reading": "きんえん",
+    "meaning": "abstaining from smoking"
+  },
+  {
+    "kanji": "現実",
+    "reading": "げんじつ",
+    "meaning": "reality"
+  },
+  {
+    "kanji": "握手",
+    "reading": "あくしゅ",
+    "meaning": "handshake"
+  },
+  {
+    "kanji": "友情",
+    "reading": "ゆうじょう",
+    "meaning": "friendship"
+  },
+  {
+    "kanji": "企業",
+    "reading": "きぎょう",
+    "meaning": "enterprise"
+  },
+  {
+    "kanji": "方向",
+    "reading": "ほうこう",
+    "meaning": "direction"
+  },
+  {
+    "kanji": "攻撃",
+    "reading": "こうげき",
+    "meaning": "attack"
+  },
+  {
+    "kanji": "香り",
+    "reading": "かおり",
+    "meaning": "aroma"
+  },
+  {
+    "kanji": "生物",
+    "reading": "せいぶつ",
+    "meaning": "living thing"
+  },
+  {
+    "kanji": "訓練",
+    "reading": "くんれん",
+    "meaning": "training"
+  },
+  {
+    "kanji": "宗教",
+    "reading": "しゅうきょう",
+    "meaning": "religion"
+  },
+  {
+    "kanji": "羽",
+    "reading": "はね",
+    "meaning": "feather"
+  },
+  {
+    "kanji": "役割",
+    "reading": "やくわり",
+    "meaning": "part"
+  },
+  {
+    "kanji": "流れ",
+    "reading": "ながれ",
+    "meaning": "flow (of a fluid or gas)"
+  },
+  {
+    "kanji": "芸術",
+    "reading": "げいじゅつ",
+    "meaning": "art"
+  },
+  {
+    "kanji": "波",
+    "reading": "なみ",
+    "meaning": "wave"
+  },
+  {
+    "kanji": "服装",
+    "reading": "ふくそう",
+    "meaning": "attire"
+  },
+  {
+    "kanji": "署名",
+    "reading": "しょめい",
+    "meaning": "signature"
+  },
+  {
+    "kanji": "個人",
+    "reading": "こじん",
+    "meaning": "individual"
+  },
+  {
+    "kanji": "無料",
+    "reading": "むりょう",
+    "meaning": "free (of charge)"
+  },
+  {
+    "kanji": "広告",
+    "reading": "こうこく",
+    "meaning": "advertisement"
+  },
+  {
+    "kanji": "駐車",
+    "reading": "ちゅうしゃ",
+    "meaning": "parking (a vehicle)"
+  },
+  {
+    "kanji": "王様",
+    "reading": "おうさま",
+    "meaning": "king"
+  },
+  {
+    "kanji": "宝石",
+    "reading": "ほうせき",
+    "meaning": "gem"
+  },
+  {
+    "kanji": "証明",
+    "reading": "しょうめい",
+    "meaning": "proof"
+  },
+  {
+    "kanji": "現金",
+    "reading": "げんきん",
+    "meaning": "cash"
+  },
+  {
+    "kanji": "出版",
+    "reading": "しゅっぱん",
+    "meaning": "publication"
+  },
+  {
+    "kanji": "芝居",
+    "reading": "しばい",
+    "meaning": "play"
+  },
+  {
+    "kanji": "塔",
+    "reading": "とう",
+    "meaning": "tower"
+  },
+  {
+    "kanji": "博士",
+    "reading": "はかせ",
+    "meaning": "expert"
+  },
+  {
+    "kanji": "話題",
+    "reading": "わだい",
+    "meaning": "topic"
+  },
+  {
+    "kanji": "競技",
+    "reading": "きょうぎ",
+    "meaning": "game"
+  },
+  {
+    "kanji": "保証",
+    "reading": "ほしょう",
+    "meaning": "guarantee"
+  },
+  {
+    "kanji": "診察",
+    "reading": "しんさつ",
+    "meaning": "medical examination"
+  },
+  {
+    "kanji": "軍隊",
+    "reading": "ぐんたい",
+    "meaning": "armed forces"
+  },
+  {
+    "kanji": "離婚",
+    "reading": "りこん",
+    "meaning": "divorce"
+  },
+  {
+    "kanji": "投票",
+    "reading": "とうひょう",
+    "meaning": "voting"
+  },
+  {
+    "kanji": "年寄り",
+    "reading": "としより",
+    "meaning": "old person"
+  },
+  {
+    "kanji": "影",
+    "reading": "かげ",
+    "meaning": "shadow"
+  },
+  {
+    "kanji": "心臓",
+    "reading": "しんぞう",
+    "meaning": "heart"
+  },
+  {
+    "kanji": "衝突",
+    "reading": "しょうとつ",
+    "meaning": "collision"
+  },
+  {
+    "kanji": "販売",
+    "reading": "はんばい",
+    "meaning": "sale"
+  },
+  {
+    "kanji": "平均",
+    "reading": "へいきん",
+    "meaning": "average"
+  },
+  {
+    "kanji": "型",
+    "reading": "かた",
+    "meaning": "type"
+  },
+  {
+    "kanji": "輸出",
+    "reading": "ゆしゅつ",
+    "meaning": "export"
+  },
+  {
+    "kanji": "冒険",
+    "reading": "ぼうけん",
+    "meaning": "adventure"
+  },
+  {
+    "kanji": "永遠",
+    "reading": "えいえん",
+    "meaning": "eternity"
+  },
+  {
+    "kanji": "未来",
+    "reading": "みらい",
+    "meaning": "(distant) future"
+  },
+  {
+    "kanji": "表情",
+    "reading": "ひょうじょう",
+    "meaning": "facial expression"
+  },
+  {
+    "kanji": "改善",
+    "reading": "かいぜん",
+    "meaning": "betterment"
+  },
+  {
+    "kanji": "虎",
+    "reading": "とら",
+    "meaning": "tiger (Panthera tigris)"
+  },
+  {
+    "kanji": "胃",
+    "reading": "い",
+    "meaning": "stomach"
+  },
+  {
+    "kanji": "青年",
+    "reading": "せいねん",
+    "meaning": "youth"
+  },
+  {
+    "kanji": "制度",
+    "reading": "せいど",
+    "meaning": "system"
+  },
+  {
+    "kanji": "女王",
+    "reading": "じょおう",
+    "meaning": "queen"
+  },
+  {
+    "kanji": "畑",
+    "reading": "はたけ",
+    "meaning": "field (for growing wheat, fruit, vegetables, etc.)"
+  },
+  {
+    "kanji": "中心",
+    "reading": "ちゅうしん",
+    "meaning": "center"
+  },
+  {
+    "kanji": "鉄道",
+    "reading": "てつどう",
+    "meaning": "railroad"
+  },
+  {
+    "kanji": "収穫",
+    "reading": "しゅうかく",
+    "meaning": "harvest"
+  },
+  {
+    "kanji": "雷",
+    "reading": "かみなり",
+    "meaning": "lightning"
+  },
+  {
+    "kanji": "籠",
+    "reading": "かご",
+    "meaning": "basket (shopping, etc.)"
+  },
+  {
+    "kanji": "放送",
+    "reading": "ほうそう",
+    "meaning": "broadcasting"
+  },
+  {
+    "kanji": "信号",
+    "reading": "しんごう",
+    "meaning": "signal"
+  },
+  {
+    "kanji": "文字",
+    "reading": "もじ",
+    "meaning": "letter (of an alphabet)"
+  },
+  {
+    "kanji": "観客",
+    "reading": "かんきゃく",
+    "meaning": "spectator"
+  },
+  {
+    "kanji": "睡眠",
+    "reading": "すいみん",
+    "meaning": "sleep"
+  },
+  {
+    "kanji": "節約",
+    "reading": "せつやく",
+    "meaning": "economising"
+  },
+  {
+    "kanji": "建設",
+    "reading": "けんせつ",
+    "meaning": "construction"
+  },
+  {
+    "kanji": "袋",
+    "reading": "ふくろ",
+    "meaning": "bag"
+  },
+  {
+    "kanji": "化学",
+    "reading": "かがく",
+    "meaning": "chemistry"
+  },
+  {
+    "kanji": "教科書",
+    "reading": "きょうかしょ",
+    "meaning": "textbook"
+  },
+  {
+    "kanji": "油",
+    "reading": "あぶら",
+    "meaning": "oil"
+  },
+  {
+    "kanji": "毒",
+    "reading": "どく",
+    "meaning": "poison"
+  },
+  {
+    "kanji": "座席",
+    "reading": "ざせき",
+    "meaning": "seat (esp. in public places or places with assigned seating)"
+  },
+  {
+    "kanji": "単位",
+    "reading": "たんい",
+    "meaning": "unit (e.g. meters, grams, etc.)"
+  },
+  {
+    "kanji": "常識",
+    "reading": "じょうしき",
+    "meaning": "common sense"
+  },
+  {
+    "kanji": "郵便",
+    "reading": "ゆうびん",
+    "meaning": "mail service"
+  },
+  {
+    "kanji": "誕生",
+    "reading": "たんじょう",
+    "meaning": "birth (of a person)"
+  },
+  {
+    "kanji": "家事",
+    "reading": "かじ",
+    "meaning": "housework"
+  },
+  {
+    "kanji": "労働",
+    "reading": "ろうどう",
+    "meaning": "labor"
+  },
+  {
+    "kanji": "運",
+    "reading": "うん",
+    "meaning": "fortune"
+  },
+  {
+    "kanji": "数字",
+    "reading": "すうじ",
+    "meaning": "numeral"
+  },
+  {
+    "kanji": "食欲",
+    "reading": "しょくよく",
+    "meaning": "appetite (for food)"
+  },
+  {
+    "kanji": "学習",
+    "reading": "がくしゅう",
+    "meaning": "learning"
+  },
+  {
+    "kanji": "失業",
+    "reading": "しつぎょう",
+    "meaning": "unemployment"
+  },
+  {
+    "kanji": "汗",
+    "reading": "あせ",
+    "meaning": "sweat"
+  },
+  {
+    "kanji": "観光",
+    "reading": "かんこう",
+    "meaning": "sightseeing"
+  },
+  {
+    "kanji": "婚約",
+    "reading": "こんやく",
+    "meaning": "engagement"
+  },
+  {
+    "kanji": "毛布",
+    "reading": "もうふ",
+    "meaning": "blanket"
+  },
+  {
+    "kanji": "分析",
+    "reading": "ぶんせき",
+    "meaning": "analysis"
+  },
+  {
+    "kanji": "引用",
+    "reading": "いんよう",
+    "meaning": "quotation"
+  },
+  {
+    "kanji": "首都",
+    "reading": "しゅと",
+    "meaning": "capital (city)"
+  },
+  {
+    "kanji": "武器",
+    "reading": "ぶき",
+    "meaning": "weapon"
+  },
+  {
+    "kanji": "砂漠",
+    "reading": "さばく",
+    "meaning": "desert"
+  },
+  {
+    "kanji": "鉄",
+    "reading": "てつ",
+    "meaning": "iron (Fe)"
+  },
+  {
+    "kanji": "書斎",
+    "reading": "しょさい",
+    "meaning": "study"
+  },
+  {
+    "kanji": "異常",
+    "reading": "いじょう",
+    "meaning": "abnormal"
+  },
+  {
+    "kanji": "監督",
+    "reading": "かんとく",
+    "meaning": "supervision"
+  },
+  {
+    "kanji": "舌",
+    "reading": "した",
+    "meaning": "tongue"
+  },
+  {
+    "kanji": "針",
+    "reading": "はり",
+    "meaning": "needle"
+  },
+  {
+    "kanji": "笑い",
+    "reading": "わらい",
+    "meaning": "laugh"
+  },
+  {
+    "kanji": "位置",
+    "reading": "いち",
+    "meaning": "place"
+  },
+  {
+    "kanji": "硬貨",
+    "reading": "こうか",
+    "meaning": "coin"
+  },
+  {
+    "kanji": "酸素",
+    "reading": "さんそ",
+    "meaning": "oxygen (O)"
+  },
+  {
+    "kanji": "感覚",
+    "reading": "かんかく",
+    "meaning": "sense"
+  },
+  {
+    "kanji": "拍手",
+    "reading": "はくしゅ",
+    "meaning": "clapping hands"
+  },
+  {
+    "kanji": "瞬間",
+    "reading": "しゅんかん",
+    "meaning": "moment"
+  },
+  {
+    "kanji": "対象",
+    "reading": "たいしょう",
+    "meaning": "target"
+  },
+  {
+    "kanji": "速度",
+    "reading": "そくど",
+    "meaning": "speed"
+  },
+  {
+    "kanji": "穀物",
+    "reading": "こくもつ",
+    "meaning": "grain"
+  },
+  {
+    "kanji": "予算",
+    "reading": "よさん",
+    "meaning": "estimate (of costs)"
+  },
+  {
+    "kanji": "物質",
+    "reading": "ぶっしつ",
+    "meaning": "material"
+  },
+  {
+    "kanji": "腰",
+    "reading": "こし",
+    "meaning": "lower back"
+  },
+  {
+    "kanji": "奨学金",
+    "reading": "しょうがくきん",
+    "meaning": "scholarship"
+  },
+  {
+    "kanji": "祭り",
+    "reading": "まつり",
+    "meaning": "festival"
+  },
+  {
+    "kanji": "農業",
+    "reading": "のうぎょう",
+    "meaning": "agriculture"
+  },
+  {
+    "kanji": "石炭",
+    "reading": "せきたん",
+    "meaning": "coal"
+  },
+  {
+    "kanji": "批評",
+    "reading": "ひひょう",
+    "meaning": "criticism"
+  },
+  {
+    "kanji": "谷",
+    "reading": "たに",
+    "meaning": "valley"
+  },
+  {
+    "kanji": "泥",
+    "reading": "どろ",
+    "meaning": "mud"
+  },
+  {
+    "kanji": "安定",
+    "reading": "あんてい",
+    "meaning": "stability"
+  },
+  {
+    "kanji": "議会",
+    "reading": "ぎかい",
+    "meaning": "congress"
+  },
+  {
+    "kanji": "独身",
+    "reading": "どくしん",
+    "meaning": "unmarried"
+  },
+  {
+    "kanji": "巣",
+    "reading": "す",
+    "meaning": "nest"
+  },
+  {
+    "kanji": "農家",
+    "reading": "のうか",
+    "meaning": "farmer"
+  },
+  {
+    "kanji": "黒板",
+    "reading": "こくばん",
+    "meaning": "blackboard"
+  },
+  {
+    "kanji": "文明",
+    "reading": "ぶんめい",
+    "meaning": "civilization"
+  },
+  {
+    "kanji": "活用",
+    "reading": "かつよう",
+    "meaning": "practical use"
+  },
+  {
+    "kanji": "大陸",
+    "reading": "たいりく",
+    "meaning": "continent"
+  },
+  {
+    "kanji": "体温",
+    "reading": "たいおん",
+    "meaning": "body temperature"
+  },
+  {
+    "kanji": "日付",
+    "reading": "ひづけ",
+    "meaning": "date"
+  },
+  {
+    "kanji": "吸収",
+    "reading": "きゅうしゅう",
+    "meaning": "absorption"
+  },
+  {
+    "kanji": "知事",
+    "reading": "ちじ",
+    "meaning": "prefectural governor"
+  },
+  {
+    "kanji": "建築",
+    "reading": "けんちく",
+    "meaning": "construction"
+  },
+  {
+    "kanji": "金融",
+    "reading": "きんゆう",
+    "meaning": "finance"
+  },
+  {
+    "kanji": "消費",
+    "reading": "しょうひ",
+    "meaning": "consumption"
+  },
+  {
+    "kanji": "信仰",
+    "reading": "しんこう",
+    "meaning": "(religious) faith"
+  },
+  {
+    "kanji": "学期",
+    "reading": "がっき",
+    "meaning": "school term"
+  },
+  {
+    "kanji": "翼",
+    "reading": "つばさ",
+    "meaning": "wing"
+  },
+  {
+    "kanji": "大臣",
+    "reading": "だいじん",
+    "meaning": "cabinet minister"
+  },
+  {
+    "kanji": "外交",
+    "reading": "がいこう",
+    "meaning": "diplomacy"
+  },
+  {
+    "kanji": "鍋",
+    "reading": "なべ",
+    "meaning": "pan"
+  },
+  {
+    "kanji": "絵画",
+    "reading": "かいが",
+    "meaning": "painting"
+  },
+  {
+    "kanji": "神経",
+    "reading": "しんけい",
+    "meaning": "nerve"
+  },
+  {
+    "kanji": "助手",
+    "reading": "じょしゅ",
+    "meaning": "assistant"
+  },
+  {
+    "kanji": "営業",
+    "reading": "えいぎょう",
+    "meaning": "business"
+  },
+  {
+    "kanji": "筋肉",
+    "reading": "きんにく",
+    "meaning": "muscle"
+  },
+  {
+    "kanji": "理想",
+    "reading": "りそう",
+    "meaning": "ideal"
+  },
+  {
+    "kanji": "現状",
+    "reading": "げんじょう",
+    "meaning": "present condition"
+  },
+  {
+    "kanji": "火災",
+    "reading": "かさい",
+    "meaning": "conflagration"
+  },
+  {
+    "kanji": "居間",
+    "reading": "いま",
+    "meaning": "living room (Western style)"
+  },
+  {
+    "kanji": "組合",
+    "reading": "くみあい",
+    "meaning": "association"
+  },
+  {
+    "kanji": "腹",
+    "reading": "はら",
+    "meaning": "abdomen"
+  },
+  {
+    "kanji": "板",
+    "reading": "いた",
+    "meaning": "board"
+  },
+  {
+    "kanji": "作業",
+    "reading": "さぎょう",
+    "meaning": "work"
+  },
+  {
+    "kanji": "金庫",
+    "reading": "きんこ",
+    "meaning": "safe"
+  },
+  {
+    "kanji": "悪魔",
+    "reading": "あくま",
+    "meaning": "devil"
+  },
+  {
+    "kanji": "伝統",
+    "reading": "でんとう",
+    "meaning": "tradition"
+  },
+  {
+    "kanji": "宝",
+    "reading": "たから",
+    "meaning": "treasure"
+  },
+  {
+    "kanji": "資源",
+    "reading": "しげん",
+    "meaning": "resources"
+  },
+  {
+    "kanji": "岸",
+    "reading": "きし",
+    "meaning": "bank"
+  },
+  {
+    "kanji": "食品",
+    "reading": "しょくひん",
+    "meaning": "food"
+  },
+  {
+    "kanji": "恋人",
+    "reading": "こいびと",
+    "meaning": "lover"
+  },
+  {
+    "kanji": "旗",
+    "reading": "はた",
+    "meaning": "flag"
+  },
+  {
+    "kanji": "現象",
+    "reading": "げんしょう",
+    "meaning": "phenomenon"
+  },
+  {
+    "kanji": "哲学",
+    "reading": "てつがく",
+    "meaning": "philosophy"
+  },
+  {
+    "kanji": "温度",
+    "reading": "おんど",
+    "meaning": "temperature"
+  },
+  {
+    "kanji": "炎",
+    "reading": "ほのお",
+    "meaning": "flame"
+  },
+  {
+    "kanji": "跡",
+    "reading": "あと",
+    "meaning": "trace"
+  },
+  {
+    "kanji": "呼吸",
+    "reading": "こきゅう",
+    "meaning": "breathing"
+  },
+  {
+    "kanji": "骨折",
+    "reading": "こっせつ",
+    "meaning": "bone fracture"
+  },
+  {
+    "kanji": "憲法",
+    "reading": "けんぽう",
+    "meaning": "constitution"
+  },
+  {
+    "kanji": "登山",
+    "reading": "とざん",
+    "meaning": "mountain climbing"
+  },
+  {
+    "kanji": "裸",
+    "reading": "はだか",
+    "meaning": "nakedness"
+  },
+  {
+    "kanji": "梅雨",
+    "reading": "つゆ",
+    "meaning": "(East Asian) rainy season (in Japan, usu. from early June to mid-July)"
+  },
+  {
+    "kanji": "代理",
+    "reading": "だいり",
+    "meaning": "representation"
+  },
+  {
+    "kanji": "鬼",
+    "reading": "おに",
+    "meaning": "ogre"
+  },
+  {
+    "kanji": "印刷",
+    "reading": "いんさつ",
+    "meaning": "printing"
+  },
+  {
+    "kanji": "知能",
+    "reading": "ちのう",
+    "meaning": "intelligence"
+  },
+  {
+    "kanji": "渋滞",
+    "reading": "じゅうたい",
+    "meaning": "(traffic) congestion"
+  },
+  {
+    "kanji": "銀",
+    "reading": "ぎん",
+    "meaning": "silver (Ag)"
+  },
+  {
+    "kanji": "弁当",
+    "reading": "べんとう",
+    "meaning": "bento"
+  },
+  {
+    "kanji": "大使",
+    "reading": "たいし",
+    "meaning": "ambassador"
+  },
+  {
+    "kanji": "航空",
+    "reading": "こうくう",
+    "meaning": "aviation"
+  },
+  {
+    "kanji": "相続",
+    "reading": "そうぞく",
+    "meaning": "succession"
+  },
+  {
+    "kanji": "歩道",
+    "reading": "ほどう",
+    "meaning": "footpath"
+  },
+  {
+    "kanji": "芽",
+    "reading": "め",
+    "meaning": "sprout"
+  },
+  {
+    "kanji": "免許",
+    "reading": "めんきょ",
+    "meaning": "license"
+  },
+  {
+    "kanji": "医療",
+    "reading": "いりょう",
+    "meaning": "medical treatment"
+  },
+  {
+    "kanji": "模様",
+    "reading": "もよう",
+    "meaning": "pattern"
+  },
+  {
+    "kanji": "栄養",
+    "reading": "えいよう",
+    "meaning": "nutrition"
+  },
+  {
+    "kanji": "衛星",
+    "reading": "えいせい",
+    "meaning": "(natural) satellite"
+  },
+  {
+    "kanji": "会計",
+    "reading": "かいけい",
+    "meaning": "accounting"
+  },
+  {
+    "kanji": "缶",
+    "reading": "かん",
+    "meaning": "can"
+  },
+  {
+    "kanji": "地下",
+    "reading": "ちか",
+    "meaning": "underground"
+  },
+  {
+    "kanji": "議員",
+    "reading": "ぎいん",
+    "meaning": "member of an assembly"
+  },
+  {
+    "kanji": "墓",
+    "reading": "はか",
+    "meaning": "grave"
+  },
+  {
+    "kanji": "差別",
+    "reading": "さべつ",
+    "meaning": "distinction"
+  },
+  {
+    "kanji": "笛",
+    "reading": "ふえ",
+    "meaning": "flute"
+  },
+  {
+    "kanji": "筋",
+    "reading": "すじ",
+    "meaning": "muscle"
+  },
+  {
+    "kanji": "道徳",
+    "reading": "どうとく",
+    "meaning": "morals"
+  },
+  {
+    "kanji": "資本",
+    "reading": "しほん",
+    "meaning": "funds"
+  },
+  {
+    "kanji": "国語",
+    "reading": "こくご",
+    "meaning": "national language"
+  },
+  {
+    "kanji": "湾",
+    "reading": "わん",
+    "meaning": "bay"
+  },
+  {
+    "kanji": "礼",
+    "reading": "れい",
+    "meaning": "thanks"
+  },
+  {
+    "kanji": "豆",
+    "reading": "まめ",
+    "meaning": "legume (esp. edible legumes or their seeds, e.g. beans, peas, pulses)"
+  },
+  {
+    "kanji": "筆",
+    "reading": "ふで",
+    "meaning": "writing brush"
+  },
+  {
+    "kanji": "土産",
+    "reading": "みやげ",
+    "meaning": "local specialty or souvenir bought as a gift while travelling"
+  },
+  {
+    "kanji": "作曲",
+    "reading": "さっきょく",
+    "meaning": "composition (of music)"
+  },
+  {
+    "kanji": "粉",
+    "reading": "こな",
+    "meaning": "flour"
+  },
+  {
+    "kanji": "刀",
+    "reading": "かたな",
+    "meaning": "sword (esp. Japanese single-edged)"
+  },
+  {
+    "kanji": "茶",
+    "reading": "ちゃ",
+    "meaning": "tea"
+  },
+  {
+    "kanji": "句",
+    "reading": "く",
+    "meaning": "section (i.e. of text)"
+  },
+  {
+    "kanji": "泡",
+    "reading": "あわ",
+    "meaning": "bubble"
+  },
+  {
+    "kanji": "熱帯",
+    "reading": "ねったい",
+    "meaning": "tropics"
+  },
+  {
+    "kanji": "電子",
+    "reading": "でんし",
+    "meaning": "electron"
+  },
+  {
+    "kanji": "菓子",
+    "reading": "かし",
+    "meaning": "confectionery"
+  },
+  {
+    "kanji": "飯",
+    "reading": "めし",
+    "meaning": "cooked rice"
+  },
+  {
+    "kanji": "梅",
+    "reading": "うめ",
+    "meaning": "Japanese apricot (Prunus mume)"
+  },
+  {
+    "kanji": "能",
+    "reading": "のう",
+    "meaning": "talent"
+  },
+  {
+    "kanji": "月",
+    "reading": "つき",
+    "meaning": "Moon"
+  },
+  {
+    "kanji": "馬鹿",
+    "reading": "ばか",
+    "meaning": "idiot"
+  },
+  {
+    "kanji": "屡々",
+    "reading": "しばしば",
+    "meaning": "often"
+  },
+  {
+    "kanji": "退屈",
+    "reading": "たいくつ",
+    "meaning": "tedious"
+  },
+  {
+    "kanji": "流れる",
+    "reading": "ながれる",
+    "meaning": "to stream"
+  },
+  {
+    "kanji": "暗記",
+    "reading": "あんき",
+    "meaning": "memorization"
+  },
+  {
+    "kanji": "兎",
+    "reading": "うさぎ",
+    "meaning": "rabbit"
+  },
+  {
+    "kanji": "ネズミ",
+    "reading": "ネズミ",
+    "meaning": "mouse"
+  },
+  {
+    "kanji": "頬",
+    "reading": "ほお",
+    "meaning": "cheek (of the face)"
+  },
+  {
+    "kanji": "膝",
+    "reading": "ひざ",
+    "meaning": "knee"
+  },
+  {
+    "kanji": "餌",
+    "reading": "えさ",
+    "meaning": "(animal) feed"
+  },
+  {
+    "kanji": "量",
+    "reading": "りょう",
+    "meaning": "quantity"
+  },
+  {
+    "kanji": "莫大",
+    "reading": "ばくだい",
+    "meaning": "vast"
+  },
+  {
+    "kanji": "式",
+    "reading": "しき",
+    "meaning": "way"
+  },
+  {
+    "kanji": "紐",
+    "reading": "ひも",
+    "meaning": "string"
+  },
+  {
+    "kanji": "連想",
+    "reading": "れんそう",
+    "meaning": "association (of ideas)"
+  },
+  {
+    "kanji": "地平線",
+    "reading": "ちへいせん",
+    "meaning": "horizon (related to land)"
+  },
+  {
+    "kanji": "場",
+    "reading": "ば",
+    "meaning": "place"
+  },
+  {
+    "kanji": "袖",
+    "reading": "そで",
+    "meaning": "sleeve"
+  },
+  {
+    "kanji": "動詞",
+    "reading": "どうし",
+    "meaning": "verb"
+  },
+  {
+    "kanji": "灰",
+    "reading": "はい",
+    "meaning": "ash"
+  },
+  {
+    "kanji": "秒",
+    "reading": "びょう",
+    "meaning": "second (unit of time)"
+  },
+  {
+    "kanji": "県",
+    "reading": "けん",
+    "meaning": "prefecture (of Japan)"
+  },
+  {
+    "kanji": "帯",
+    "reading": "おび",
+    "meaning": "obi (kimono sash)"
+  },
+  {
+    "kanji": "有る",
+    "reading": "ある",
+    "meaning": "to be"
+  },
+  {
+    "kanji": "其の",
+    "reading": "その",
+    "meaning": "that"
+  },
+  {
+    "kanji": "言う",
+    "reading": "いう",
+    "meaning": "to say"
+  },
+  {
+    "kanji": "出来る",
+    "reading": "できる",
+    "meaning": "to be able to do"
+  },
+  {
+    "kanji": "良い",
+    "reading": "よい",
+    "meaning": "good"
+  },
+  {
+    "kanji": "此の",
+    "reading": "この",
+    "meaning": "this"
+  },
+  {
+    "kanji": "何",
+    "reading": "なに",
+    "meaning": "what"
+  },
+  {
+    "kanji": "今日",
+    "reading": "きょう",
+    "meaning": "today"
+  },
+  {
+    "kanji": "皆",
+    "reading": "みな",
+    "meaning": "everyone"
+  },
+  {
+    "kanji": "勉強",
+    "reading": "べんきょう",
+    "meaning": "study"
+  },
+  {
+    "kanji": "後ろ",
+    "reading": "うしろ",
+    "meaning": "back"
+  },
+  {
+    "kanji": "町",
+    "reading": "まち",
+    "meaning": "town"
+  },
+  {
+    "kanji": "又",
+    "reading": "また",
+    "meaning": "again"
+  },
+  {
+    "kanji": "余り",
+    "reading": "あまり",
+    "meaning": "remainder"
+  },
+  {
+    "kanji": "本当",
+    "reading": "ほんとう",
+    "meaning": "truth"
+  },
+  {
+    "kanji": "体",
+    "reading": "からだ",
+    "meaning": "body"
+  },
+  {
+    "kanji": "昨夜",
+    "reading": "ゆうべ",
+    "meaning": "last night"
+  },
+  {
+    "kanji": "上る",
+    "reading": "のぼる",
+    "meaning": "to ascend"
+  },
+  {
+    "kanji": "魚",
+    "reading": "さかな",
+    "meaning": "fish"
+  },
+  {
+    "kanji": "暖かい",
+    "reading": "あたたかい",
+    "meaning": "warm"
+  },
+  {
+    "kanji": "立派",
+    "reading": "りっぱ",
+    "meaning": "splendid"
+  },
+  {
+    "kanji": "多分",
+    "reading": "たぶん",
+    "meaning": "probably"
+  },
+  {
+    "kanji": "練習",
+    "reading": "れんしゅう",
+    "meaning": "practice"
+  },
+  {
+    "kanji": "十",
+    "reading": "じゅう",
+    "meaning": "ten"
+  },
+  {
+    "kanji": "幾つ",
+    "reading": "いくつ",
+    "meaning": "how many"
+  },
+  {
+    "kanji": "張る",
+    "reading": "はる",
+    "meaning": "to stick"
+  },
+  {
+    "kanji": "丸い",
+    "reading": "まるい",
+    "meaning": "round"
+  },
+  {
+    "kanji": "浴びる",
+    "reading": "あびる",
+    "meaning": "to dash over oneself (e.g. water)"
+  },
+  {
+    "kanji": "縦",
+    "reading": "たて",
+    "meaning": "the vertical"
+  },
+  {
+    "kanji": "其れ",
+    "reading": "それ",
+    "meaning": "that"
+  },
+  {
+    "kanji": "何時も",
+    "reading": "いつも",
+    "meaning": "always"
+  },
+  {
+    "kanji": "掛かる",
+    "reading": "かかる",
+    "meaning": "to take (a resource, e.g. time or money)"
+  },
+  {
+    "kanji": "開ける",
+    "reading": "あける",
+    "meaning": "to open (a door, etc.)"
+  },
+  {
+    "kanji": "付ける",
+    "reading": "つける",
+    "meaning": "to attach"
+  },
+  {
+    "kanji": "幾ら",
+    "reading": "いくら",
+    "meaning": "how much"
+  },
+  {
+    "kanji": "真っ直ぐ",
+    "reading": "まっすぐ",
+    "meaning": "straight (ahead)"
+  },
+  {
+    "kanji": "お腹",
+    "reading": "おなか",
+    "meaning": "belly"
+  },
+  {
+    "kanji": "と",
+    "reading": "と",
+    "meaning": "if"
+  },
+  {
+    "kanji": "大抵",
+    "reading": "たいてい",
+    "meaning": "mostly"
+  },
+  {
+    "kanji": "値段",
+    "reading": "ねだん",
+    "meaning": "price"
+  },
+  {
+    "kanji": "形",
+    "reading": "かたち",
+    "meaning": "(physical) form"
+  },
+  {
+    "kanji": "遠慮",
+    "reading": "えんりょ",
+    "meaning": "reserve"
+  },
+  {
+    "kanji": "止める",
+    "reading": "とめる",
+    "meaning": "to stop"
+  },
+  {
+    "kanji": "褒める",
+    "reading": "ほめる",
+    "meaning": "to praise"
+  },
+  {
+    "kanji": "硬い",
+    "reading": "かたい",
+    "meaning": "hard"
+  },
+  {
+    "kanji": "凄い",
+    "reading": "すごい",
+    "meaning": "terrible"
+  },
+  {
+    "kanji": "濡れる",
+    "reading": "ぬれる",
+    "meaning": "to get wet"
+  },
+  {
+    "kanji": "外出",
+    "reading": "がいしゅつ",
+    "meaning": "going out"
+  },
+  {
+    "kanji": "当時",
+    "reading": "とうじ",
+    "meaning": "at that time"
+  },
+  {
+    "kanji": "案内",
+    "reading": "あんない",
+    "meaning": "guidance"
+  },
+  {
+    "kanji": "地方",
+    "reading": "ちほう",
+    "meaning": "district"
+  },
+  {
+    "kanji": "一方",
+    "reading": "いっぽう",
+    "meaning": "one (esp. of two)"
+  },
+  {
+    "kanji": "発展",
+    "reading": "はってん",
+    "meaning": "development"
+  },
+  {
+    "kanji": "双子",
+    "reading": "ふたご",
+    "meaning": "twins"
+  },
+  {
+    "kanji": "団体",
+    "reading": "だんたい",
+    "meaning": "group"
+  },
+  {
+    "kanji": "夜中",
+    "reading": "よなか",
+    "meaning": "middle of the night"
+  },
+  {
+    "kanji": "中央",
+    "reading": "ちゅうおう",
+    "meaning": "centre"
+  },
+  {
+    "kanji": "共同",
+    "reading": "きょうどう",
+    "meaning": "cooperation"
+  },
+  {
+    "kanji": "通り",
+    "reading": "とおり",
+    "meaning": "street"
+  },
+  {
+    "kanji": "埃",
+    "reading": "ほこり",
+    "meaning": "dust"
+  },
+  {
+    "kanji": "でも",
+    "reading": "でも",
+    "meaning": "but"
+  },
+  {
+    "kanji": "日",
+    "reading": "にち",
+    "meaning": "Sunday"
+  },
+  {
+    "kanji": "等",
+    "reading": "など",
+    "meaning": "et cetera"
+  },
+  {
+    "kanji": "事",
+    "reading": "こと",
+    "meaning": "thing"
+  },
+  {
+    "kanji": "欧羅巴",
+    "reading": "ヨーロッパ",
+    "meaning": "Europe"
+  },
+  {
+    "kanji": "彼ら",
+    "reading": "かれら",
+    "meaning": "they"
+  },
+  {
+    "kanji": "我々",
+    "reading": "われわれ",
+    "meaning": "we"
+  },
+  {
+    "kanji": "方",
+    "reading": "ほう",
+    "meaning": "direction"
+  },
+  {
+    "kanji": "成功",
+    "reading": "せいこう",
+    "meaning": "success"
+  },
+  {
+    "kanji": "何か",
+    "reading": "なにか",
+    "meaning": "something"
+  },
+  {
+    "kanji": "尻",
+    "reading": "しり",
+    "meaning": "buttocks"
+  },
+  {
+    "kanji": "出発",
+    "reading": "しゅっぱつ",
+    "meaning": "departure"
+  },
+  {
+    "kanji": "起こる",
+    "reading": "おこる",
+    "meaning": "to occur"
+  },
+  {
+    "kanji": "考え",
+    "reading": "かんがえ",
+    "meaning": "thinking"
+  },
+  {
+    "kanji": "何も",
+    "reading": "なにも",
+    "meaning": "(not) anything"
+  },
+  {
+    "kanji": "友人",
+    "reading": "ゆうじん",
+    "meaning": "friend"
+  },
+  {
+    "kanji": "努力",
+    "reading": "どりょく",
+    "meaning": "effort"
+  },
+  {
+    "kanji": "終える",
+    "reading": "おえる",
+    "meaning": "to finish"
+  },
+  {
+    "kanji": "最も",
+    "reading": "もっとも",
+    "meaning": "most"
+  },
+  {
+    "kanji": "素晴らしい",
+    "reading": "すばらしい",
+    "meaning": "wonderful"
+  },
+  {
+    "kanji": "運転",
+    "reading": "うんてん",
+    "meaning": "operation (of a machine)"
+  },
+  {
+    "kanji": "重要",
+    "reading": "じゅうよう",
+    "meaning": "important"
+  },
+  {
+    "kanji": "助ける",
+    "reading": "たすける",
+    "meaning": "to save"
+  },
+  {
+    "kanji": "幸せ",
+    "reading": "しあわせ",
+    "meaning": "happiness"
+  },
+  {
+    "kanji": "心配",
+    "reading": "しんぱい",
+    "meaning": "worry"
+  },
+  {
+    "kanji": "感じる",
+    "reading": "かんじる",
+    "meaning": "to feel"
+  },
+  {
+    "kanji": "提案",
+    "reading": "ていあん",
+    "meaning": "proposal"
+  },
+  {
+    "kanji": "出席",
+    "reading": "しゅっせき",
+    "meaning": "attendance"
+  },
+  {
+    "kanji": "他人",
+    "reading": "たにん",
+    "meaning": "another person"
+  },
+  {
+    "kanji": "以前",
+    "reading": "いぜん",
+    "meaning": "before"
+  },
+  {
+    "kanji": "間違い",
+    "reading": "まちがい",
+    "meaning": "mistake"
+  },
+  {
+    "kanji": "価値",
+    "reading": "かち",
+    "meaning": "value"
+  },
+  {
+    "kanji": "突然",
+    "reading": "とつぜん",
+    "meaning": "abrupt"
+  },
+  {
+    "kanji": "賛成",
+    "reading": "さんせい",
+    "meaning": "approval"
+  },
+  {
+    "kanji": "愛する",
+    "reading": "あいする",
+    "meaning": "to love"
+  },
+  {
+    "kanji": "老人",
+    "reading": "ろうじん",
+    "meaning": "old person"
+  },
+  {
+    "kanji": "到着",
+    "reading": "とうちゃく",
+    "meaning": "arrival"
+  },
+  {
+    "kanji": "満足",
+    "reading": "まんぞく",
+    "meaning": "satisfaction"
+  },
+  {
+    "kanji": "氏",
+    "reading": "し",
+    "meaning": "Mr"
+  },
+  {
+    "kanji": "守る",
+    "reading": "まもる",
+    "meaning": "to protect"
+  },
+  {
+    "kanji": "失う",
+    "reading": "うしなう",
+    "meaning": "to lose"
+  },
+  {
+    "kanji": "只",
+    "reading": "ただ",
+    "meaning": "ordinary"
+  },
+  {
+    "kanji": "下さる",
+    "reading": "くださる",
+    "meaning": "to give"
+  },
+  {
+    "kanji": "方法",
+    "reading": "ほうほう",
+    "meaning": "method"
+  },
+  {
+    "kanji": "無駄",
+    "reading": "むだ",
+    "meaning": "futility"
+  },
+  {
+    "kanji": "援助",
+    "reading": "えんじょ",
+    "meaning": "assistance"
+  },
+  {
+    "kanji": "合格",
+    "reading": "ごうかく",
+    "meaning": "passing (an exam)"
+  },
+  {
+    "kanji": "許す",
+    "reading": "ゆるす",
+    "meaning": "to permit"
+  },
+  {
+    "kanji": "帰宅",
+    "reading": "きたく",
+    "meaning": "returning home"
+  },
+  {
+    "kanji": "世話",
+    "reading": "せわ",
+    "meaning": "care"
+  },
+  {
+    "kanji": "会合",
+    "reading": "かいごう",
+    "meaning": "meeting"
+  },
+  {
+    "kanji": "事件",
+    "reading": "じけん",
+    "meaning": "event"
+  },
+  {
+    "kanji": "お前",
+    "reading": "おまえ",
+    "meaning": "you"
+  },
+  {
+    "kanji": "議論",
+    "reading": "ぎろん",
+    "meaning": "argument"
+  },
+  {
+    "kanji": "困難",
+    "reading": "こんなん",
+    "meaning": "difficulty"
+  },
+  {
+    "kanji": "決心",
+    "reading": "けっしん",
+    "meaning": "determination"
+  },
+  {
+    "kanji": "要求",
+    "reading": "ようきゅう",
+    "meaning": "demand"
+  },
+  {
+    "kanji": "駄目",
+    "reading": "だめ",
+    "meaning": "no good"
+  },
+  {
+    "kanji": "休暇",
+    "reading": "きゅうか",
+    "meaning": "holiday"
+  },
+  {
+    "kanji": "受け取る",
+    "reading": "うけとる",
+    "meaning": "to receive"
+  },
+  {
+    "kanji": "結局",
+    "reading": "けっきょく",
+    "meaning": "after all"
+  },
+  {
+    "kanji": "激しい",
+    "reading": "はげしい",
+    "meaning": "violent"
+  },
+  {
+    "kanji": "尊敬",
+    "reading": "そんけい",
+    "meaning": "respect"
+  },
+  {
+    "kanji": "大いに",
+    "reading": "おおいに",
+    "meaning": "very"
+  },
+  {
+    "kanji": "準備",
+    "reading": "じゅんび",
+    "meaning": "preparation"
+  },
+  {
+    "kanji": "全然",
+    "reading": "ぜんぜん",
+    "meaning": "(not) at all"
+  },
+  {
+    "kanji": "滞在",
+    "reading": "たいざい",
+    "meaning": "stay"
+  },
+  {
+    "kanji": "扱う",
+    "reading": "あつかう",
+    "meaning": "to deal with (a person)"
+  },
+  {
+    "kanji": "現れる",
+    "reading": "あらわれる",
+    "meaning": "to appear"
+  },
+  {
+    "kanji": "参加",
+    "reading": "さんか",
+    "meaning": "participation"
+  },
+  {
+    "kanji": "離れる",
+    "reading": "はなれる",
+    "meaning": "to be separated"
+  },
+  {
+    "kanji": "実行",
+    "reading": "じっこう",
+    "meaning": "execution (e.g. of a plan)"
+  },
+  {
+    "kanji": "貧しい",
+    "reading": "まずしい",
+    "meaning": "poor"
+  },
+  {
+    "kanji": "出来るだけ",
+    "reading": "できるだけ",
+    "meaning": "as much as one can"
+  },
+  {
+    "kanji": "偉大",
+    "reading": "いだい",
+    "meaning": "great"
+  },
+  {
+    "kanji": "望む",
+    "reading": "のぞむ",
+    "meaning": "to desire"
+  },
+  {
+    "kanji": "修理",
+    "reading": "しゅうり",
+    "meaning": "repair"
+  },
+  {
+    "kanji": "誤り",
+    "reading": "あやまり",
+    "meaning": "error"
+  },
+  {
+    "kanji": "目的",
+    "reading": "もくてき",
+    "meaning": "purpose"
+  },
+  {
+    "kanji": "感謝",
+    "reading": "かんしゃ",
+    "meaning": "thanks"
+  },
+  {
+    "kanji": "示す",
+    "reading": "しめす",
+    "meaning": "to (take out and) show"
+  },
+  {
+    "kanji": "人気",
+    "reading": "にんき",
+    "meaning": "popularity"
+  },
+  {
+    "kanji": "相手",
+    "reading": "あいて",
+    "meaning": "companion"
+  },
+  {
+    "kanji": "教師",
+    "reading": "きょうし",
+    "meaning": "teacher"
+  },
+  {
+    "kanji": "全員",
+    "reading": "ぜんいん",
+    "meaning": "all members"
+  },
+  {
+    "kanji": "招待",
+    "reading": "しょうたい",
+    "meaning": "invitation"
+  },
+  {
+    "kanji": "黙る",
+    "reading": "だまる",
+    "meaning": "to be silent"
+  },
+  {
+    "kanji": "出会う",
+    "reading": "であう",
+    "meaning": "to meet (by chance)"
+  },
+  {
+    "kanji": "完全",
+    "reading": "かんぜん",
+    "meaning": "perfect"
+  },
+  {
+    "kanji": "実際",
+    "reading": "じっさい",
+    "meaning": "reality"
+  },
+  {
+    "kanji": "辺り",
+    "reading": "あたり",
+    "meaning": "(in the) neighbourhood"
+  },
+  {
+    "kanji": "歌手",
+    "reading": "かしゅ",
+    "meaning": "singer"
+  },
+  {
+    "kanji": "冗談",
+    "reading": "じょうだん",
+    "meaning": "joke"
+  },
+  {
+    "kanji": "能力",
+    "reading": "のうりょく",
+    "meaning": "ability"
+  },
+  {
+    "kanji": "才能",
+    "reading": "さいのう",
+    "meaning": "talent"
+  },
+  {
+    "kanji": "自慢",
+    "reading": "じまん",
+    "meaning": "pride (in one's achievements, possessions, etc.)"
+  },
+  {
+    "kanji": "敵",
+    "reading": "てき",
+    "meaning": "opponent"
+  },
+  {
+    "kanji": "選手",
+    "reading": "せんしゅ",
+    "meaning": "player (of a sport)"
+  },
+  {
+    "kanji": "一体",
+    "reading": "いったい",
+    "meaning": "(what) the heck"
+  },
+  {
+    "kanji": "素敵",
+    "reading": "すてき",
+    "meaning": "lovely"
+  },
+  {
+    "kanji": "更に",
+    "reading": "さらに",
+    "meaning": "furthermore"
+  },
+  {
+    "kanji": "回復",
+    "reading": "かいふく",
+    "meaning": "restoration"
+  },
+  {
+    "kanji": "熱心",
+    "reading": "ねっしん",
+    "meaning": "zealous"
+  },
+  {
+    "kanji": "判断",
+    "reading": "はんだん",
+    "meaning": "judgment"
+  },
+  {
+    "kanji": "訪問",
+    "reading": "ほうもん",
+    "meaning": "call"
+  },
+  {
+    "kanji": "態度",
+    "reading": "たいど",
+    "meaning": "attitude"
+  },
+  {
+    "kanji": "注文",
+    "reading": "ちゅうもん",
+    "meaning": "order (for an item)"
+  },
+  {
+    "kanji": "給料",
+    "reading": "きゅうりょう",
+    "meaning": "salary"
+  },
+  {
+    "kanji": "既に",
+    "reading": "すでに",
+    "meaning": "already"
+  },
+  {
+    "kanji": "決定",
+    "reading": "けってい",
+    "meaning": "decision"
+  },
+  {
+    "kanji": "影響",
+    "reading": "えいきょう",
+    "meaning": "influence"
+  },
+  {
+    "kanji": "次第",
+    "reading": "しだい",
+    "meaning": "depending on"
+  },
+  {
+    "kanji": "年齢",
+    "reading": "ねんれい",
+    "meaning": "age"
+  },
+  {
+    "kanji": "主張",
+    "reading": "しゅちょう",
+    "meaning": "claim"
+  },
+  {
+    "kanji": "正確",
+    "reading": "せいかく",
+    "meaning": "accurate"
+  },
+  {
+    "kanji": "便り",
+    "reading": "たより",
+    "meaning": "news"
+  },
+  {
+    "kanji": "延期",
+    "reading": "えんき",
+    "meaning": "postponement"
+  },
+  {
+    "kanji": "信用",
+    "reading": "しんよう",
+    "meaning": "confidence"
+  },
+  {
+    "kanji": "土地",
+    "reading": "とち",
+    "meaning": "plot of land"
+  },
+  {
+    "kanji": "旅",
+    "reading": "たび",
+    "meaning": "travel"
+  },
+  {
+    "kanji": "奪う",
+    "reading": "うばう",
+    "meaning": "to take (by force)"
+  },
+  {
+    "kanji": "苦労",
+    "reading": "くろう",
+    "meaning": "trouble"
+  },
+  {
+    "kanji": "喜び",
+    "reading": "よろこび",
+    "meaning": "joy"
+  },
+  {
+    "kanji": "商売",
+    "reading": "しょうばい",
+    "meaning": "trade"
+  },
+  {
+    "kanji": "提出",
+    "reading": "ていしゅつ",
+    "meaning": "presentation (of documents)"
+  },
+  {
+    "kanji": "姿",
+    "reading": "すがた",
+    "meaning": "figure"
+  },
+  {
+    "kanji": "回",
+    "reading": "かい",
+    "meaning": "counter for occurrences"
+  },
+  {
+    "kanji": "追いつく",
+    "reading": "おいつく",
+    "meaning": "to catch up (with)"
+  },
+  {
+    "kanji": "明らか",
+    "reading": "あきらか",
+    "meaning": "clear"
+  },
+  {
+    "kanji": "不足",
+    "reading": "ふそく",
+    "meaning": "insufficiency"
+  },
+  {
+    "kanji": "好む",
+    "reading": "このむ",
+    "meaning": "to like"
+  },
+  {
+    "kanji": "状況",
+    "reading": "じょうきょう",
+    "meaning": "state of affairs"
+  },
+  {
+    "kanji": "話し合う",
+    "reading": "はなしあう",
+    "meaning": "to discuss"
+  },
+  {
+    "kanji": "変化",
+    "reading": "へんか",
+    "meaning": "change"
+  },
+  {
+    "kanji": "書類",
+    "reading": "しょるい",
+    "meaning": "document"
+  },
+  {
+    "kanji": "邪魔",
+    "reading": "じゃま",
+    "meaning": "hindrance"
+  },
+  {
+    "kanji": "単語",
+    "reading": "たんご",
+    "meaning": "word"
+  },
+  {
+    "kanji": "万一",
+    "reading": "まんいち",
+    "meaning": "(unlikely event of) emergency"
+  },
+  {
+    "kanji": "恐れる",
+    "reading": "おそれる",
+    "meaning": "to fear"
+  },
+  {
+    "kanji": "最高",
+    "reading": "さいこう",
+    "meaning": "best"
+  },
+  {
+    "kanji": "週間",
+    "reading": "しゅうかん",
+    "meaning": "week"
+  },
+  {
+    "kanji": "幸運",
+    "reading": "こううん",
+    "meaning": "good luck"
+  },
+  {
+    "kanji": "越える",
+    "reading": "こえる",
+    "meaning": "to cross over"
+  },
+  {
+    "kanji": "事態",
+    "reading": "じたい",
+    "meaning": "situation"
+  },
+  {
+    "kanji": "種類",
+    "reading": "しゅるい",
+    "meaning": "variety"
+  },
+  {
+    "kanji": "状態",
+    "reading": "じょうたい",
+    "meaning": "state"
+  },
+  {
+    "kanji": "以来",
+    "reading": "いらい",
+    "meaning": "since"
+  },
+  {
+    "kanji": "調子",
+    "reading": "ちょうし",
+    "meaning": "tune"
+  },
+  {
+    "kanji": "得意",
+    "reading": "とくい",
+    "meaning": "satisfaction"
+  },
+  {
+    "kanji": "必ずしも",
+    "reading": "かならずしも",
+    "meaning": "(not) always"
+  },
+  {
+    "kanji": "成長",
+    "reading": "せいちょう",
+    "meaning": "growth"
+  },
+  {
+    "kanji": "残す",
+    "reading": "のこす",
+    "meaning": "to leave (behind)"
+  },
+  {
+    "kanji": "頼る",
+    "reading": "たよる",
+    "meaning": "to rely on"
+  },
+  {
+    "kanji": "恐ろしい",
+    "reading": "おそろしい",
+    "meaning": "terrible"
+  },
+  {
+    "kanji": "光景",
+    "reading": "こうけい",
+    "meaning": "scene"
+  },
+  {
+    "kanji": "隠す",
+    "reading": "かくす",
+    "meaning": "to hide"
+  },
+  {
+    "kanji": "実は",
+    "reading": "じつは",
+    "meaning": "as a matter of fact"
+  },
+  {
+    "kanji": "戦う",
+    "reading": "たたかう",
+    "meaning": "to make war (on)"
+  },
+  {
+    "kanji": "常に",
+    "reading": "つねに",
+    "meaning": "always"
+  },
+  {
+    "kanji": "誇り",
+    "reading": "ほこり",
+    "meaning": "pride"
+  },
+  {
+    "kanji": "性格",
+    "reading": "せいかく",
+    "meaning": "character (of a person)"
+  },
+  {
+    "kanji": "容易",
+    "reading": "ようい",
+    "meaning": "easy"
+  },
+  {
+    "kanji": "一言",
+    "reading": "ひとこと",
+    "meaning": "single word"
+  },
+  {
+    "kanji": "中止",
+    "reading": "ちゅうし",
+    "meaning": "interruption"
+  },
+  {
+    "kanji": "借金",
+    "reading": "しゃっきん",
+    "meaning": "debt"
+  },
+  {
+    "kanji": "達する",
+    "reading": "たっする",
+    "meaning": "to reach"
+  },
+  {
+    "kanji": "罪",
+    "reading": "つみ",
+    "meaning": "crime"
+  },
+  {
+    "kanji": "勝ち",
+    "reading": "かち",
+    "meaning": "win"
+  },
+  {
+    "kanji": "地位",
+    "reading": "ちい",
+    "meaning": "(social) position"
+  },
+  {
+    "kanji": "乗客",
+    "reading": "じょうきゃく",
+    "meaning": "passenger"
+  },
+  {
+    "kanji": "天候",
+    "reading": "てんこう",
+    "meaning": "weather"
+  },
+  {
+    "kanji": "備える",
+    "reading": "そなえる",
+    "meaning": "to furnish with"
+  },
+  {
+    "kanji": "再び",
+    "reading": "ふたたび",
+    "meaning": "again"
+  },
+  {
+    "kanji": "一層",
+    "reading": "いっそう",
+    "meaning": "even more"
+  },
+  {
+    "kanji": "立場",
+    "reading": "たちば",
+    "meaning": "position"
+  },
+  {
+    "kanji": "命",
+    "reading": "いのち",
+    "meaning": "life"
+  },
+  {
+    "kanji": "職",
+    "reading": "しょく",
+    "meaning": "job"
+  },
+  {
+    "kanji": "欠席",
+    "reading": "けっせき",
+    "meaning": "absence"
+  },
+  {
+    "kanji": "環境",
+    "reading": "かんきょう",
+    "meaning": "environment"
+  },
+  {
+    "kanji": "傾向",
+    "reading": "けいこう",
+    "meaning": "tendency"
+  },
+  {
+    "kanji": "燃える",
+    "reading": "もえる",
+    "meaning": "to burn"
+  },
+  {
+    "kanji": "是非",
+    "reading": "ぜひ",
+    "meaning": "certainly"
+  },
+  {
+    "kanji": "出身",
+    "reading": "しゅっしん",
+    "meaning": "one's origin (e.g. city, country, parentage, school)"
+  },
+  {
+    "kanji": "覆う",
+    "reading": "おおう",
+    "meaning": "to cover"
+  },
+  {
+    "kanji": "供給",
+    "reading": "きょうきゅう",
+    "meaning": "supply"
+  },
+  {
+    "kanji": "手段",
+    "reading": "しゅだん",
+    "meaning": "means"
+  },
+  {
+    "kanji": "断る",
+    "reading": "ことわる",
+    "meaning": "to refuse"
+  },
+  {
+    "kanji": "不幸",
+    "reading": "ふこう",
+    "meaning": "unhappiness"
+  },
+  {
+    "kanji": "感動",
+    "reading": "かんどう",
+    "meaning": "being deeply moved emotionally"
+  },
+  {
+    "kanji": "先日",
+    "reading": "せんじつ",
+    "meaning": "the other day"
+  },
+  {
+    "kanji": "感じ",
+    "reading": "かんじ",
+    "meaning": "feeling"
+  },
+  {
+    "kanji": "乗せる",
+    "reading": "のせる",
+    "meaning": "to place on (something)"
+  },
+  {
+    "kanji": "表現",
+    "reading": "ひょうげん",
+    "meaning": "expression"
+  },
+  {
+    "kanji": "無視",
+    "reading": "むし",
+    "meaning": "disregarding"
+  },
+  {
+    "kanji": "支払う",
+    "reading": "しはらう",
+    "meaning": "to pay"
+  },
+  {
+    "kanji": "余裕",
+    "reading": "よゆう",
+    "meaning": "surplus"
+  },
+  {
+    "kanji": "奇妙",
+    "reading": "きみょう",
+    "meaning": "strange"
+  },
+  {
+    "kanji": "明かり",
+    "reading": "あかり",
+    "meaning": "light"
+  },
+  {
+    "kanji": "変更",
+    "reading": "へんこう",
+    "meaning": "change"
+  },
+  {
+    "kanji": "違い",
+    "reading": "ちがい",
+    "meaning": "difference"
+  },
+  {
+    "kanji": "美人",
+    "reading": "びじん",
+    "meaning": "beautiful woman"
+  },
+  {
+    "kanji": "合わせる",
+    "reading": "あわせる",
+    "meaning": "to match (rhythm, speed, etc.)"
+  },
+  {
+    "kanji": "実現",
+    "reading": "じつげん",
+    "meaning": "implementation (e.g. of a system)"
+  },
+  {
+    "kanji": "無事",
+    "reading": "ぶじ",
+    "meaning": "safety"
+  },
+  {
+    "kanji": "殺す",
+    "reading": "ころす",
+    "meaning": "to kill"
+  },
+  {
+    "kanji": "雇う",
+    "reading": "やとう",
+    "meaning": "to employ"
+  },
+  {
+    "kanji": "仲間",
+    "reading": "なかま",
+    "meaning": "companion"
+  },
+  {
+    "kanji": "成績",
+    "reading": "せいせき",
+    "meaning": "results"
+  },
+  {
+    "kanji": "発表",
+    "reading": "はっぴょう",
+    "meaning": "announcement"
+  },
+  {
+    "kanji": "様々",
+    "reading": "さまざま",
+    "meaning": "various"
+  },
+  {
+    "kanji": "恐らく",
+    "reading": "おそらく",
+    "meaning": "probably"
+  },
+  {
+    "kanji": "歓迎",
+    "reading": "かんげい",
+    "meaning": "welcome"
+  },
+  {
+    "kanji": "許可",
+    "reading": "きょか",
+    "meaning": "permission"
+  },
+  {
+    "kanji": "全体",
+    "reading": "ぜんたい",
+    "meaning": "whole"
+  },
+  {
+    "kanji": "製品",
+    "reading": "せいひん",
+    "meaning": "manufactured goods"
+  },
+  {
+    "kanji": "疑う",
+    "reading": "うたがう",
+    "meaning": "to doubt"
+  },
+  {
+    "kanji": "大部分",
+    "reading": "だいぶぶん",
+    "meaning": "most part"
+  },
+  {
+    "kanji": "動かす",
+    "reading": "うごかす",
+    "meaning": "to move"
+  },
+  {
+    "kanji": "完成",
+    "reading": "かんせい",
+    "meaning": "completion"
+  },
+  {
+    "kanji": "最終",
+    "reading": "さいしゅう",
+    "meaning": "last"
+  },
+  {
+    "kanji": "女優",
+    "reading": "じょゆう",
+    "meaning": "actress"
+  },
+  {
+    "kanji": "通す",
+    "reading": "とおす",
+    "meaning": "to let pass"
+  },
+  {
+    "kanji": "想像",
+    "reading": "そうぞう",
+    "meaning": "imagination"
+  },
+  {
+    "kanji": "増加",
+    "reading": "ぞうか",
+    "meaning": "increase"
+  },
+  {
+    "kanji": "便",
+    "reading": "びん",
+    "meaning": "flight (e.g. airline flight)"
+  },
+  {
+    "kanji": "経営",
+    "reading": "けいえい",
+    "meaning": "management"
+  },
+  {
+    "kanji": "物事",
+    "reading": "ものごと",
+    "meaning": "things"
+  },
+  {
+    "kanji": "関心",
+    "reading": "かんしん",
+    "meaning": "concern"
+  },
+  {
+    "kanji": "救う",
+    "reading": "すくう",
+    "meaning": "to rescue (someone)"
+  },
+  {
+    "kanji": "横断",
+    "reading": "おうだん",
+    "meaning": "crossing (a road, river, etc.)"
+  },
+  {
+    "kanji": "唯一",
+    "reading": "ゆいいつ",
+    "meaning": "only"
+  },
+  {
+    "kanji": "際",
+    "reading": "さい",
+    "meaning": "occasion"
+  },
+  {
+    "kanji": "育つ",
+    "reading": "そだつ",
+    "meaning": "to be raised (e.g. child)"
+  },
+  {
+    "kanji": "支払い",
+    "reading": "しはらい",
+    "meaning": "payment"
+  },
+  {
+    "kanji": "現代",
+    "reading": "げんだい",
+    "meaning": "present age"
+  },
+  {
+    "kanji": "相談",
+    "reading": "そうだん",
+    "meaning": "consultation"
+  },
+  {
+    "kanji": "婦人",
+    "reading": "ふじん",
+    "meaning": "woman"
+  },
+  {
+    "kanji": "活動",
+    "reading": "かつどう",
+    "meaning": "activity (of a person, organization, animal, volcano, etc.)"
+  },
+  {
+    "kanji": "貯金",
+    "reading": "ちょきん",
+    "meaning": "putting money aside"
+  },
+  {
+    "kanji": "王",
+    "reading": "おう",
+    "meaning": "king"
+  },
+  {
+    "kanji": "考慮",
+    "reading": "こうりょ",
+    "meaning": "consideration"
+  },
+  {
+    "kanji": "結論",
+    "reading": "けつろん",
+    "meaning": "conclusion (of an argument, discussion, study, etc.)"
+  },
+  {
+    "kanji": "命じる",
+    "reading": "めいじる",
+    "meaning": "to order"
+  },
+  {
+    "kanji": "出来事",
+    "reading": "できごと",
+    "meaning": "occurrence"
+  },
+  {
+    "kanji": "劇",
+    "reading": "げき",
+    "meaning": "drama"
+  },
+  {
+    "kanji": "恋",
+    "reading": "こい",
+    "meaning": "(romantic) love"
+  },
+  {
+    "kanji": "分ける",
+    "reading": "わける",
+    "meaning": "to divide (into)"
+  },
+  {
+    "kanji": "文句",
+    "reading": "もんく",
+    "meaning": "complaint"
+  },
+  {
+    "kanji": "見送り",
+    "reading": "みおくり",
+    "meaning": "seeing (someone) off"
+  },
+  {
+    "kanji": "人類",
+    "reading": "じんるい",
+    "meaning": "mankind"
+  },
+  {
+    "kanji": "桜",
+    "reading": "さくら",
+    "meaning": "cherry tree"
+  },
+  {
+    "kanji": "人物",
+    "reading": "じんぶつ",
+    "meaning": "person"
+  },
+  {
+    "kanji": "協力",
+    "reading": "きょうりょく",
+    "meaning": "cooperation"
+  },
+  {
+    "kanji": "望み",
+    "reading": "のぞみ",
+    "meaning": "wish"
+  },
+  {
+    "kanji": "食料",
+    "reading": "しょくりょう",
+    "meaning": "food"
+  },
+  {
+    "kanji": "食物",
+    "reading": "しょくもつ",
+    "meaning": "food"
+  },
+  {
+    "kanji": "確かめる",
+    "reading": "たしかめる",
+    "meaning": "to make sure"
+  },
+  {
+    "kanji": "略",
+    "reading": "ほぼ",
+    "meaning": "almost"
+  },
+  {
+    "kanji": "使用",
+    "reading": "しよう",
+    "meaning": "use"
+  },
+  {
+    "kanji": "愛情",
+    "reading": "あいじょう",
+    "meaning": "love"
+  },
+  {
+    "kanji": "癖",
+    "reading": "くせ",
+    "meaning": "habit (usu. a bad one)"
+  },
+  {
+    "kanji": "一生",
+    "reading": "いっしょう",
+    "meaning": "whole life"
+  },
+  {
+    "kanji": "処理",
+    "reading": "しょり",
+    "meaning": "processing"
+  },
+  {
+    "kanji": "確認",
+    "reading": "かくにん",
+    "meaning": "confirmation"
+  },
+  {
+    "kanji": "加える",
+    "reading": "くわえる",
+    "meaning": "to add"
+  },
+  {
+    "kanji": "部分",
+    "reading": "ぶぶん",
+    "meaning": "portion"
+  },
+  {
+    "kanji": "日曜",
+    "reading": "にちよう",
+    "meaning": "Sunday"
+  },
+  {
+    "kanji": "報告",
+    "reading": "ほうこく",
+    "meaning": "report"
+  },
+  {
+    "kanji": "同様",
+    "reading": "どうよう",
+    "meaning": "same"
+  },
+  {
+    "kanji": "当てる",
+    "reading": "あてる",
+    "meaning": "to hit"
+  },
+  {
+    "kanji": "直ちに",
+    "reading": "ただちに",
+    "meaning": "at once"
+  },
+  {
+    "kanji": "可能",
+    "reading": "かのう",
+    "meaning": "possible"
+  },
+  {
+    "kanji": "画家",
+    "reading": "がか",
+    "meaning": "painter"
+  },
+  {
+    "kanji": "眺める",
+    "reading": "ながめる",
+    "meaning": "to look at"
+  },
+  {
+    "kanji": "高価",
+    "reading": "こうか",
+    "meaning": "highly priced"
+  },
+  {
+    "kanji": "禁止",
+    "reading": "きんし",
+    "meaning": "prohibition"
+  },
+  {
+    "kanji": "様子",
+    "reading": "ようす",
+    "meaning": "state (of affairs)"
+  },
+  {
+    "kanji": "被害",
+    "reading": "ひがい",
+    "meaning": "(suffering) damage"
+  },
+  {
+    "kanji": "警告",
+    "reading": "けいこく",
+    "meaning": "warning"
+  },
+  {
+    "kanji": "手術",
+    "reading": "しゅじゅつ",
+    "meaning": "surgery"
+  },
+  {
+    "kanji": "誤解",
+    "reading": "ごかい",
+    "meaning": "misunderstanding"
+  },
+  {
+    "kanji": "傷",
+    "reading": "きず",
+    "meaning": "wound"
+  },
+  {
+    "kanji": "専攻",
+    "reading": "せんこう",
+    "meaning": "major subject"
+  },
+  {
+    "kanji": "穴",
+    "reading": "あな",
+    "meaning": "hole"
+  },
+  {
+    "kanji": "頂上",
+    "reading": "ちょうじょう",
+    "meaning": "top"
+  },
+  {
+    "kanji": "夫婦",
+    "reading": "ふうふ",
+    "meaning": "married couple"
+  },
+  {
+    "kanji": "誘う",
+    "reading": "さそう",
+    "meaning": "to invite"
+  },
+  {
+    "kanji": "用いる",
+    "reading": "もちいる",
+    "meaning": "to use"
+  },
+  {
+    "kanji": "重大",
+    "reading": "じゅうだい",
+    "meaning": "serious"
+  },
+  {
+    "kanji": "慎重",
+    "reading": "しんちょう",
+    "meaning": "careful"
+  },
+  {
+    "kanji": "評判",
+    "reading": "ひょうばん",
+    "meaning": "reputation"
+  },
+  {
+    "kanji": "抱える",
+    "reading": "かかえる",
+    "meaning": "to hold in one's arms"
+  },
+  {
+    "kanji": "暮らし",
+    "reading": "くらし",
+    "meaning": "(way of) life"
+  },
+  {
+    "kanji": "犯人",
+    "reading": "はんにん",
+    "meaning": "offender"
+  },
+  {
+    "kanji": "夫人",
+    "reading": "ふじん",
+    "meaning": "wife"
+  },
+  {
+    "kanji": "味方",
+    "reading": "みかた",
+    "meaning": "friend"
+  },
+  {
+    "kanji": "瓶",
+    "reading": "びん",
+    "meaning": "bottle"
+  },
+  {
+    "kanji": "繰り返す",
+    "reading": "くりかえす",
+    "meaning": "to repeat"
+  },
+  {
+    "kanji": "今回",
+    "reading": "こんかい",
+    "meaning": "this time"
+  },
+  {
+    "kanji": "損害",
+    "reading": "そんがい",
+    "meaning": "damage"
+  },
+  {
+    "kanji": "交換",
+    "reading": "こうかん",
+    "meaning": "exchange"
+  },
+  {
+    "kanji": "親しい",
+    "reading": "したしい",
+    "meaning": "close (e.g. friend)"
+  },
+  {
+    "kanji": "好み",
+    "reading": "このみ",
+    "meaning": "liking"
+  },
+  {
+    "kanji": "骨",
+    "reading": "ほね",
+    "meaning": "bone"
+  },
+  {
+    "kanji": "相当",
+    "reading": "そうとう",
+    "meaning": "corresponding to (in meaning, function, etc.)"
+  },
+  {
+    "kanji": "限る",
+    "reading": "かぎる",
+    "meaning": "to restrict"
+  },
+  {
+    "kanji": "例",
+    "reading": "れい",
+    "meaning": "example"
+  },
+  {
+    "kanji": "演奏",
+    "reading": "えんそう",
+    "meaning": "musical performance"
+  },
+  {
+    "kanji": "語る",
+    "reading": "かたる",
+    "meaning": "to talk about"
+  },
+  {
+    "kanji": "料金",
+    "reading": "りょうきん",
+    "meaning": "fee"
+  },
+  {
+    "kanji": "世の中",
+    "reading": "よのなか",
+    "meaning": "society"
+  },
+  {
+    "kanji": "幸い",
+    "reading": "さいわい",
+    "meaning": "happiness"
+  },
+  {
+    "kanji": "不自由",
+    "reading": "ふじゆう",
+    "meaning": "discomfort"
+  },
+  {
+    "kanji": "事情",
+    "reading": "じじょう",
+    "meaning": "circumstances"
+  },
+  {
+    "kanji": "有能",
+    "reading": "ゆうのう",
+    "meaning": "able"
+  },
+  {
+    "kanji": "破る",
+    "reading": "やぶる",
+    "meaning": "to tear"
+  },
+  {
+    "kanji": "列",
+    "reading": "れつ",
+    "meaning": "row"
+  },
+  {
+    "kanji": "戦い",
+    "reading": "たたかい",
+    "meaning": "battle"
+  },
+  {
+    "kanji": "内容",
+    "reading": "ないよう",
+    "meaning": "contents"
+  },
+  {
+    "kanji": "有効",
+    "reading": "ゆうこう",
+    "meaning": "valid"
+  },
+  {
+    "kanji": "不満",
+    "reading": "ふまん",
+    "meaning": "dissatisfaction"
+  },
+  {
+    "kanji": "従って",
+    "reading": "したがって",
+    "meaning": "therefore"
+  },
+  {
+    "kanji": "次々",
+    "reading": "つぎつぎ",
+    "meaning": "in succession"
+  },
+  {
+    "kanji": "役",
+    "reading": "やく",
+    "meaning": "role"
+  },
+  {
+    "kanji": "数える",
+    "reading": "かぞえる",
+    "meaning": "to count"
+  },
+  {
+    "kanji": "本物",
+    "reading": "ほんもの",
+    "meaning": "genuine article"
+  },
+  {
+    "kanji": "言わば",
+    "reading": "いわば",
+    "meaning": "so to speak"
+  },
+  {
+    "kanji": "減る",
+    "reading": "へる",
+    "meaning": "to decrease (in size or number)"
+  },
+  {
+    "kanji": "程度",
+    "reading": "ていど",
+    "meaning": "degree"
+  },
+  {
+    "kanji": "回す",
+    "reading": "まわす",
+    "meaning": "to turn"
+  },
+  {
+    "kanji": "貴重",
+    "reading": "きちょう",
+    "meaning": "precious"
+  },
+  {
+    "kanji": "芝生",
+    "reading": "しばふ",
+    "meaning": "lawn"
+  },
+  {
+    "kanji": "岩",
+    "reading": "いわ",
+    "meaning": "rock"
+  },
+  {
+    "kanji": "会員",
+    "reading": "かいいん",
+    "meaning": "member"
+  },
+  {
+    "kanji": "都会",
+    "reading": "とかい",
+    "meaning": "city"
+  },
+  {
+    "kanji": "豊か",
+    "reading": "ゆたか",
+    "meaning": "abundant"
+  },
+  {
+    "kanji": "失望",
+    "reading": "しつぼう",
+    "meaning": "disappointment"
+  },
+  {
+    "kanji": "面倒",
+    "reading": "めんどう",
+    "meaning": "trouble"
+  },
+  {
+    "kanji": "裏切る",
+    "reading": "うらぎる",
+    "meaning": "to betray"
+  },
+  {
+    "kanji": "急速",
+    "reading": "きゅうそく",
+    "meaning": "rapid (e.g. progress)"
+  },
+  {
+    "kanji": "計る",
+    "reading": "はかる",
+    "meaning": "to measure"
+  },
+  {
+    "kanji": "新鮮",
+    "reading": "しんせん",
+    "meaning": "fresh"
+  },
+  {
+    "kanji": "組織",
+    "reading": "そしき",
+    "meaning": "organization"
+  },
+  {
+    "kanji": "批判",
+    "reading": "ひはん",
+    "meaning": "criticism"
+  },
+  {
+    "kanji": "製造",
+    "reading": "せいぞう",
+    "meaning": "manufacture"
+  },
+  {
+    "kanji": "検査",
+    "reading": "けんさ",
+    "meaning": "inspection (e.g. customs, factory)"
+  },
+  {
+    "kanji": "残り",
+    "reading": "のこり",
+    "meaning": "remainder"
+  },
+  {
+    "kanji": "加わる",
+    "reading": "くわわる",
+    "meaning": "to be added to"
+  },
+  {
+    "kanji": "今後",
+    "reading": "こんご",
+    "meaning": "from now on"
+  },
+  {
+    "kanji": "塀",
+    "reading": "へい",
+    "meaning": "wall"
+  },
+  {
+    "kanji": "手伝い",
+    "reading": "てつだい",
+    "meaning": "helper"
+  },
+  {
+    "kanji": "現場",
+    "reading": "げんば",
+    "meaning": "actual spot"
+  },
+  {
+    "kanji": "税金",
+    "reading": "ぜいきん",
+    "meaning": "tax"
+  },
+  {
+    "kanji": "比較",
+    "reading": "ひかく",
+    "meaning": "comparison"
+  },
+  {
+    "kanji": "豊富",
+    "reading": "ほうふ",
+    "meaning": "abundant"
+  },
+  {
+    "kanji": "有利",
+    "reading": "ゆうり",
+    "meaning": "advantageous"
+  },
+  {
+    "kanji": "新た",
+    "reading": "あらた",
+    "meaning": "new"
+  },
+  {
+    "kanji": "株",
+    "reading": "かぶ",
+    "meaning": "stock"
+  },
+  {
+    "kanji": "少々",
+    "reading": "しょうしょう",
+    "meaning": "a little"
+  },
+  {
+    "kanji": "願い",
+    "reading": "ねがい",
+    "meaning": "desire"
+  },
+  {
+    "kanji": "快適",
+    "reading": "かいてき",
+    "meaning": "pleasant"
+  },
+  {
+    "kanji": "働き",
+    "reading": "はたらき",
+    "meaning": "work"
+  },
+  {
+    "kanji": "直接",
+    "reading": "ちょくせつ",
+    "meaning": "direct"
+  },
+  {
+    "kanji": "勘定",
+    "reading": "かんじょう",
+    "meaning": "calculation"
+  },
+  {
+    "kanji": "息",
+    "reading": "いき",
+    "meaning": "breath"
+  },
+  {
+    "kanji": "結ぶ",
+    "reading": "むすぶ",
+    "meaning": "to tie"
+  },
+  {
+    "kanji": "構成",
+    "reading": "こうせい",
+    "meaning": "composition"
+  },
+  {
+    "kanji": "刈る",
+    "reading": "かる",
+    "meaning": "to cut (grass, hair, etc.)"
+  },
+  {
+    "kanji": "謎",
+    "reading": "なぞ",
+    "meaning": "riddle"
+  },
+  {
+    "kanji": "友",
+    "reading": "とも",
+    "meaning": "friend"
+  },
+  {
+    "kanji": "囲む",
+    "reading": "かこむ",
+    "meaning": "to surround"
+  },
+  {
+    "kanji": "絶対",
+    "reading": "ぜったい",
+    "meaning": "absolutely"
+  },
+  {
+    "kanji": "検討",
+    "reading": "けんとう",
+    "meaning": "consideration"
+  },
+  {
+    "kanji": "応じる",
+    "reading": "おうじる",
+    "meaning": "to respond"
+  },
+  {
+    "kanji": "追う",
+    "reading": "おう",
+    "meaning": "to chase"
+  },
+  {
+    "kanji": "組む",
+    "reading": "くむ",
+    "meaning": "to cross (legs or arms)"
+  },
+  {
+    "kanji": "解釈",
+    "reading": "かいしゃく",
+    "meaning": "interpretation"
+  },
+  {
+    "kanji": "苦手",
+    "reading": "にがて",
+    "meaning": "poor (at)"
+  },
+  {
+    "kanji": "選択",
+    "reading": "せんたく",
+    "meaning": "choice"
+  },
+  {
+    "kanji": "害",
+    "reading": "がい",
+    "meaning": "injury"
+  },
+  {
+    "kanji": "握る",
+    "reading": "にぎる",
+    "meaning": "to clasp"
+  },
+  {
+    "kanji": "思想",
+    "reading": "しそう",
+    "meaning": "thought"
+  },
+  {
+    "kanji": "魅力",
+    "reading": "みりょく",
+    "meaning": "charm"
+  },
+  {
+    "kanji": "飛び出す",
+    "reading": "とびだす",
+    "meaning": "to jump out"
+  },
+  {
+    "kanji": "共に",
+    "reading": "ともに",
+    "meaning": "together"
+  },
+  {
+    "kanji": "確実",
+    "reading": "かくじつ",
+    "meaning": "certain"
+  },
+  {
+    "kanji": "需要",
+    "reading": "じゅよう",
+    "meaning": "demand"
+  },
+  {
+    "kanji": "冷静",
+    "reading": "れいせい",
+    "meaning": "calmness"
+  },
+  {
+    "kanji": "減らす",
+    "reading": "へらす",
+    "meaning": "to abate"
+  },
+  {
+    "kanji": "髪の毛",
+    "reading": "かみのけ",
+    "meaning": "hair (on the head)"
+  },
+  {
+    "kanji": "悩む",
+    "reading": "なやむ",
+    "meaning": "to be worried"
+  },
+  {
+    "kanji": "悲しむ",
+    "reading": "かなしむ",
+    "meaning": "to be sad"
+  },
+  {
+    "kanji": "時期",
+    "reading": "じき",
+    "meaning": "time"
+  },
+  {
+    "kanji": "作物",
+    "reading": "さくもつ",
+    "meaning": "crop"
+  },
+  {
+    "kanji": "汚染",
+    "reading": "おせん",
+    "meaning": "pollution"
+  },
+  {
+    "kanji": "適切",
+    "reading": "てきせつ",
+    "meaning": "appropriate"
+  },
+  {
+    "kanji": "祝う",
+    "reading": "いわう",
+    "meaning": "to celebrate"
+  },
+  {
+    "kanji": "鋭い",
+    "reading": "するどい",
+    "meaning": "sharp (knife, claws, etc.)"
+  },
+  {
+    "kanji": "主要",
+    "reading": "しゅよう",
+    "meaning": "chief"
+  },
+  {
+    "kanji": "姉妹",
+    "reading": "しまい",
+    "meaning": "sisters"
+  },
+  {
+    "kanji": "周囲",
+    "reading": "しゅうい",
+    "meaning": "surroundings"
+  },
+  {
+    "kanji": "注目",
+    "reading": "ちゅうもく",
+    "meaning": "notice"
+  },
+  {
+    "kanji": "支配",
+    "reading": "しはい",
+    "meaning": "rule"
+  },
+  {
+    "kanji": "観察",
+    "reading": "かんさつ",
+    "meaning": "observation"
+  },
+  {
+    "kanji": "休憩",
+    "reading": "きゅうけい",
+    "meaning": "rest"
+  },
+  {
+    "kanji": "不利",
+    "reading": "ふり",
+    "meaning": "disadvantage"
+  },
+  {
+    "kanji": "覚悟",
+    "reading": "かくご",
+    "meaning": "readiness"
+  },
+  {
+    "kanji": "答案",
+    "reading": "とうあん",
+    "meaning": "examination paper"
+  },
+  {
+    "kanji": "疑問",
+    "reading": "ぎもん",
+    "meaning": "doubt"
+  },
+  {
+    "kanji": "代表",
+    "reading": "だいひょう",
+    "meaning": "representation"
+  },
+  {
+    "kanji": "可哀想",
+    "reading": "かわいそう",
+    "meaning": "poor"
+  },
+  {
+    "kanji": "何で",
+    "reading": "なんで",
+    "meaning": "why?"
+  },
+  {
+    "kanji": "注ぐ",
+    "reading": "そそぐ",
+    "meaning": "to pour (into)"
+  },
+  {
+    "kanji": "贈る",
+    "reading": "おくる",
+    "meaning": "to give (as a gift)"
+  },
+  {
+    "kanji": "嫌う",
+    "reading": "きらう",
+    "meaning": "to hate"
+  },
+  {
+    "kanji": "替える",
+    "reading": "かえる",
+    "meaning": "to replace"
+  },
+  {
+    "kanji": "試す",
+    "reading": "ためす",
+    "meaning": "to try (out)"
+  },
+  {
+    "kanji": "混雑",
+    "reading": "こんざつ",
+    "meaning": "congestion"
+  },
+  {
+    "kanji": "順調",
+    "reading": "じゅんちょう",
+    "meaning": "favourable"
+  },
+  {
+    "kanji": "小包",
+    "reading": "こづつみ",
+    "meaning": "parcel"
+  },
+  {
+    "kanji": "配達",
+    "reading": "はいたつ",
+    "meaning": "delivery"
+  },
+  {
+    "kanji": "優秀",
+    "reading": "ゆうしゅう",
+    "meaning": "superior"
+  },
+  {
+    "kanji": "混乱",
+    "reading": "こんらん",
+    "meaning": "disorder"
+  },
+  {
+    "kanji": "分野",
+    "reading": "ぶんや",
+    "meaning": "field"
+  },
+  {
+    "kanji": "永久",
+    "reading": "えいきゅう",
+    "meaning": "eternity"
+  },
+  {
+    "kanji": "一家",
+    "reading": "いっか",
+    "meaning": "a family"
+  },
+  {
+    "kanji": "就職",
+    "reading": "しゅうしょく",
+    "meaning": "finding employment"
+  },
+  {
+    "kanji": "印",
+    "reading": "しるし",
+    "meaning": "mark"
+  },
+  {
+    "kanji": "景気",
+    "reading": "けいき",
+    "meaning": "business conditions"
+  },
+  {
+    "kanji": "見事",
+    "reading": "みごと",
+    "meaning": "splendid"
+  },
+  {
+    "kanji": "書物",
+    "reading": "しょもつ",
+    "meaning": "book"
+  },
+  {
+    "kanji": "玉",
+    "reading": "たま",
+    "meaning": "ball"
+  },
+  {
+    "kanji": "納得",
+    "reading": "なっとく",
+    "meaning": "consent"
+  },
+  {
+    "kanji": "主義",
+    "reading": "しゅぎ",
+    "meaning": "doctrine"
+  },
+  {
+    "kanji": "時刻",
+    "reading": "じこく",
+    "meaning": "time"
+  },
+  {
+    "kanji": "親友",
+    "reading": "しんゆう",
+    "meaning": "close friend"
+  },
+  {
+    "kanji": "国会",
+    "reading": "こっかい",
+    "meaning": "National Diet"
+  },
+  {
+    "kanji": "衣服",
+    "reading": "いふく",
+    "meaning": "clothes"
+  },
+  {
+    "kanji": "外す",
+    "reading": "はずす",
+    "meaning": "to remove"
+  },
+  {
+    "kanji": "記入",
+    "reading": "きにゅう",
+    "meaning": "entry (in a form, register, diary, etc.)"
+  },
+  {
+    "kanji": "講演",
+    "reading": "こうえん",
+    "meaning": "lecture"
+  },
+  {
+    "kanji": "適用",
+    "reading": "てきよう",
+    "meaning": "application (of a rule, law, method, etc.)"
+  },
+  {
+    "kanji": "合計",
+    "reading": "ごうけい",
+    "meaning": "sum total"
+  },
+  {
+    "kanji": "管理",
+    "reading": "かんり",
+    "meaning": "control"
+  },
+  {
+    "kanji": "戻す",
+    "reading": "もどす",
+    "meaning": "to put back"
+  },
+  {
+    "kanji": "要素",
+    "reading": "ようそ",
+    "meaning": "component"
+  },
+  {
+    "kanji": "質",
+    "reading": "しつ",
+    "meaning": "quality"
+  },
+  {
+    "kanji": "承知",
+    "reading": "しょうち",
+    "meaning": "knowledge"
+  },
+  {
+    "kanji": "食卓",
+    "reading": "しょくたく",
+    "meaning": "dining table"
+  },
+  {
+    "kanji": "思い出",
+    "reading": "おもいで",
+    "meaning": "memories"
+  },
+  {
+    "kanji": "布",
+    "reading": "ぬの",
+    "meaning": "cloth"
+  },
+  {
+    "kanji": "大半",
+    "reading": "たいはん",
+    "meaning": "majority"
+  },
+  {
+    "kanji": "制限",
+    "reading": "せいげん",
+    "meaning": "restriction"
+  },
+  {
+    "kanji": "尊重",
+    "reading": "そんちょう",
+    "meaning": "respect"
+  },
+  {
+    "kanji": "身長",
+    "reading": "しんちょう",
+    "meaning": "height (of a person)"
+  },
+  {
+    "kanji": "範囲",
+    "reading": "はんい",
+    "meaning": "extent"
+  },
+  {
+    "kanji": "皮",
+    "reading": "かわ",
+    "meaning": "skin"
+  },
+  {
+    "kanji": "論争",
+    "reading": "ろんそう",
+    "meaning": "dispute"
+  },
+  {
+    "kanji": "肌",
+    "reading": "はだ",
+    "meaning": "skin"
+  },
+  {
+    "kanji": "維持",
+    "reading": "いじ",
+    "meaning": "maintenance"
+  },
+  {
+    "kanji": "穏やか",
+    "reading": "おだやか",
+    "meaning": "calm"
+  },
+  {
+    "kanji": "感心",
+    "reading": "かんしん",
+    "meaning": "admiration"
+  },
+  {
+    "kanji": "障害",
+    "reading": "しょうがい",
+    "meaning": "obstacle"
+  },
+  {
+    "kanji": "苦痛",
+    "reading": "くつう",
+    "meaning": "pain"
+  },
+  {
+    "kanji": "克服",
+    "reading": "こくふく",
+    "meaning": "conquest (of a difficulty, illness, crisis, etc.)"
+  },
+  {
+    "kanji": "別れ",
+    "reading": "わかれ",
+    "meaning": "parting (of people)"
+  },
+  {
+    "kanji": "効果",
+    "reading": "こうか",
+    "meaning": "effect"
+  },
+  {
+    "kanji": "年代",
+    "reading": "ねんだい",
+    "meaning": "age"
+  },
+  {
+    "kanji": "明確",
+    "reading": "めいかく",
+    "meaning": "clear"
+  },
+  {
+    "kanji": "科目",
+    "reading": "かもく",
+    "meaning": "(school) subject"
+  },
+  {
+    "kanji": "移動",
+    "reading": "いどう",
+    "meaning": "movement"
+  },
+  {
+    "kanji": "脇",
+    "reading": "わき",
+    "meaning": "armpit"
+  },
+  {
+    "kanji": "承認",
+    "reading": "しょうにん",
+    "meaning": "recognition"
+  },
+  {
+    "kanji": "試し",
+    "reading": "ためし",
+    "meaning": "trial"
+  },
+  {
+    "kanji": "貢献",
+    "reading": "こうけん",
+    "meaning": "contribution (furthering a goal or cause)"
+  },
+  {
+    "kanji": "陽気",
+    "reading": "ようき",
+    "meaning": "cheerful"
+  },
+  {
+    "kanji": "順番",
+    "reading": "じゅんばん",
+    "meaning": "order"
+  },
+  {
+    "kanji": "記者",
+    "reading": "きしゃ",
+    "meaning": "reporter"
+  },
+  {
+    "kanji": "度々",
+    "reading": "たびたび",
+    "meaning": "often"
+  },
+  {
+    "kanji": "経由",
+    "reading": "けいゆ",
+    "meaning": "going through"
+  },
+  {
+    "kanji": "気温",
+    "reading": "きおん",
+    "meaning": "(air) temperature"
+  },
+  {
+    "kanji": "金銭",
+    "reading": "きんせん",
+    "meaning": "money"
+  },
+  {
+    "kanji": "緊張",
+    "reading": "きんちょう",
+    "meaning": "tension"
+  },
+  {
+    "kanji": "要するに",
+    "reading": "ようするに",
+    "meaning": "in short"
+  },
+  {
+    "kanji": "著者",
+    "reading": "ちょしゃ",
+    "meaning": "author (usu. of a particular book)"
+  },
+  {
+    "kanji": "底",
+    "reading": "そこ",
+    "meaning": "bottom"
+  },
+  {
+    "kanji": "風景",
+    "reading": "ふうけい",
+    "meaning": "scenery"
+  },
+  {
+    "kanji": "保存",
+    "reading": "ほぞん",
+    "meaning": "preservation"
+  },
+  {
+    "kanji": "期間",
+    "reading": "きかん",
+    "meaning": "period"
+  },
+  {
+    "kanji": "巨大",
+    "reading": "きょだい",
+    "meaning": "huge"
+  },
+  {
+    "kanji": "引っ張る",
+    "reading": "ひっぱる",
+    "meaning": "to pull"
+  },
+  {
+    "kanji": "独特",
+    "reading": "どくとく",
+    "meaning": "peculiarity"
+  },
+  {
+    "kanji": "軒",
+    "reading": "のき",
+    "meaning": "eaves"
+  },
+  {
+    "kanji": "共通",
+    "reading": "きょうつう",
+    "meaning": "common"
+  },
+  {
+    "kanji": "同僚",
+    "reading": "どうりょう",
+    "meaning": "coworker"
+  },
+  {
+    "kanji": "表面",
+    "reading": "ひょうめん",
+    "meaning": "surface"
+  },
+  {
+    "kanji": "関連",
+    "reading": "かんれん",
+    "meaning": "relation"
+  },
+  {
+    "kanji": "引退",
+    "reading": "いんたい",
+    "meaning": "retirement"
+  },
+  {
+    "kanji": "開始",
+    "reading": "かいし",
+    "meaning": "start"
+  },
+  {
+    "kanji": "損",
+    "reading": "そん",
+    "meaning": "loss"
+  },
+  {
+    "kanji": "代金",
+    "reading": "だいきん",
+    "meaning": "price"
+  },
+  {
+    "kanji": "意思",
+    "reading": "いし",
+    "meaning": "intention"
+  },
+  {
+    "kanji": "家賃",
+    "reading": "やちん",
+    "meaning": "rent"
+  },
+  {
+    "kanji": "発達",
+    "reading": "はったつ",
+    "meaning": "development"
+  },
+  {
+    "kanji": "一般",
+    "reading": "いっぱん",
+    "meaning": "general"
+  },
+  {
+    "kanji": "日光",
+    "reading": "にっこう",
+    "meaning": "sunlight"
+  },
+  {
+    "kanji": "見舞い",
+    "reading": "みまい",
+    "meaning": "visit (to someone affected by illness or misfortune)"
+  },
+  {
+    "kanji": "付き合い",
+    "reading": "つきあい",
+    "meaning": "association"
+  },
+  {
+    "kanji": "通過",
+    "reading": "つうか",
+    "meaning": "passing through (a tunnel, station, town, etc.)"
+  },
+  {
+    "kanji": "思わず",
+    "reading": "おもわず",
+    "meaning": "unconsciously"
+  },
+  {
+    "kanji": "技師",
+    "reading": "ぎし",
+    "meaning": "engineer"
+  },
+  {
+    "kanji": "小麦",
+    "reading": "こむぎ",
+    "meaning": "wheat"
+  },
+  {
+    "kanji": "月曜",
+    "reading": "げつよう",
+    "meaning": "Monday"
+  },
+  {
+    "kanji": "後者",
+    "reading": "こうしゃ",
+    "meaning": "the latter"
+  },
+  {
+    "kanji": "差",
+    "reading": "さ",
+    "meaning": "difference"
+  },
+  {
+    "kanji": "九",
+    "reading": "きゅう",
+    "meaning": "nine"
+  },
+  {
+    "kanji": "食糧",
+    "reading": "しょくりょう",
+    "meaning": "food (esp. staple food such as rice or wheat)"
+  },
+  {
+    "kanji": "泳ぎ",
+    "reading": "およぎ",
+    "meaning": "swimming"
+  },
+  {
+    "kanji": "請求",
+    "reading": "せいきゅう",
+    "meaning": "claim"
+  },
+  {
+    "kanji": "真っ赤",
+    "reading": "まっか",
+    "meaning": "bright red"
+  },
+  {
+    "kanji": "温暖",
+    "reading": "おんだん",
+    "meaning": "warm"
+  },
+  {
+    "kanji": "男子",
+    "reading": "だんし",
+    "meaning": "boy"
+  },
+  {
+    "kanji": "住民",
+    "reading": "じゅうみん",
+    "meaning": "inhabitant"
+  },
+  {
+    "kanji": "支度",
+    "reading": "したく",
+    "meaning": "preparation"
+  },
+  {
+    "kanji": "予測",
+    "reading": "よそく",
+    "meaning": "prediction"
+  },
+  {
+    "kanji": "女子",
+    "reading": "じょし",
+    "meaning": "woman"
+  },
+  {
+    "kanji": "救助",
+    "reading": "きゅうじょ",
+    "meaning": "relief"
+  },
+  {
+    "kanji": "王子",
+    "reading": "おうじ",
+    "meaning": "prince"
+  },
+  {
+    "kanji": "見解",
+    "reading": "けんかい",
+    "meaning": "opinion"
+  },
+  {
+    "kanji": "非常",
+    "reading": "ひじょう",
+    "meaning": "emergency"
+  },
+  {
+    "kanji": "化粧",
+    "reading": "けしょう",
+    "meaning": "make-up"
+  },
+  {
+    "kanji": "単に",
+    "reading": "たんに",
+    "meaning": "simply"
+  },
+  {
+    "kanji": "学問",
+    "reading": "がくもん",
+    "meaning": "study"
+  },
+  {
+    "kanji": "徹夜",
+    "reading": "てつや",
+    "meaning": "staying up all night"
+  },
+  {
+    "kanji": "前進",
+    "reading": "ぜんしん",
+    "meaning": "advance"
+  },
+  {
+    "kanji": "破産",
+    "reading": "はさん",
+    "meaning": "bankruptcy"
+  },
+  {
+    "kanji": "疲れ",
+    "reading": "つかれ",
+    "meaning": "tiredness"
+  },
+  {
+    "kanji": "意外",
+    "reading": "いがい",
+    "meaning": "unexpected"
+  },
+  {
+    "kanji": "機能",
+    "reading": "きのう",
+    "meaning": "function"
+  },
+  {
+    "kanji": "印象",
+    "reading": "いんしょう",
+    "meaning": "impression"
+  },
+  {
+    "kanji": "笑顔",
+    "reading": "えがお",
+    "meaning": "smiling face"
+  },
+  {
+    "kanji": "普段",
+    "reading": "ふだん",
+    "meaning": "usual"
+  },
+  {
+    "kanji": "棒",
+    "reading": "ぼう",
+    "meaning": "pole"
+  },
+  {
+    "kanji": "流す",
+    "reading": "ながす",
+    "meaning": "to drain"
+  },
+  {
+    "kanji": "積極的",
+    "reading": "せっきょくてき",
+    "meaning": "positive"
+  },
+  {
+    "kanji": "単なる",
+    "reading": "たんなる",
+    "meaning": "mere"
+  },
+  {
+    "kanji": "適度",
+    "reading": "てきど",
+    "meaning": "moderate (degree)"
+  },
+  {
+    "kanji": "単純",
+    "reading": "たんじゅん",
+    "meaning": "simple"
+  },
+  {
+    "kanji": "抵抗",
+    "reading": "ていこう",
+    "meaning": "resistance"
+  },
+  {
+    "kanji": "操作",
+    "reading": "そうさ",
+    "meaning": "operation"
+  },
+  {
+    "kanji": "苦しい",
+    "reading": "くるしい",
+    "meaning": "painful"
+  },
+  {
+    "kanji": "実施",
+    "reading": "じっし",
+    "meaning": "enforcement"
+  },
+  {
+    "kanji": "夜明け",
+    "reading": "よあけ",
+    "meaning": "dawn"
+  },
+  {
+    "kanji": "雰囲気",
+    "reading": "ふんいき",
+    "meaning": "atmosphere"
+  },
+  {
+    "kanji": "両替",
+    "reading": "りょうがえ",
+    "meaning": "change"
+  },
+  {
+    "kanji": "前者",
+    "reading": "ぜんしゃ",
+    "meaning": "the former"
+  },
+  {
+    "kanji": "連続",
+    "reading": "れんぞく",
+    "meaning": "continuation"
+  },
+  {
+    "kanji": "刺激",
+    "reading": "しげき",
+    "meaning": "stimulus"
+  },
+  {
+    "kanji": "宿泊",
+    "reading": "しゅくはく",
+    "meaning": "accommodation"
+  },
+  {
+    "kanji": "金額",
+    "reading": "きんがく",
+    "meaning": "amount of money"
+  },
+  {
+    "kanji": "勤め",
+    "reading": "つとめ",
+    "meaning": "service"
+  },
+  {
+    "kanji": "物理",
+    "reading": "ぶつり",
+    "meaning": "laws of nature"
+  },
+  {
+    "kanji": "一瞬",
+    "reading": "いっしゅん",
+    "meaning": "instant"
+  },
+  {
+    "kanji": "大会",
+    "reading": "たいかい",
+    "meaning": "mass meeting"
+  },
+  {
+    "kanji": "倒す",
+    "reading": "たおす",
+    "meaning": "to throw down"
+  },
+  {
+    "kanji": "重視",
+    "reading": "じゅうし",
+    "meaning": "regarding as important"
+  },
+  {
+    "kanji": "成人",
+    "reading": "せいじん",
+    "meaning": "adult"
+  },
+  {
+    "kanji": "死亡",
+    "reading": "しぼう",
+    "meaning": "death"
+  },
+  {
+    "kanji": "一時",
+    "reading": "いちじ",
+    "meaning": "one o'clock"
+  },
+  {
+    "kanji": "支出",
+    "reading": "ししゅつ",
+    "meaning": "expenditure"
+  },
+  {
+    "kanji": "主婦",
+    "reading": "しゅふ",
+    "meaning": "housewife"
+  },
+  {
+    "kanji": "清潔",
+    "reading": "せいけつ",
+    "meaning": "clean"
+  },
+  {
+    "kanji": "悲劇",
+    "reading": "ひげき",
+    "meaning": "tragedy"
+  },
+  {
+    "kanji": "入場",
+    "reading": "にゅうじょう",
+    "meaning": "entrance"
+  },
+  {
+    "kanji": "症状",
+    "reading": "しょうじょう",
+    "meaning": "symptoms"
+  },
+  {
+    "kanji": "演技",
+    "reading": "えんぎ",
+    "meaning": "acting"
+  },
+  {
+    "kanji": "粗末",
+    "reading": "そまつ",
+    "meaning": "crude"
+  },
+  {
+    "kanji": "格好",
+    "reading": "かっこう",
+    "meaning": "shape"
+  },
+  {
+    "kanji": "半ば",
+    "reading": "なかば",
+    "meaning": "middle"
+  },
+  {
+    "kanji": "設計",
+    "reading": "せっけい",
+    "meaning": "plan"
+  },
+  {
+    "kanji": "欠陥",
+    "reading": "けっかん",
+    "meaning": "defect"
+  },
+  {
+    "kanji": "限界",
+    "reading": "げんかい",
+    "meaning": "limit"
+  },
+  {
+    "kanji": "担当",
+    "reading": "たんとう",
+    "meaning": "being in charge (of an area of responsibility)"
+  },
+  {
+    "kanji": "仲",
+    "reading": "なか",
+    "meaning": "relation"
+  },
+  {
+    "kanji": "委員",
+    "reading": "いいん",
+    "meaning": "committee member"
+  },
+  {
+    "kanji": "進学",
+    "reading": "しんがく",
+    "meaning": "advancing to the next stage of education"
+  },
+  {
+    "kanji": "農民",
+    "reading": "のうみん",
+    "meaning": "farmer"
+  },
+  {
+    "kanji": "住宅",
+    "reading": "じゅうたく",
+    "meaning": "residence"
+  },
+  {
+    "kanji": "不正",
+    "reading": "ふせい",
+    "meaning": "injustice"
+  },
+  {
+    "kanji": "活気",
+    "reading": "かっき",
+    "meaning": "energy"
+  },
+  {
+    "kanji": "特徴",
+    "reading": "とくちょう",
+    "meaning": "feature"
+  },
+  {
+    "kanji": "支店",
+    "reading": "してん",
+    "meaning": "branch office"
+  },
+  {
+    "kanji": "最低",
+    "reading": "さいてい",
+    "meaning": "least"
+  },
+  {
+    "kanji": "生き物",
+    "reading": "いきもの",
+    "meaning": "living thing"
+  },
+  {
+    "kanji": "地区",
+    "reading": "ちく",
+    "meaning": "district"
+  },
+  {
+    "kanji": "礼儀",
+    "reading": "れいぎ",
+    "meaning": "manners"
+  },
+  {
+    "kanji": "推薦",
+    "reading": "すいせん",
+    "meaning": "recommendation"
+  },
+  {
+    "kanji": "審判",
+    "reading": "しんぱん",
+    "meaning": "judgement"
+  },
+  {
+    "kanji": "修正",
+    "reading": "しゅうせい",
+    "meaning": "amendment"
+  },
+  {
+    "kanji": "幅",
+    "reading": "はば",
+    "meaning": "width"
+  },
+  {
+    "kanji": "依頼",
+    "reading": "いらい",
+    "meaning": "request"
+  },
+  {
+    "kanji": "急激",
+    "reading": "きゅうげき",
+    "meaning": "sudden"
+  },
+  {
+    "kanji": "生地",
+    "reading": "きじ",
+    "meaning": "cloth"
+  },
+  {
+    "kanji": "完了",
+    "reading": "かんりょう",
+    "meaning": "completion"
+  },
+  {
+    "kanji": "支給",
+    "reading": "しきゅう",
+    "meaning": "provision"
+  },
+  {
+    "kanji": "厄介",
+    "reading": "やっかい",
+    "meaning": "trouble"
+  },
+  {
+    "kanji": "拡大",
+    "reading": "かくだい",
+    "meaning": "expansion"
+  },
+  {
+    "kanji": "整理",
+    "reading": "せいり",
+    "meaning": "sorting"
+  },
+  {
+    "kanji": "課",
+    "reading": "か",
+    "meaning": "lesson"
+  },
+  {
+    "kanji": "装置",
+    "reading": "そうち",
+    "meaning": "equipment"
+  },
+  {
+    "kanji": "基本",
+    "reading": "きほん",
+    "meaning": "basics"
+  },
+  {
+    "kanji": "収める",
+    "reading": "おさめる",
+    "meaning": "to put (into)"
+  },
+  {
+    "kanji": "予期",
+    "reading": "よき",
+    "meaning": "expectation"
+  },
+  {
+    "kanji": "刑事",
+    "reading": "けいじ",
+    "meaning": "(police) detective"
+  },
+  {
+    "kanji": "記念",
+    "reading": "きねん",
+    "meaning": "commemoration"
+  },
+  {
+    "kanji": "設備",
+    "reading": "せつび",
+    "meaning": "equipment"
+  },
+  {
+    "kanji": "本人",
+    "reading": "ほんにん",
+    "meaning": "the person in question"
+  },
+  {
+    "kanji": "読み",
+    "reading": "よみ",
+    "meaning": "reading"
+  },
+  {
+    "kanji": "全国",
+    "reading": "ぜんこく",
+    "meaning": "the whole country"
+  },
+  {
+    "kanji": "手間",
+    "reading": "てま",
+    "meaning": "time"
+  },
+  {
+    "kanji": "土曜",
+    "reading": "どよう",
+    "meaning": "Saturday"
+  },
+  {
+    "kanji": "微妙",
+    "reading": "びみょう",
+    "meaning": "subtle"
+  },
+  {
+    "kanji": "続き",
+    "reading": "つづき",
+    "meaning": "continuation"
+  },
+  {
+    "kanji": "迎え",
+    "reading": "むかえ",
+    "meaning": "meeting"
+  },
+  {
+    "kanji": "正式",
+    "reading": "せいしき",
+    "meaning": "formal"
+  },
+  {
+    "kanji": "年月",
+    "reading": "としつき",
+    "meaning": "months and years"
+  },
+  {
+    "kanji": "決まり",
+    "reading": "きまり",
+    "meaning": "rule"
+  },
+  {
+    "kanji": "掲示",
+    "reading": "けいじ",
+    "meaning": "notice"
+  },
+  {
+    "kanji": "券",
+    "reading": "けん",
+    "meaning": "ticket"
+  },
+  {
+    "kanji": "豪華",
+    "reading": "ごうか",
+    "meaning": "extravagant"
+  },
+  {
+    "kanji": "長期",
+    "reading": "ちょうき",
+    "meaning": "long-term"
+  },
+  {
+    "kanji": "級",
+    "reading": "きゅう",
+    "meaning": "(school) grade"
+  },
+  {
+    "kanji": "裁判",
+    "reading": "さいばん",
+    "meaning": "trial"
+  },
+  {
+    "kanji": "大気",
+    "reading": "たいき",
+    "meaning": "atmosphere"
+  },
+  {
+    "kanji": "幕",
+    "reading": "まく",
+    "meaning": "curtain"
+  },
+  {
+    "kanji": "向い",
+    "reading": "むかい",
+    "meaning": "facing"
+  },
+  {
+    "kanji": "水準",
+    "reading": "すいじゅん",
+    "meaning": "level"
+  },
+  {
+    "kanji": "敬意",
+    "reading": "けいい",
+    "meaning": "respect"
+  },
+  {
+    "kanji": "語学",
+    "reading": "ごがく",
+    "meaning": "study of foreign languages"
+  },
+  {
+    "kanji": "強力",
+    "reading": "きょうりょく",
+    "meaning": "powerful"
+  },
+  {
+    "kanji": "愉快",
+    "reading": "ゆかい",
+    "meaning": "pleasant"
+  },
+  {
+    "kanji": "図",
+    "reading": "ず",
+    "meaning": "drawing"
+  },
+  {
+    "kanji": "飛行",
+    "reading": "ひこう",
+    "meaning": "flight"
+  },
+  {
+    "kanji": "出会い",
+    "reading": "であい",
+    "meaning": "meeting"
+  },
+  {
+    "kanji": "集まり",
+    "reading": "あつまり",
+    "meaning": "gathering"
+  },
+  {
+    "kanji": "予防",
+    "reading": "よぼう",
+    "meaning": "prevention"
+  },
+  {
+    "kanji": "孫",
+    "reading": "まご",
+    "meaning": "grandchild"
+  },
+  {
+    "kanji": "陸",
+    "reading": "りく",
+    "meaning": "land"
+  },
+  {
+    "kanji": "係",
+    "reading": "かかり",
+    "meaning": "charge"
+  },
+  {
+    "kanji": "組",
+    "reading": "くみ",
+    "meaning": "class (of students)"
+  },
+  {
+    "kanji": "年中",
+    "reading": "ねんじゅう",
+    "meaning": "whole year"
+  },
+  {
+    "kanji": "盛り",
+    "reading": "さかり",
+    "meaning": "height (e.g. of summer)"
+  },
+  {
+    "kanji": "騒ぎ",
+    "reading": "さわぎ",
+    "meaning": "uproar"
+  },
+  {
+    "kanji": "輪",
+    "reading": "わ",
+    "meaning": "ring"
+  },
+  {
+    "kanji": "地",
+    "reading": "ち",
+    "meaning": "earth"
+  },
+  {
+    "kanji": "方々",
+    "reading": "かたがた",
+    "meaning": "people"
+  },
+  {
+    "kanji": "問い",
+    "reading": "とい",
+    "meaning": "question"
+  },
+  {
+    "kanji": "心理",
+    "reading": "しんり",
+    "meaning": "state of mind"
+  },
+  {
+    "kanji": "違反",
+    "reading": "いはん",
+    "meaning": "violation"
+  },
+  {
+    "kanji": "負け",
+    "reading": "まけ",
+    "meaning": "defeat"
+  },
+  {
+    "kanji": "中学",
+    "reading": "ちゅうがく",
+    "meaning": "junior high school"
+  },
+  {
+    "kanji": "順",
+    "reading": "じゅん",
+    "meaning": "order"
+  },
+  {
+    "kanji": "通信",
+    "reading": "つうしん",
+    "meaning": "correspondence"
+  },
+  {
+    "kanji": "勢い",
+    "reading": "いきおい",
+    "meaning": "force"
+  },
+  {
+    "kanji": "野",
+    "reading": "の",
+    "meaning": "field"
+  },
+  {
+    "kanji": "宿",
+    "reading": "やど",
+    "meaning": "lodging"
+  },
+  {
+    "kanji": "事務",
+    "reading": "じむ",
+    "meaning": "office work"
+  },
+  {
+    "kanji": "稲",
+    "reading": "いね",
+    "meaning": "rice plant (Oryza sativa)"
+  },
+  {
+    "kanji": "金曜",
+    "reading": "きんよう",
+    "meaning": "Friday"
+  },
+  {
+    "kanji": "候補",
+    "reading": "こうほ",
+    "meaning": "candidate"
+  },
+  {
+    "kanji": "革",
+    "reading": "かわ",
+    "meaning": "leather"
+  },
+  {
+    "kanji": "移す",
+    "reading": "うつす",
+    "meaning": "to transfer (to a different place, group, etc.)"
+  },
+  {
+    "kanji": "予報",
+    "reading": "よほう",
+    "meaning": "forecast"
+  },
+  {
+    "kanji": "気味",
+    "reading": "きみ",
+    "meaning": "sensation"
+  },
+  {
+    "kanji": "日常",
+    "reading": "にちじょう",
+    "meaning": "everyday"
+  },
+  {
+    "kanji": "通行",
+    "reading": "つうこう",
+    "meaning": "passage (of people or vehicles)"
+  },
+  {
+    "kanji": "天然",
+    "reading": "てんねん",
+    "meaning": "nature"
+  },
+  {
+    "kanji": "近代",
+    "reading": "きんだい",
+    "meaning": "present day"
+  },
+  {
+    "kanji": "沖",
+    "reading": "おき",
+    "meaning": "open sea"
+  },
+  {
+    "kanji": "空き",
+    "reading": "あき",
+    "meaning": "space"
+  },
+  {
+    "kanji": "互い",
+    "reading": "たがい",
+    "meaning": "each other"
+  },
+  {
+    "kanji": "徹底",
+    "reading": "てってい",
+    "meaning": "thoroughness"
+  },
+  {
+    "kanji": "自動",
+    "reading": "じどう",
+    "meaning": "automatic"
+  },
+  {
+    "kanji": "注",
+    "reading": "ちゅう",
+    "meaning": "annotation"
+  },
+  {
+    "kanji": "恩",
+    "reading": "おん",
+    "meaning": "favour"
+  },
+  {
+    "kanji": "名人",
+    "reading": "めいじん",
+    "meaning": "master"
+  },
+  {
+    "kanji": "機関",
+    "reading": "きかん",
+    "meaning": "engine"
+  },
+  {
+    "kanji": "機嫌",
+    "reading": "きげん",
+    "meaning": "humour"
+  },
+  {
+    "kanji": "境",
+    "reading": "さかい",
+    "meaning": "border"
+  },
+  {
+    "kanji": "連れ",
+    "reading": "つれ",
+    "meaning": "companion"
+  },
+  {
+    "kanji": "題",
+    "reading": "だい",
+    "meaning": "title"
+  },
+  {
+    "kanji": "木曜",
+    "reading": "もくよう",
+    "meaning": "Thursday"
+  },
+  {
+    "kanji": "典型",
+    "reading": "てんけい",
+    "meaning": "type"
+  },
+  {
+    "kanji": "誠に",
+    "reading": "まことに",
+    "meaning": "really"
+  },
+  {
+    "kanji": "縄",
+    "reading": "なわ",
+    "meaning": "rope"
+  },
+  {
+    "kanji": "学",
+    "reading": "がく",
+    "meaning": "learning"
+  },
+  {
+    "kanji": "可",
+    "reading": "か",
+    "meaning": "acceptable"
+  },
+  {
+    "kanji": "中古",
+    "reading": "ちゅうこ",
+    "meaning": "used"
+  },
+  {
+    "kanji": "束",
+    "reading": "たば",
+    "meaning": "bundle"
+  },
+  {
+    "kanji": "見当",
+    "reading": "けんとう",
+    "meaning": "estimate"
+  },
+  {
+    "kanji": "嫁",
+    "reading": "よめ",
+    "meaning": "bride"
+  },
+  {
+    "kanji": "加減",
+    "reading": "かげん",
+    "meaning": "degree"
+  },
+  {
+    "kanji": "作法",
+    "reading": "さほう",
+    "meaning": "manners"
+  },
+  {
+    "kanji": "参考",
+    "reading": "さんこう",
+    "meaning": "reference"
+  },
+  {
+    "kanji": "泉",
+    "reading": "いずみ",
+    "meaning": "spring"
+  },
+  {
+    "kanji": "祝い",
+    "reading": "いわい",
+    "meaning": "congratulation"
+  },
+  {
+    "kanji": "高速",
+    "reading": "こうそく",
+    "meaning": "high-speed"
+  },
+  {
+    "kanji": "定期",
+    "reading": "ていき",
+    "meaning": "fixed period"
+  },
+  {
+    "kanji": "図書",
+    "reading": "としょ",
+    "meaning": "books"
+  },
+  {
+    "kanji": "宅",
+    "reading": "たく",
+    "meaning": "house"
+  },
+  {
+    "kanji": "火曜",
+    "reading": "かよう",
+    "meaning": "Tuesday"
+  },
+  {
+    "kanji": "段",
+    "reading": "だん",
+    "meaning": "step"
+  },
+  {
+    "kanji": "同時",
+    "reading": "どうじ",
+    "meaning": "same time"
+  },
+  {
+    "kanji": "不可",
+    "reading": "ふか",
+    "meaning": "wrong"
+  },
+  {
+    "kanji": "局",
+    "reading": "きょく",
+    "meaning": "bureau"
+  },
+  {
+    "kanji": "現れ",
+    "reading": "あらわれ",
+    "meaning": "embodiment"
+  },
+  {
+    "kanji": "勘",
+    "reading": "かん",
+    "meaning": "perception"
+  },
+  {
+    "kanji": "消防",
+    "reading": "しょうぼう",
+    "meaning": "fire fighting"
+  },
+  {
+    "kanji": "老い",
+    "reading": "おい",
+    "meaning": "old age"
+  },
+  {
+    "kanji": "大戦",
+    "reading": "たいせん",
+    "meaning": "great war"
+  },
+  {
+    "kanji": "下り",
+    "reading": "くだり",
+    "meaning": "down-train"
+  },
+  {
+    "kanji": "今に",
+    "reading": "いまに",
+    "meaning": "before long"
+  },
+  {
+    "kanji": "仕舞う",
+    "reading": "しまう",
+    "meaning": "to finish"
+  },
+  {
+    "kanji": "様",
+    "reading": "よう",
+    "meaning": "appearing ..."
+  },
+  {
+    "kanji": "貰う",
+    "reading": "もらう",
+    "meaning": "to receive"
+  },
+  {
+    "kanji": "全て",
+    "reading": "すべて",
+    "meaning": "everything"
+  },
+  {
+    "kanji": "全く",
+    "reading": "まったく",
+    "meaning": "really"
+  },
+  {
+    "kanji": "履く",
+    "reading": "はく",
+    "meaning": "to put on (lower-body clothing, e.g. pants, skirt, footwear)"
+  },
+  {
+    "kanji": "信じる",
+    "reading": "しんじる",
+    "meaning": "to believe"
+  },
+  {
+    "kanji": "与える",
+    "reading": "あたえる",
+    "meaning": "to give (esp. to someone of lower status)"
+  },
+  {
+    "kanji": "分",
+    "reading": "ぶん",
+    "meaning": "part"
+  },
+  {
+    "kanji": "頃",
+    "reading": "ころ",
+    "meaning": "(approximate) time"
+  },
+  {
+    "kanji": "知らせ",
+    "reading": "しらせ",
+    "meaning": "news"
+  },
+  {
+    "kanji": "求める",
+    "reading": "もとめる",
+    "meaning": "to want"
+  },
+  {
+    "kanji": "得る",
+    "reading": "える",
+    "meaning": "to get"
+  },
+  {
+    "kanji": "者",
+    "reading": "もの",
+    "meaning": "person"
+  },
+  {
+    "kanji": "嬉しい",
+    "reading": "うれしい",
+    "meaning": "happy"
+  },
+  {
+    "kanji": "可也",
+    "reading": "かなり",
+    "meaning": "considerably"
+  },
+  {
+    "kanji": "学ぶ",
+    "reading": "まなぶ",
+    "meaning": "to learn"
+  },
+  {
+    "kanji": "過ごす",
+    "reading": "すごす",
+    "meaning": "to spend (time)"
+  },
+  {
+    "kanji": "位",
+    "reading": "くらい",
+    "meaning": "throne"
+  },
+  {
+    "kanji": "認める",
+    "reading": "みとめる",
+    "meaning": "to recognize"
+  },
+  {
+    "kanji": "気づく",
+    "reading": "きづく",
+    "meaning": "to notice"
+  },
+  {
+    "kanji": "頂く",
+    "reading": "いただく",
+    "meaning": "to receive"
+  },
+  {
+    "kanji": "遂に",
+    "reading": "ついに",
+    "meaning": "finally"
+  },
+  {
+    "kanji": "先ず",
+    "reading": "まず",
+    "meaning": "first (of all)"
+  },
+  {
+    "kanji": "凡ゆる",
+    "reading": "あらゆる",
+    "meaning": "all"
+  },
+  {
+    "kanji": "宜しい",
+    "reading": "よろしい",
+    "meaning": "good"
+  },
+  {
+    "kanji": "暮らす",
+    "reading": "くらす",
+    "meaning": "to live (on, by, etc.)"
+  },
+  {
+    "kanji": "丸で",
+    "reading": "まるで",
+    "meaning": "as if"
+  },
+  {
+    "kanji": "数",
+    "reading": "すう",
+    "meaning": "several"
+  },
+  {
+    "kanji": "気に入る",
+    "reading": "きにいる",
+    "meaning": "to like"
+  },
+  {
+    "kanji": "如何しても",
+    "reading": "どうしても",
+    "meaning": "by all means"
+  },
+  {
+    "kanji": "解く",
+    "reading": "とく",
+    "meaning": "to untie"
+  },
+  {
+    "kanji": "喋る",
+    "reading": "しゃべる",
+    "meaning": "to talk"
+  },
+  {
+    "kanji": "寧ろ",
+    "reading": "むしろ",
+    "meaning": "rather"
+  },
+  {
+    "kanji": "優れる",
+    "reading": "すぐれる",
+    "meaning": "to be better (than)"
+  },
+  {
+    "kanji": "遅刻",
+    "reading": "ちこく",
+    "meaning": "lateness"
+  },
+  {
+    "kanji": "何時でも",
+    "reading": "いつでも",
+    "meaning": "always"
+  },
+  {
+    "kanji": "従う",
+    "reading": "したがう",
+    "meaning": "to obey (an order, law, etc.)"
+  },
+  {
+    "kanji": "例え",
+    "reading": "たとえ",
+    "meaning": "example"
+  },
+  {
+    "kanji": "怪我",
+    "reading": "けが",
+    "meaning": "injury"
+  },
+  {
+    "kanji": "回り",
+    "reading": "まわり",
+    "meaning": "rotation"
+  },
+  {
+    "kanji": "益々",
+    "reading": "ますます",
+    "meaning": "increasingly"
+  },
+  {
+    "kanji": "済みません",
+    "reading": "すみません",
+    "meaning": "excuse me"
+  },
+  {
+    "kanji": "表す",
+    "reading": "あらわす",
+    "meaning": "to represent"
+  },
+  {
+    "kanji": "少しも",
+    "reading": "すこしも",
+    "meaning": "(not) at all"
+  },
+  {
+    "kanji": "描く",
+    "reading": "えがく",
+    "meaning": "to draw"
+  },
+  {
+    "kanji": "丸",
+    "reading": "まる",
+    "meaning": "circle"
+  },
+  {
+    "kanji": "述べる",
+    "reading": "のべる",
+    "meaning": "to state"
+  },
+  {
+    "kanji": "当たる",
+    "reading": "あたる",
+    "meaning": "to be hit"
+  },
+  {
+    "kanji": "切れる",
+    "reading": "きれる",
+    "meaning": "to break"
+  },
+  {
+    "kanji": "会",
+    "reading": "かい",
+    "meaning": "meeting"
+  },
+  {
+    "kanji": "或る",
+    "reading": "ある",
+    "meaning": "a certain ..."
+  },
+  {
+    "kanji": "向ける",
+    "reading": "むける",
+    "meaning": "to turn (towards)"
+  },
+  {
+    "kanji": "効く",
+    "reading": "きく",
+    "meaning": "to be effective"
+  },
+  {
+    "kanji": "約",
+    "reading": "やく",
+    "meaning": "approximately"
+  },
+  {
+    "kanji": "中々",
+    "reading": "なかなか",
+    "meaning": "very"
+  },
+  {
+    "kanji": "僅か",
+    "reading": "わずか",
+    "meaning": "a little"
+  },
+  {
+    "kanji": "避ける",
+    "reading": "さける",
+    "meaning": "to avoid (physical contact with)"
+  },
+  {
+    "kanji": "賢い",
+    "reading": "かしこい",
+    "meaning": "wise"
+  },
+  {
+    "kanji": "正に",
+    "reading": "まさに",
+    "meaning": "exactly"
+  },
+  {
+    "kanji": "経つ",
+    "reading": "たつ",
+    "meaning": "to pass (of time)"
+  },
+  {
+    "kanji": "勿論",
+    "reading": "もちろん",
+    "meaning": "of course"
+  },
+  {
+    "kanji": "夢中",
+    "reading": "むちゅう",
+    "meaning": "absorbed in"
+  },
+  {
+    "kanji": "諦める",
+    "reading": "あきらめる",
+    "meaning": "to give up"
+  },
+  {
+    "kanji": "掴む",
+    "reading": "つかむ",
+    "meaning": "to seize"
+  },
+  {
+    "kanji": "床",
+    "reading": "ゆか",
+    "meaning": "floor"
+  },
+  {
+    "kanji": "随分",
+    "reading": "ずいぶん",
+    "meaning": "very"
+  },
+  {
+    "kanji": "伸ばす",
+    "reading": "のばす",
+    "meaning": "to grow long (e.g. hair, nails)"
+  },
+  {
+    "kanji": "異なる",
+    "reading": "ことなる",
+    "meaning": "to differ"
+  },
+  {
+    "kanji": "飼う",
+    "reading": "かう",
+    "meaning": "to keep (a pet or other animal)"
+  },
+  {
+    "kanji": "去る",
+    "reading": "さる",
+    "meaning": "to leave"
+  },
+  {
+    "kanji": "沈む",
+    "reading": "しずむ",
+    "meaning": "to sink"
+  },
+  {
+    "kanji": "輝く",
+    "reading": "かがやく",
+    "meaning": "to shine"
+  },
+  {
+    "kanji": "願う",
+    "reading": "ねがう",
+    "meaning": "to desire"
+  },
+  {
+    "kanji": "利口",
+    "reading": "りこう",
+    "meaning": "clever"
+  },
+  {
+    "kanji": "取れる",
+    "reading": "とれる",
+    "meaning": "to come off (of a button, handle, lid, etc.)"
+  },
+  {
+    "kanji": "叩く",
+    "reading": "たたく",
+    "meaning": "to strike"
+  },
+  {
+    "kanji": "似合う",
+    "reading": "にあう",
+    "meaning": "to suit"
+  },
+  {
+    "kanji": "偶々",
+    "reading": "たまたま",
+    "meaning": "by chance"
+  },
+  {
+    "kanji": "匂い",
+    "reading": "におい",
+    "meaning": "smell"
+  },
+  {
+    "kanji": "招く",
+    "reading": "まねく",
+    "meaning": "to invite"
+  },
+  {
+    "kanji": "お喋り",
+    "reading": "おしゃべり",
+    "meaning": "chattering"
+  },
+  {
+    "kanji": "任せる",
+    "reading": "まかせる",
+    "meaning": "to leave (a matter, decision, etc. to someone)"
+  },
+  {
+    "kanji": "凝乎と",
+    "reading": "じっと",
+    "meaning": "motionlessly (e.g. stand, wait)"
+  },
+  {
+    "kanji": "割る",
+    "reading": "わる",
+    "meaning": "to divide"
+  },
+  {
+    "kanji": "触れる",
+    "reading": "ふれる",
+    "meaning": "to touch"
+  },
+  {
+    "kanji": "所謂",
+    "reading": "いわゆる",
+    "meaning": "what is called"
+  },
+  {
+    "kanji": "届く",
+    "reading": "とどく",
+    "meaning": "to reach"
+  },
+  {
+    "kanji": "解ける",
+    "reading": "とける",
+    "meaning": "to be solved"
+  },
+  {
+    "kanji": "文",
+    "reading": "ぶん",
+    "meaning": "sentence"
+  },
+  {
+    "kanji": "立ち上がる",
+    "reading": "たちあがる",
+    "meaning": "to stand up"
+  },
+  {
+    "kanji": "不平",
+    "reading": "ふへい",
+    "meaning": "discontent"
+  },
+  {
+    "kanji": "大した",
+    "reading": "たいした",
+    "meaning": "considerable"
+  },
+  {
+    "kanji": "腐る",
+    "reading": "くさる",
+    "meaning": "to rot"
+  },
+  {
+    "kanji": "宜しく",
+    "reading": "よろしく",
+    "meaning": "well"
+  },
+  {
+    "kanji": "軈て",
+    "reading": "やがて",
+    "meaning": "before long"
+  },
+  {
+    "kanji": "伺う",
+    "reading": "うかがう",
+    "meaning": "to call on someone"
+  },
+  {
+    "kanji": "通じる",
+    "reading": "つうじる",
+    "meaning": "to be open (to traffic)"
+  },
+  {
+    "kanji": "稼ぐ",
+    "reading": "かせぐ",
+    "meaning": "to earn (income)"
+  },
+  {
+    "kanji": "罹る",
+    "reading": "かかる",
+    "meaning": "to contract (a disease)"
+  },
+  {
+    "kanji": "辞める",
+    "reading": "やめる",
+    "meaning": "to resign"
+  },
+  {
+    "kanji": "含む",
+    "reading": "ふくむ",
+    "meaning": "to contain"
+  },
+  {
+    "kanji": "微笑む",
+    "reading": "ほほえむ",
+    "meaning": "to smile"
+  },
+  {
+    "kanji": "苦しむ",
+    "reading": "くるしむ",
+    "meaning": "to suffer"
+  },
+  {
+    "kanji": "種",
+    "reading": "たね",
+    "meaning": "seed (e.g. of a plant)"
+  },
+  {
+    "kanji": "詰まり",
+    "reading": "つまり",
+    "meaning": "that is to say"
+  },
+  {
+    "kanji": "近頃",
+    "reading": "ちかごろ",
+    "meaning": "lately"
+  },
+  {
+    "kanji": "叱る",
+    "reading": "しかる",
+    "meaning": "to scold"
+  },
+  {
+    "kanji": "基づく",
+    "reading": "もとづく",
+    "meaning": "to be based (on)"
+  },
+  {
+    "kanji": "兎に角",
+    "reading": "とにかく",
+    "meaning": "anyway"
+  },
+  {
+    "kanji": "勧める",
+    "reading": "すすめる",
+    "meaning": "to recommend (someone to do)"
+  },
+  {
+    "kanji": "済ませる",
+    "reading": "すませる",
+    "meaning": "to finish"
+  },
+  {
+    "kanji": "責める",
+    "reading": "せめる",
+    "meaning": "to condemn"
+  },
+  {
+    "kanji": "苛々",
+    "reading": "いらいら",
+    "meaning": "to get irritated"
+  },
+  {
+    "kanji": "案",
+    "reading": "あん",
+    "meaning": "idea"
+  },
+  {
+    "kanji": "面",
+    "reading": "めん",
+    "meaning": "face"
+  },
+  {
+    "kanji": "就く",
+    "reading": "つく",
+    "meaning": "to take (seat, position, course, office, etc.)"
+  },
+  {
+    "kanji": "捕まる",
+    "reading": "つかまる",
+    "meaning": "to be caught"
+  },
+  {
+    "kanji": "欠ける",
+    "reading": "かける",
+    "meaning": "to chip"
+  },
+  {
+    "kanji": "従兄弟",
+    "reading": "いとこ",
+    "meaning": "cousin (male)"
+  },
+  {
+    "kanji": "精々",
+    "reading": "せいぜい",
+    "meaning": "at the most"
+  },
+  {
+    "kanji": "向く",
+    "reading": "むく",
+    "meaning": "to turn toward"
+  },
+  {
+    "kanji": "横切る",
+    "reading": "よこぎる",
+    "meaning": "to cross (e.g. road)"
+  },
+  {
+    "kanji": "転ぶ",
+    "reading": "ころぶ",
+    "meaning": "to fall down"
+  },
+  {
+    "kanji": "強調",
+    "reading": "きょうちょう",
+    "meaning": "emphasis"
+  },
+  {
+    "kanji": "下ろす",
+    "reading": "おろす",
+    "meaning": "to take down"
+  },
+  {
+    "kanji": "生まれ",
+    "reading": "うまれ",
+    "meaning": "birth"
+  },
+  {
+    "kanji": "生じる",
+    "reading": "しょうじる",
+    "meaning": "to produce"
+  },
+  {
+    "kanji": "轢く",
+    "reading": "ひく",
+    "meaning": "to run over (with a vehicle)"
+  },
+  {
+    "kanji": "其のまま",
+    "reading": "そのまま",
+    "meaning": "without change"
+  },
+  {
+    "kanji": "法",
+    "reading": "ほう",
+    "meaning": "law"
+  },
+  {
+    "kanji": "劣る",
+    "reading": "おとる",
+    "meaning": "to be inferior to"
+  },
+  {
+    "kanji": "隠れる",
+    "reading": "かくれる",
+    "meaning": "to hide"
+  },
+  {
+    "kanji": "吠える",
+    "reading": "ほえる",
+    "meaning": "to bark"
+  },
+  {
+    "kanji": "訴える",
+    "reading": "うったえる",
+    "meaning": "to raise"
+  },
+  {
+    "kanji": "繋ぐ",
+    "reading": "つなぐ",
+    "meaning": "to connect"
+  },
+  {
+    "kanji": "怠ける",
+    "reading": "なまける",
+    "meaning": "to be lazy"
+  },
+  {
+    "kanji": "震える",
+    "reading": "ふるえる",
+    "meaning": "to shiver"
+  },
+  {
+    "kanji": "凍る",
+    "reading": "こおる",
+    "meaning": "to freeze"
+  },
+  {
+    "kanji": "広がる",
+    "reading": "ひろがる",
+    "meaning": "to spread (out)"
+  },
+  {
+    "kanji": "悪戯",
+    "reading": "いたずら",
+    "meaning": "mischief"
+  },
+  {
+    "kanji": "伸びる",
+    "reading": "のびる",
+    "meaning": "to stretch"
+  },
+  {
+    "kanji": "罰する",
+    "reading": "ばっする",
+    "meaning": "to punish"
+  },
+  {
+    "kanji": "堪らない",
+    "reading": "たまらない",
+    "meaning": "intolerable"
+  },
+  {
+    "kanji": "飽きる",
+    "reading": "あきる",
+    "meaning": "to get tired of"
+  },
+  {
+    "kanji": "濃い",
+    "reading": "こい",
+    "meaning": "deep (colour)"
+  },
+  {
+    "kanji": "酔う",
+    "reading": "よう",
+    "meaning": "to get drunk"
+  },
+  {
+    "kanji": "態と",
+    "reading": "わざと",
+    "meaning": "on purpose"
+  },
+  {
+    "kanji": "生憎",
+    "reading": "あいにく",
+    "meaning": "unfortunately"
+  },
+  {
+    "kanji": "支える",
+    "reading": "ささえる",
+    "meaning": "to support"
+  },
+  {
+    "kanji": "除く",
+    "reading": "のぞく",
+    "meaning": "to remove"
+  },
+  {
+    "kanji": "論じる",
+    "reading": "ろんじる",
+    "meaning": "to discuss"
+  },
+  {
+    "kanji": "満ちる",
+    "reading": "みちる",
+    "meaning": "to fill"
+  },
+  {
+    "kanji": "抜く",
+    "reading": "ぬく",
+    "meaning": "to pull out"
+  },
+  {
+    "kanji": "何時までも",
+    "reading": "いつまでも",
+    "meaning": "forever"
+  },
+  {
+    "kanji": "真面目",
+    "reading": "まじめ",
+    "meaning": "serious"
+  },
+  {
+    "kanji": "直に",
+    "reading": "じかに",
+    "meaning": "directly"
+  },
+  {
+    "kanji": "適する",
+    "reading": "てきする",
+    "meaning": "to fit"
+  },
+  {
+    "kanji": "若しも",
+    "reading": "もしも",
+    "meaning": "if"
+  },
+  {
+    "kanji": "陰",
+    "reading": "かげ",
+    "meaning": "shade"
+  },
+  {
+    "kanji": "臭い",
+    "reading": "くさい",
+    "meaning": "stinking"
+  },
+  {
+    "kanji": "振る",
+    "reading": "ふる",
+    "meaning": "to wave"
+  },
+  {
+    "kanji": "途端",
+    "reading": "とたん",
+    "meaning": "just (now, at the moment, etc.)"
+  },
+  {
+    "kanji": "通り過ぎる",
+    "reading": "とおりすぎる",
+    "meaning": "to go past"
+  },
+  {
+    "kanji": "喉",
+    "reading": "のど",
+    "meaning": "throat"
+  },
+  {
+    "kanji": "止す",
+    "reading": "よす",
+    "meaning": "to stop (doing)"
+  },
+  {
+    "kanji": "真似",
+    "reading": "まね",
+    "meaning": "imitating"
+  },
+  {
+    "kanji": "幼い",
+    "reading": "おさない",
+    "meaning": "very young"
+  },
+  {
+    "kanji": "不図",
+    "reading": "ふと",
+    "meaning": "suddenly"
+  },
+  {
+    "kanji": "凡そ",
+    "reading": "およそ",
+    "meaning": "about"
+  },
+  {
+    "kanji": "抜ける",
+    "reading": "ぬける",
+    "meaning": "to come out"
+  },
+  {
+    "kanji": "用心",
+    "reading": "ようじん",
+    "meaning": "care"
+  },
+  {
+    "kanji": "性",
+    "reading": "せい",
+    "meaning": "nature (of a person)"
+  },
+  {
+    "kanji": "防ぐ",
+    "reading": "ふせぐ",
+    "meaning": "to defend against"
+  },
+  {
+    "kanji": "行儀",
+    "reading": "ぎょうぎ",
+    "meaning": "manners"
+  },
+  {
+    "kanji": "熱中",
+    "reading": "ねっちゅう",
+    "meaning": "being enthusiastic about"
+  },
+  {
+    "kanji": "等しい",
+    "reading": "ひとしい",
+    "meaning": "equal"
+  },
+  {
+    "kanji": "譲る",
+    "reading": "ゆずる",
+    "meaning": "to hand over"
+  },
+  {
+    "kanji": "放す",
+    "reading": "はなす",
+    "meaning": "to release"
+  },
+  {
+    "kanji": "省く",
+    "reading": "はぶく",
+    "meaning": "to omit"
+  },
+  {
+    "kanji": "上達",
+    "reading": "じょうたつ",
+    "meaning": "improvement (e.g. in skill, ability)"
+  },
+  {
+    "kanji": "眺め",
+    "reading": "ながめ",
+    "meaning": "scene"
+  },
+  {
+    "kanji": "逆らう",
+    "reading": "さからう",
+    "meaning": "to go against"
+  },
+  {
+    "kanji": "気の毒",
+    "reading": "きのどく",
+    "meaning": "pitiful"
+  },
+  {
+    "kanji": "取り上げる",
+    "reading": "とりあげる",
+    "meaning": "to pick up"
+  },
+  {
+    "kanji": "諺",
+    "reading": "ことわざ",
+    "meaning": "proverb"
+  },
+  {
+    "kanji": "増す",
+    "reading": "ます",
+    "meaning": "to increase"
+  },
+  {
+    "kanji": "申し込む",
+    "reading": "もうしこむ",
+    "meaning": "to apply for"
+  },
+  {
+    "kanji": "占める",
+    "reading": "しめる",
+    "meaning": "to occupy"
+  },
+  {
+    "kanji": "一度に",
+    "reading": "いちどに",
+    "meaning": "all at once"
+  },
+  {
+    "kanji": "詰める",
+    "reading": "つめる",
+    "meaning": "to stuff into"
+  },
+  {
+    "kanji": "一人一人",
+    "reading": "ひとりひとり",
+    "meaning": "each (person)"
+  },
+  {
+    "kanji": "即ち",
+    "reading": "すなわち",
+    "meaning": "that is (to say)"
+  },
+  {
+    "kanji": "可愛らしい",
+    "reading": "かわいらしい",
+    "meaning": "lovely"
+  },
+  {
+    "kanji": "その内",
+    "reading": "そのうち",
+    "meaning": "before very long"
+  },
+  {
+    "kanji": "我儘",
+    "reading": "わがまま",
+    "meaning": "selfish"
+  },
+  {
+    "kanji": "狂う",
+    "reading": "くるう",
+    "meaning": "to go mad"
+  },
+  {
+    "kanji": "頂戴",
+    "reading": "ちょうだい",
+    "meaning": "receiving"
+  },
+  {
+    "kanji": "札",
+    "reading": "さつ",
+    "meaning": "banknote"
+  },
+  {
+    "kanji": "売れる",
+    "reading": "うれる",
+    "meaning": "to sell (well)"
+  },
+  {
+    "kanji": "生",
+    "reading": "なま",
+    "meaning": "raw"
+  },
+  {
+    "kanji": "象",
+    "reading": "ぞう",
+    "meaning": "elephant (Elephantidae spp.)"
+  },
+  {
+    "kanji": "頻りに",
+    "reading": "しきりに",
+    "meaning": "frequently"
+  },
+  {
+    "kanji": "迷子",
+    "reading": "まいご",
+    "meaning": "lost child"
+  },
+  {
+    "kanji": "真剣",
+    "reading": "しんけん",
+    "meaning": "serious"
+  },
+  {
+    "kanji": "飛ばす",
+    "reading": "とばす",
+    "meaning": "to let fly"
+  },
+  {
+    "kanji": "要点",
+    "reading": "ようてん",
+    "meaning": "gist"
+  },
+  {
+    "kanji": "食う",
+    "reading": "くう",
+    "meaning": "to eat"
+  },
+  {
+    "kanji": "指す",
+    "reading": "さす",
+    "meaning": "to point"
+  },
+  {
+    "kanji": "至る",
+    "reading": "いたる",
+    "meaning": "to arrive at (e.g. a decision)"
+  },
+  {
+    "kanji": "贅沢",
+    "reading": "ぜいたく",
+    "meaning": "luxury"
+  },
+  {
+    "kanji": "真逆",
+    "reading": "まさか",
+    "meaning": "by no means"
+  },
+  {
+    "kanji": "最中",
+    "reading": "さいちゅう",
+    "meaning": "(in) the middle of"
+  },
+  {
+    "kanji": "居眠り",
+    "reading": "いねむり",
+    "meaning": "nodding off (while sitting)"
+  },
+  {
+    "kanji": "発車",
+    "reading": "はっしゃ",
+    "meaning": "departure (of a train, car, etc.)"
+  },
+  {
+    "kanji": "反抗",
+    "reading": "はんこう",
+    "meaning": "opposition"
+  },
+  {
+    "kanji": "余分",
+    "reading": "よぶん",
+    "meaning": "extra"
+  },
+  {
+    "kanji": "親戚",
+    "reading": "しんせき",
+    "meaning": "relative"
+  },
+  {
+    "kanji": "停留所",
+    "reading": "ていりゅうじょ",
+    "meaning": "stop (bus, tram, etc.)"
+  },
+  {
+    "kanji": "進める",
+    "reading": "すすめる",
+    "meaning": "to advance"
+  },
+  {
+    "kanji": "上等",
+    "reading": "じょうとう",
+    "meaning": "superior"
+  },
+  {
+    "kanji": "今にも",
+    "reading": "いまにも",
+    "meaning": "at any moment (now)"
+  },
+  {
+    "kanji": "離す",
+    "reading": "はなす",
+    "meaning": "to separate"
+  },
+  {
+    "kanji": "越す",
+    "reading": "こす",
+    "meaning": "to cross over (e.g. mountain)"
+  },
+  {
+    "kanji": "平ら",
+    "reading": "たいら",
+    "meaning": "flat"
+  },
+  {
+    "kanji": "包み",
+    "reading": "つつみ",
+    "meaning": "bundle"
+  },
+  {
+    "kanji": "手品",
+    "reading": "てじな",
+    "meaning": "magic (illusion)"
+  },
+  {
+    "kanji": "率",
+    "reading": "りつ",
+    "meaning": "rate"
+  },
+  {
+    "kanji": "覚める",
+    "reading": "さめる",
+    "meaning": "to wake"
+  },
+  {
+    "kanji": "積もる",
+    "reading": "つもる",
+    "meaning": "to pile up"
+  },
+  {
+    "kanji": "哀れ",
+    "reading": "あわれ",
+    "meaning": "pity"
+  },
+  {
+    "kanji": "綿",
+    "reading": "めん",
+    "meaning": "cotton"
+  },
+  {
+    "kanji": "及ぼす",
+    "reading": "およぼす",
+    "meaning": "to exert (influence)"
+  },
+  {
+    "kanji": "旧",
+    "reading": "きゅう",
+    "meaning": "old"
+  },
+  {
+    "kanji": "稍",
+    "reading": "やや",
+    "meaning": "a little"
+  },
+  {
+    "kanji": "咳",
+    "reading": "せき",
+    "meaning": "cough"
+  },
+  {
+    "kanji": "切れ",
+    "reading": "きれ",
+    "meaning": "piece"
+  },
+  {
+    "kanji": "器用",
+    "reading": "きよう",
+    "meaning": "skillful"
+  },
+  {
+    "kanji": "唸る",
+    "reading": "うなる",
+    "meaning": "to groan"
+  },
+  {
+    "kanji": "説",
+    "reading": "せつ",
+    "meaning": "theory"
+  },
+  {
+    "kanji": "粗い",
+    "reading": "あらい",
+    "meaning": "coarse"
+  },
+  {
+    "kanji": "大家",
+    "reading": "おおや",
+    "meaning": "landlord"
+  },
+  {
+    "kanji": "節",
+    "reading": "ふし",
+    "meaning": "joint"
+  },
+  {
+    "kanji": "関する",
+    "reading": "かんする",
+    "meaning": "to concern"
+  },
+  {
+    "kanji": "覚ます",
+    "reading": "さます",
+    "meaning": "to awaken"
+  },
+  {
+    "kanji": "違いない",
+    "reading": "ちがいない",
+    "meaning": "sure"
+  },
+  {
+    "kanji": "原",
+    "reading": "はら",
+    "meaning": "field"
+  },
+  {
+    "kanji": "銅貨",
+    "reading": "どうか",
+    "meaning": "copper coin"
+  },
+  {
+    "kanji": "仕舞った",
+    "reading": "しまった",
+    "meaning": "darn it!"
+  },
+  {
+    "kanji": "頂きます",
+    "reading": "いただきます",
+    "meaning": "thank you (for the meal just served)"
+  },
+  {
+    "kanji": "矢張り",
+    "reading": "やはり",
+    "meaning": "as expected"
+  },
+  {
+    "kanji": "中",
+    "reading": "ちゅう",
+    "meaning": "medium (size)"
+  },
+  {
+    "kanji": "後",
+    "reading": "ご",
+    "meaning": "after"
+  },
+  {
+    "kanji": "これ等",
+    "reading": "これら",
+    "meaning": "these"
+  },
+  {
+    "kanji": "上手い",
+    "reading": "うまい",
+    "meaning": "skillful"
+  },
+  {
+    "kanji": "急に",
+    "reading": "きゅうに",
+    "meaning": "swiftly"
+  },
+  {
+    "kanji": "番",
+    "reading": "ばん",
+    "meaning": "number (in a series)"
+  },
+  {
+    "kanji": "人ごみ",
+    "reading": "ひとごみ",
+    "meaning": "crowd of people"
+  },
+  {
+    "kanji": "持ち上げる",
+    "reading": "もちあげる",
+    "meaning": "to elevate"
+  },
+  {
+    "kanji": "お昼",
+    "reading": "おひる",
+    "meaning": "lunch"
+  },
+  {
+    "kanji": "無",
+    "reading": "む",
+    "meaning": "nothing"
+  },
+  {
+    "kanji": "小",
+    "reading": "しょう",
+    "meaning": "smallness"
+  },
+  {
+    "kanji": "男の人",
+    "reading": "おとこのひと",
+    "meaning": "man"
+  },
+  {
+    "kanji": "キロ",
+    "reading": "キロ",
+    "meaning": "kilo-"
+  },
+  {
+    "kanji": "コピー",
+    "reading": "コピー",
+    "meaning": "copy"
+  },
+  {
+    "kanji": "所で",
+    "reading": "ところで",
+    "meaning": "by the way"
+  },
+  {
+    "kanji": "だって",
+    "reading": "だって",
+    "meaning": "after all"
+  },
+  {
+    "kanji": "コンピュータ",
+    "reading": "コンピュータ",
+    "meaning": "computer"
+  },
+  {
+    "kanji": "ビール",
+    "reading": "ビール",
+    "meaning": "beer"
+  },
+  {
+    "kanji": "メンバー",
+    "reading": "メンバー",
+    "meaning": "member"
+  },
+  {
+    "kanji": "ドラマ",
+    "reading": "ドラマ",
+    "meaning": "(non-documentary) television series"
+  },
+  {
+    "kanji": "為る",
+    "reading": "する",
+    "meaning": "to do"
+  },
+  {
+    "kanji": "オーバー",
+    "reading": "オーバー",
+    "meaning": "overcoat"
+  },
+  {
+    "kanji": "空",
+    "reading": "から",
+    "meaning": "emptiness"
+  },
+  {
+    "kanji": "語",
+    "reading": "ご",
+    "meaning": "word"
+  },
+  {
+    "kanji": "市場",
+    "reading": "いちば",
+    "meaning": "(town) market"
+  },
+  {
+    "kanji": "煙",
+    "reading": "けむり",
+    "meaning": "smoke"
+  },
+  {
+    "kanji": "値",
+    "reading": "あたい",
+    "meaning": "price"
+  },
+  {
+    "kanji": "善",
+    "reading": "ぜん",
+    "meaning": "good"
+  },
+  {
+    "kanji": "都",
+    "reading": "みやこ",
+    "meaning": "capital (esp. Kyoto, Japan's former capital)"
+  },
+  {
+    "kanji": "灯",
+    "reading": "ひ",
+    "meaning": "light"
+  },
+  {
+    "kanji": "管",
+    "reading": "かん",
+    "meaning": "pipe"
+  },
+  {
+    "kanji": "チーム",
+    "reading": "チーム",
+    "meaning": "team"
+  },
+  {
+    "kanji": "ドレス",
+    "reading": "ドレス",
+    "meaning": "dress"
+  },
+  {
+    "kanji": "市",
+    "reading": "いち",
+    "meaning": "market"
+  },
+  {
+    "kanji": "スキー",
+    "reading": "スキー",
+    "meaning": "skiing"
+  },
+  {
+    "kanji": "ボール",
+    "reading": "ボール",
+    "meaning": "ball"
+  },
+  {
+    "kanji": "ピクニック",
+    "reading": "ピクニック",
+    "meaning": "picnic"
+  },
+  {
+    "kanji": "ゲーム",
+    "reading": "ゲーム",
+    "meaning": "game"
+  },
+  {
+    "kanji": "ワイン",
+    "reading": "ワイン",
+    "meaning": "wine"
+  },
+  {
+    "kanji": "スープ",
+    "reading": "スープ",
+    "meaning": "(Western) soup"
+  },
+  {
+    "kanji": "ボート",
+    "reading": "ボート",
+    "meaning": "boat"
+  },
+  {
+    "kanji": "クリスマス",
+    "reading": "クリスマス",
+    "meaning": "Christmas"
+  },
+  {
+    "kanji": "グループ",
+    "reading": "グループ",
+    "meaning": "group (usu. of people)"
+  },
+  {
+    "kanji": "エンジン",
+    "reading": "エンジン",
+    "meaning": "engine"
+  },
+  {
+    "kanji": "まあ",
+    "reading": "まあ",
+    "meaning": "just (e.g. \"just wait here\")"
+  },
+  {
+    "kanji": "エネルギー",
+    "reading": "エネルギー",
+    "meaning": "energy"
+  },
+  {
+    "kanji": "ダンス",
+    "reading": "ダンス",
+    "meaning": "dance"
+  },
+  {
+    "kanji": "サービス",
+    "reading": "サービス",
+    "meaning": "service"
+  },
+  {
+    "kanji": "ソファ",
+    "reading": "ソファ",
+    "meaning": "sofa"
+  },
+  {
+    "kanji": "ベンチ",
+    "reading": "ベンチ",
+    "meaning": "bench"
+  },
+  {
+    "kanji": "度",
+    "reading": "たび",
+    "meaning": "time (three times, each time, etc.)"
+  },
+  {
+    "kanji": "バイオリン",
+    "reading": "バイオリン",
+    "meaning": "violin"
+  },
+  {
+    "kanji": "デート",
+    "reading": "デート",
+    "meaning": "date (with someone)"
+  },
+  {
+    "kanji": "チャンス",
+    "reading": "チャンス",
+    "meaning": "chance"
+  },
+  {
+    "kanji": "トランプ",
+    "reading": "トランプ",
+    "meaning": "(Western) playing cards"
+  },
+  {
+    "kanji": "ユーモア",
+    "reading": "ユーモア",
+    "meaning": "humor"
+  },
+  {
+    "kanji": "チーズ",
+    "reading": "チーズ",
+    "meaning": "cheese"
+  },
+  {
+    "kanji": "インク",
+    "reading": "インク",
+    "meaning": "ink"
+  },
+  {
+    "kanji": "パスポート",
+    "reading": "パスポート",
+    "meaning": "passport"
+  },
+  {
+    "kanji": "スケート",
+    "reading": "スケート",
+    "meaning": "skating (esp. ice)"
+  },
+  {
+    "kanji": "ドライブ",
+    "reading": "ドライブ",
+    "meaning": "drive"
+  },
+  {
+    "kanji": "ノック",
+    "reading": "ノック",
+    "meaning": "knock"
+  },
+  {
+    "kanji": "パーセント",
+    "reading": "パーセント",
+    "meaning": "percent"
+  },
+  {
+    "kanji": "トンネル",
+    "reading": "トンネル",
+    "meaning": "tunnel"
+  },
+  {
+    "kanji": "キャンプ",
+    "reading": "キャンプ",
+    "meaning": "camp"
+  },
+  {
+    "kanji": "ヨット",
+    "reading": "ヨット",
+    "meaning": "yacht (esp. a sailing boat with one mast)"
+  },
+  {
+    "kanji": "ハイキング",
+    "reading": "ハイキング",
+    "meaning": "hiking"
+  },
+  {
+    "kanji": "パイロット",
+    "reading": "パイロット",
+    "meaning": "pilot"
+  },
+  {
+    "kanji": "スタイル",
+    "reading": "スタイル",
+    "meaning": "(one's) figure"
+  },
+  {
+    "kanji": "アルバム",
+    "reading": "アルバム",
+    "meaning": "album"
+  },
+  {
+    "kanji": "ラケット",
+    "reading": "ラケット",
+    "meaning": "racket"
+  },
+  {
+    "kanji": "ウイスキー",
+    "reading": "ウイスキー",
+    "meaning": "whisky"
+  },
+  {
+    "kanji": "タイプライター",
+    "reading": "タイプライター",
+    "meaning": "typewriter"
+  },
+  {
+    "kanji": "タオル",
+    "reading": "タオル",
+    "meaning": "towel"
+  },
+  {
+    "kanji": "ロケット",
+    "reading": "ロケット",
+    "meaning": "rocket"
+  },
+  {
+    "kanji": "アイスクリーム",
+    "reading": "アイスクリーム",
+    "meaning": "ice cream"
+  },
+  {
+    "kanji": "テント",
+    "reading": "テント",
+    "meaning": "tent"
+  },
+  {
+    "kanji": "パイプ",
+    "reading": "パイプ",
+    "meaning": "pipe"
+  },
+  {
+    "kanji": "ブレーキ",
+    "reading": "ブレーキ",
+    "meaning": "brake"
+  },
+  {
+    "kanji": "ジェット機",
+    "reading": "ジェットき",
+    "meaning": "jet aeroplane"
+  },
+  {
+    "kanji": "コーチ",
+    "reading": "コーチ",
+    "meaning": "coach"
+  },
+  {
+    "kanji": "ベルト",
+    "reading": "ベルト",
+    "meaning": "belt (worn around the waist)"
+  },
+  {
+    "kanji": "霜",
+    "reading": "しも",
+    "meaning": "frost"
+  },
+  {
+    "kanji": "ケース",
+    "reading": "ケース",
+    "meaning": "case (container)"
+  },
+  {
+    "kanji": "ジュース",
+    "reading": "ジュース",
+    "meaning": "juice"
+  },
+  {
+    "kanji": "アイロン",
+    "reading": "アイロン",
+    "meaning": "iron (for pressing clothes)"
+  },
+  {
+    "kanji": "ＯＵＴ",
+    "reading": "アウト",
+    "meaning": "out (of a ball; in tennis, etc.)"
+  },
+  {
+    "kanji": "スタンド",
+    "reading": "スタンド",
+    "meaning": "stands"
+  },
+  {
+    "kanji": "プラス",
+    "reading": "プラス",
+    "meaning": "plus"
+  },
+  {
+    "kanji": "日本",
+    "reading": "にほん",
+    "meaning": "Japan"
+  },
+  {
+    "kanji": "オフィス",
+    "reading": "オフィス",
+    "meaning": "office"
+  },
+  {
+    "kanji": "キャプテン",
+    "reading": "キャプテン",
+    "meaning": "captain"
+  },
+  {
+    "kanji": "ジーンズ",
+    "reading": "ジーンズ",
+    "meaning": "jeans"
+  },
+  {
+    "kanji": "マスター",
+    "reading": "マスター",
+    "meaning": "to master (a skill)"
+  },
+  {
+    "kanji": "パス",
+    "reading": "パス",
+    "meaning": "passing (an examination, inspection, etc.)"
+  },
+  {
+    "kanji": "カー",
+    "reading": "カー",
+    "meaning": "car"
+  },
+  {
+    "kanji": "一人",
+    "reading": "ひとり",
+    "meaning": "one person"
+  },
+  {
+    "kanji": "側",
+    "reading": "そば",
+    "meaning": "(place) near by"
+  },
+  {
+    "kanji": "七",
+    "reading": "しち",
+    "meaning": "seven"
+  },
+  {
+    "kanji": "四",
+    "reading": "し",
+    "meaning": "four"
+  },
+  {
+    "kanji": "此処",
+    "reading": "ここ",
+    "meaning": "here"
+  },
+  {
+    "kanji": "未だ",
+    "reading": "まだ",
+    "meaning": "still"
+  },
+  {
+    "kanji": "他",
+    "reading": "ほか",
+    "meaning": "another place"
+  },
+  {
+    "kanji": "誰か",
+    "reading": "だれか",
+    "meaning": "someone"
+  },
+  {
+    "kanji": "而して",
+    "reading": "そして",
+    "meaning": "and"
+  },
+  {
+    "kanji": "ゆっくり",
+    "reading": "ゆっくり",
+    "meaning": "slowly"
+  },
+  {
+    "kanji": "明後日",
+    "reading": "あさって",
+    "meaning": "day after tomorrow"
+  },
+  {
+    "kanji": "何れ",
+    "reading": "どれ",
+    "meaning": "which (of three or more)"
+  },
+  {
+    "kanji": "２０歳",
+    "reading": "はたち",
+    "meaning": "20 years old"
+  },
+  {
+    "kanji": "では",
+    "reading": "では",
+    "meaning": "then"
+  },
+  {
+    "kanji": "内",
+    "reading": "うち",
+    "meaning": "inside"
+  },
+  {
+    "kanji": "そう",
+    "reading": "そう",
+    "meaning": "appearing that"
+  },
+  {
+    "kanji": "だから",
+    "reading": "だから",
+    "meaning": "so"
+  },
+  {
+    "kanji": "レポート",
+    "reading": "レポート",
+    "meaning": "report"
+  },
+  {
+    "kanji": "すると",
+    "reading": "すると",
+    "meaning": "(and) then"
+  },
+  {
+    "kanji": "日中",
+    "reading": "にっちゅう",
+    "meaning": "daytime"
+  },
+  {
+    "kanji": "セット",
+    "reading": "セット",
+    "meaning": "set (of things)"
+  },
+  {
+    "kanji": "センター",
+    "reading": "センター",
+    "meaning": "centre"
+  },
+  {
+    "kanji": "マーケット",
+    "reading": "マーケット",
+    "meaning": "market"
+  },
+  {
+    "kanji": "居る",
+    "reading": "おる",
+    "meaning": "to be (animate)"
+  },
+  {
+    "kanji": "何でも",
+    "reading": "なんでも",
+    "meaning": "any"
+  },
+  {
+    "kanji": "名",
+    "reading": "な",
+    "meaning": "name"
+  },
+  {
+    "kanji": "訳",
+    "reading": "やく",
+    "meaning": "translation"
+  },
+  {
+    "kanji": "何とか",
+    "reading": "なんとか",
+    "meaning": "something"
+  },
+  {
+    "kanji": "何時か",
+    "reading": "いつか",
+    "meaning": "sometime"
+  },
+  {
+    "kanji": "楽",
+    "reading": "らく",
+    "meaning": "comfort"
+  },
+  {
+    "kanji": "行き",
+    "reading": "いき",
+    "meaning": "the way there"
+  },
+  {
+    "kanji": "流行",
+    "reading": "りゅうこう",
+    "meaning": "fashion"
+  },
+  {
+    "kanji": "故郷",
+    "reading": "ふるさと",
+    "meaning": "hometown"
+  },
+  {
+    "kanji": "台",
+    "reading": "だい",
+    "meaning": "stand"
+  },
+  {
+    "kanji": "悪口",
+    "reading": "わるぐち",
+    "meaning": "(verbal) abuse"
+  },
+  {
+    "kanji": "お互い",
+    "reading": "おたがい",
+    "meaning": "each other"
+  },
+  {
+    "kanji": "世間",
+    "reading": "せけん",
+    "meaning": "world"
+  },
+  {
+    "kanji": "預ける",
+    "reading": "あずける",
+    "meaning": "to leave (in someone's keeping)"
+  },
+  {
+    "kanji": "主に",
+    "reading": "おもに",
+    "meaning": "mainly"
+  },
+  {
+    "kanji": "一種",
+    "reading": "いっしゅ",
+    "meaning": "a kind"
+  },
+  {
+    "kanji": "逆",
+    "reading": "ぎゃく",
+    "meaning": "reverse"
+  },
+  {
+    "kanji": "税",
+    "reading": "ぜい",
+    "meaning": "tax"
+  },
+  {
+    "kanji": "末",
+    "reading": "すえ",
+    "meaning": "end"
+  },
+  {
+    "kanji": "端",
+    "reading": "はし",
+    "meaning": "end (e.g. of street)"
+  },
+  {
+    "kanji": "章",
+    "reading": "しょう",
+    "meaning": "chapter"
+  },
+  {
+    "kanji": "同一",
+    "reading": "どういつ",
+    "meaning": "identical"
+  },
+  {
+    "kanji": "縁",
+    "reading": "ふち",
+    "meaning": "rim"
+  },
+  {
+    "kanji": "土",
+    "reading": "つち",
+    "meaning": "earth"
+  },
+  {
+    "kanji": "人工",
+    "reading": "じんこう",
+    "meaning": "artificial"
+  },
+  {
+    "kanji": "柄",
+    "reading": "がら",
+    "meaning": "pattern"
+  },
+  {
+    "kanji": "密",
+    "reading": "みつ",
+    "meaning": "dense"
+  },
+  {
+    "kanji": "堀",
+    "reading": "ほり",
+    "meaning": "moat"
+  },
+  {
+    "kanji": "曜日",
+    "reading": "ようび",
+    "meaning": "day of the week"
+  },
+  {
+    "kanji": "松",
+    "reading": "まつ",
+    "meaning": "pine tree (Pinus spp.)"
+  },
+  {
+    "kanji": "はあ",
+    "reading": "はあ",
+    "meaning": "yes"
+  },
+  {
+    "kanji": "上",
+    "reading": "じょう",
+    "meaning": "from the standpoint of"
+  },
+  {
+    "kanji": "間",
+    "reading": "ま",
+    "meaning": "time"
+  },
+  {
+    "kanji": "金",
+    "reading": "きん",
+    "meaning": "gold (metal)"
+  },
+  {
+    "kanji": "かも知れない",
+    "reading": "かもしれない",
+    "meaning": "may"
+  },
+  {
+    "kanji": "ずっと",
+    "reading": "ずっと",
+    "meaning": "continuously"
+  },
+  {
+    "kanji": "どんな",
+    "reading": "どんな",
+    "meaning": "what kind of"
+  },
+  {
+    "kanji": "実",
+    "reading": "み",
+    "meaning": "fruit"
+  },
+  {
+    "kanji": "どんなに",
+    "reading": "どんなに",
+    "meaning": "how"
+  },
+  {
+    "kanji": "何処か",
+    "reading": "どこか",
+    "meaning": "somewhere"
+  },
+  {
+    "kanji": "打つ",
+    "reading": "ぶつ",
+    "meaning": "to hit (someone)"
+  },
+  {
+    "kanji": "其処で",
+    "reading": "そこで",
+    "meaning": "so"
+  },
+  {
+    "kanji": "有難う",
+    "reading": "ありがとう",
+    "meaning": "thank you"
+  },
+  {
+    "kanji": "滅多に",
+    "reading": "めったに",
+    "meaning": "rarely"
+  },
+  {
+    "kanji": "ミルク",
+    "reading": "ミルク",
+    "meaning": "milk"
+  },
+  {
+    "kanji": "こんなに",
+    "reading": "こんなに",
+    "meaning": "so"
+  },
+  {
+    "kanji": "其れ其れ",
+    "reading": "それぞれ",
+    "meaning": "each"
+  },
+  {
+    "kanji": "被る",
+    "reading": "かぶる",
+    "meaning": "to put on (one's head)"
+  },
+  {
+    "kanji": "其れとも",
+    "reading": "それとも",
+    "meaning": "or"
+  },
+  {
+    "kanji": "がっかり",
+    "reading": "がっかり",
+    "meaning": "to be disappointed"
+  },
+  {
+    "kanji": "角",
+    "reading": "つの",
+    "meaning": "horn"
+  },
+  {
+    "kanji": "彼方此方",
+    "reading": "あちこち",
+    "meaning": "here and there"
+  },
+  {
+    "kanji": "きちんと",
+    "reading": "きちんと",
+    "meaning": "properly"
+  },
+  {
+    "kanji": "スピーチ",
+    "reading": "スピーチ",
+    "meaning": "speech"
+  },
+  {
+    "kanji": "所為",
+    "reading": "せい",
+    "meaning": "consequence"
+  },
+  {
+    "kanji": "ですから",
+    "reading": "ですから",
+    "meaning": "so"
+  },
+  {
+    "kanji": "バッグ",
+    "reading": "バッグ",
+    "meaning": "bag"
+  },
+  {
+    "kanji": "品",
+    "reading": "しな",
+    "meaning": "article"
+  },
+  {
+    "kanji": "其れでも",
+    "reading": "それでも",
+    "meaning": "but (still)"
+  },
+  {
+    "kanji": "溺れる",
+    "reading": "おぼれる",
+    "meaning": "to struggle in the water"
+  },
+  {
+    "kanji": "ちゃんと",
+    "reading": "ちゃんと",
+    "meaning": "diligently"
+  },
+  {
+    "kanji": "ペンキ",
+    "reading": "ペンキ",
+    "meaning": "paint"
+  },
+  {
+    "kanji": "たった",
+    "reading": "たった",
+    "meaning": "only"
+  },
+  {
+    "kanji": "きつい",
+    "reading": "きつい",
+    "meaning": "tough"
+  },
+  {
+    "kanji": "ぐっすり",
+    "reading": "ぐっすり",
+    "meaning": "soundly (sleeping)"
+  },
+  {
+    "kanji": "ぴったり",
+    "reading": "ぴったり",
+    "meaning": "tightly"
+  },
+  {
+    "kanji": "何故なら",
+    "reading": "なぜなら",
+    "meaning": "because"
+  },
+  {
+    "kanji": "ゴミ",
+    "reading": "ゴミ",
+    "meaning": "rubbish"
+  },
+  {
+    "kanji": "さっぱり",
+    "reading": "さっぱり",
+    "meaning": "feeling refreshed"
+  },
+  {
+    "kanji": "然も",
+    "reading": "しかも",
+    "meaning": "moreover"
+  },
+  {
+    "kanji": "偖",
+    "reading": "さて",
+    "meaning": "well"
+  },
+  {
+    "kanji": "対",
+    "reading": "つい",
+    "meaning": "pair"
+  },
+  {
+    "kanji": "メモ",
+    "reading": "メモ",
+    "meaning": "note"
+  },
+  {
+    "kanji": "ハンサム",
+    "reading": "ハンサム",
+    "meaning": "handsome"
+  },
+  {
+    "kanji": "スイッチ",
+    "reading": "スイッチ",
+    "meaning": "switch"
+  },
+  {
+    "kanji": "ざっと",
+    "reading": "ざっと",
+    "meaning": "roughly"
+  },
+  {
+    "kanji": "表",
+    "reading": "ひょう",
+    "meaning": "table"
+  },
+  {
+    "kanji": "たっぷり",
+    "reading": "たっぷり",
+    "meaning": "plentifully"
+  },
+  {
+    "kanji": "ダイヤ",
+    "reading": "ダイヤ",
+    "meaning": "diamond"
+  },
+  {
+    "kanji": "ぼんやり",
+    "reading": "ぼんやり",
+    "meaning": "dimly"
+  },
+  {
+    "kanji": "今日は",
+    "reading": "こんにちは",
+    "meaning": "hello"
+  },
+  {
+    "kanji": "プラン",
+    "reading": "プラン",
+    "meaning": "plan"
+  },
+  {
+    "kanji": "のんびり",
+    "reading": "のんびり",
+    "meaning": "at leisure"
+  },
+  {
+    "kanji": "プロ",
+    "reading": "プロ",
+    "meaning": "professional"
+  },
+  {
+    "kanji": "デモ",
+    "reading": "デモ",
+    "meaning": "demonstration"
+  },
+  {
+    "kanji": "ビデオ",
+    "reading": "ビデオ",
+    "meaning": "video (esp. a televised image)"
+  },
+  {
+    "kanji": "トップ",
+    "reading": "トップ",
+    "meaning": "top"
+  },
+  {
+    "kanji": "鋏",
+    "reading": "はさみ",
+    "meaning": "scissors"
+  },
+  {
+    "kanji": "クリーム",
+    "reading": "クリーム",
+    "meaning": "cream"
+  },
+  {
+    "kanji": "スター",
+    "reading": "スター",
+    "meaning": "star (actor, athlete, etc.)"
+  },
+  {
+    "kanji": "ボーイ",
+    "reading": "ボーイ",
+    "meaning": "boy"
+  },
+  {
+    "kanji": "屯",
+    "reading": "トン",
+    "meaning": "ton (esp. a metric ton, i.e. 1000 kg)"
+  },
+  {
+    "kanji": "クラシック",
+    "reading": "クラシック",
+    "meaning": "classical music"
+  },
+  {
+    "kanji": "マイク",
+    "reading": "マイク",
+    "meaning": "mike"
+  },
+  {
+    "kanji": "所が",
+    "reading": "ところが",
+    "meaning": "even so"
+  },
+  {
+    "kanji": "空く",
+    "reading": "すく",
+    "meaning": "to become less crowded"
+  },
+  {
+    "kanji": "仏",
+    "reading": "ほとけ",
+    "meaning": "Buddha"
+  },
+  {
+    "kanji": "田",
+    "reading": "た",
+    "meaning": "rice field"
+  },
+  {
+    "kanji": "そっくり",
+    "reading": "そっくり",
+    "meaning": "all"
+  },
+  {
+    "kanji": "いらっしゃい",
+    "reading": "いらっしゃい",
+    "meaning": "come"
+  },
+  {
+    "kanji": "にっこり",
+    "reading": "にっこり",
+    "meaning": "sweetly (smiling)"
+  },
+  {
+    "kanji": "だけど",
+    "reading": "だけど",
+    "meaning": "but"
+  },
+  {
+    "kanji": "だが",
+    "reading": "だが",
+    "meaning": "but"
+  },
+  {
+    "kanji": "ノー",
+    "reading": "ノー",
+    "meaning": "no"
+  },
+  {
+    "kanji": "身",
+    "reading": "み",
+    "meaning": "one's body"
+  },
+  {
+    "kanji": "閉じる",
+    "reading": "とじる",
+    "meaning": "to close (e.g. book, eyes, meeting, etc.)"
+  },
+  {
+    "kanji": "叫ぶ",
+    "reading": "さけぶ",
+    "meaning": "to shout"
+  },
+  {
+    "kanji": "撃つ",
+    "reading": "うつ",
+    "meaning": "to shoot (a gun, person, etc.)"
+  },
+  {
+    "kanji": "奥",
+    "reading": "おく",
+    "meaning": "inner part"
+  },
+  {
+    "kanji": "申し訳",
+    "reading": "もうしわけ",
+    "meaning": "apology"
+  },
+  {
+    "kanji": "訓",
+    "reading": "くん",
+    "meaning": "native Japanese reading of a Chinese character"
+  },
+  {
+    "kanji": "暮れ",
+    "reading": "くれ",
+    "meaning": "sunset"
+  },
+  {
+    "kanji": "正",
+    "reading": "せい",
+    "meaning": "(logical) true"
+  },
+  {
+    "kanji": "具体",
+    "reading": "ぐたい",
+    "meaning": "concreteness"
+  },
+  {
+    "kanji": "御",
+    "reading": "ご",
+    "meaning": "honorific/polite/humble prefix"
+  },
+  {
+    "kanji": "いけない",
+    "reading": "いけない",
+    "meaning": "bad"
+  },
+  {
+    "kanji": "抱く",
+    "reading": "いだく",
+    "meaning": "to hold in one's arms (e.g. a baby)"
+  },
+  {
+    "kanji": "辛い",
+    "reading": "つらい",
+    "meaning": "painful"
+  },
+  {
+    "kanji": "尤も",
+    "reading": "もっとも",
+    "meaning": "but then"
+  },
+  {
+    "kanji": "吐く",
+    "reading": "はく",
+    "meaning": "to vomit"
+  },
+  {
+    "kanji": "とんでもない",
+    "reading": "とんでもない",
+    "meaning": "unthinkable"
+  },
+  {
+    "kanji": "或いは",
+    "reading": "あるいは",
+    "meaning": "or"
+  },
+  {
+    "kanji": "嗽",
+    "reading": "うがい",
+    "meaning": "gargling"
+  },
+  {
+    "kanji": "対する",
+    "reading": "たいする",
+    "meaning": "to face (each other)"
+  },
+  {
+    "kanji": "吃驚",
+    "reading": "びっくり",
+    "meaning": "to be surprised"
+  },
+  {
+    "kanji": "不",
+    "reading": "ふ",
+    "meaning": "un-"
+  },
+  {
+    "kanji": "あんなに",
+    "reading": "あんなに",
+    "meaning": "to that extent"
+  },
+  {
+    "kanji": "極",
+    "reading": "きょく",
+    "meaning": "pole"
+  },
+  {
+    "kanji": "御免なさい",
+    "reading": "ごめんなさい",
+    "meaning": "I'm sorry"
+  },
+  {
+    "kanji": "ばったり",
+    "reading": "ばったり",
+    "meaning": "with a clash"
+  },
+  {
+    "kanji": "ケチ",
+    "reading": "ケチ",
+    "meaning": "stinginess"
+  },
+  {
+    "kanji": "ライター",
+    "reading": "ライター",
+    "meaning": "lighter"
+  },
+  {
+    "kanji": "グランド",
+    "reading": "グランド",
+    "meaning": "grand"
+  },
+  {
+    "kanji": "いいえ",
+    "reading": "いいえ",
+    "meaning": "no"
+  },
+  {
+    "kanji": "ゴール",
+    "reading": "ゴール",
+    "meaning": "goal (in soccer, hockey, etc.)"
+  },
+  {
+    "kanji": "バン",
+    "reading": "バン",
+    "meaning": "bun (hairstyle)"
+  },
+  {
+    "kanji": "ど",
+    "reading": "ど",
+    "meaning": "extreme"
+  },
+  {
+    "kanji": "徐々",
+    "reading": "じょじょ",
+    "meaning": "slow"
+  },
+  {
+    "kanji": "背",
+    "reading": "せい",
+    "meaning": "height"
+  },
+  {
+    "kanji": "球",
+    "reading": "きゅう",
+    "meaning": "sphere"
+  },
+  {
+    "kanji": "率土",
+    "reading": "そっと",
+    "meaning": "ends of the earth"
+  },
+  {
+    "kanji": "無し",
+    "reading": "なし",
+    "meaning": "without"
+  },
+  {
+    "kanji": "トラック",
+    "reading": "トラック",
+    "meaning": "truck"
+  },
+  {
+    "kanji": "カード",
+    "reading": "カード",
+    "meaning": "card (information, filing, etc.)"
+  },
+  {
+    "kanji": "サイン",
+    "reading": "サイン",
+    "meaning": "autograph"
+  },
+  {
+    "kanji": "ミス",
+    "reading": "ミス",
+    "meaning": "mistake"
+  },
+  {
+    "kanji": "グラス",
+    "reading": "グラス",
+    "meaning": "glass (drinking vessel)"
+  },
+  {
+    "kanji": "御目出度う",
+    "reading": "おめでとう",
+    "meaning": "congratulations!"
+  },
+  {
+    "kanji": "ママ",
+    "reading": "ママ",
+    "meaning": "mom"
+  },
+  {
+    "kanji": "ホーム",
+    "reading": "ホーム",
+    "meaning": "platform"
+  },
+  {
+    "kanji": "ピン",
+    "reading": "ピン",
+    "meaning": "pin (e.g. hairpin, safety pin)"
+  },
+  {
+    "kanji": "コード",
+    "reading": "コード",
+    "meaning": "code"
+  },
+  {
+    "kanji": "麦酒",
+    "reading": "ばくしゅ",
+    "meaning": "beer"
+  },
+  {
+    "kanji": "下",
+    "reading": "げ",
+    "meaning": "lowness (of degree, value, etc.)"
+  },
+  {
+    "kanji": "直",
+    "reading": "なお",
+    "meaning": "straight"
+  },
+  {
+    "kanji": "ト",
+    "reading": "ト",
+    "meaning": "7th (in a sequence denoted by the iroha system)"
+  }
 ]
