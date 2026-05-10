@@ -181,13 +181,15 @@
 
     <!-- Floating Pixel Radio -->
     <div class="fixed top-4 right-4 z-50">
-        <div class="nes-container is-dark with-title mb-6" style="padding: 10px;">
+        <div class="nes-container is-dark with-title mb-6" style="padding: 10px; text-align: center;">
             <p class="title" style="margin-bottom: -10px;">BGM</p>
+            <p id="trackName" style="font-size: 6px; margin-bottom: 5px; color: #a855f7;">Track 1/2</p>
             <audio id="bgMusic" loop>
-                <source src="/static/bg_music.ogg" type="audio/ogg">
+                <source id="bgMusicSource" src="/static/bg_music.ogg" type="audio/ogg">
             </audio>
             <div class="flex gap-1 w-full justify-center">
-                <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 8px; width: 100%;">PLAY</button>
+                <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 8px; flex: 1;">PLAY</button>
+                <button onclick="nextTrack()" class="nes-btn is-warning p-1" style="font-size: 8px; flex: 1;">NEXT</button>
             </div>
         </div>
     </div>
@@ -409,7 +411,7 @@
             </div>
         </div>
         
-        <div id="tab-SHOP" class="tab-content hidden max-w-2xl mx-auto mt-4">
+        <div id="SHOP" class="tab-content hidden max-w-2xl mx-auto mt-4">
             <h2 class="text-xl mb-4 text-center nes-text is-warning">ITEM SHOP</h2>
             <p class="text-center text-xs mb-6 nes-text is-disabled">Spend your hard-earned Coins here!</p>
             
@@ -440,7 +442,7 @@
             </div>
         </div>
 
-        <div id="tab-MINIGAMES" class="tab-content hidden max-w-2xl mx-auto mt-4 text-center">
+        <div id="MINIGAMES" class="tab-content hidden max-w-2xl mx-auto mt-4 text-center">
             <h2 class="text-xl mb-4 text-center nes-text is-error">MINIGAMES</h2>
             <p class="text-xs mb-6 nes-text is-disabled">Take a break and play to earn XP!</p>
             
@@ -1893,6 +1895,16 @@ async function cloudLoad() {
         // Ensure UI updates immediately on load
         setTimeout(renderAll, 500);
 
+        const playlist = [
+            { src: '/static/bg_music.ogg', type: 'audio/ogg' },
+            { src: '/static/bg-music.webm', type: 'audio/webm' }
+        ];
+        let currentTrackIndex = 0;
+
+        function updateTrackName() {
+            document.getElementById('trackName').innerText = `Track ${currentTrackIndex + 1}/${playlist.length}`;
+        }
+
         function toggleMusic() {
             const m = document.getElementById('bgMusic');
             const btn = document.getElementById('playBtn');
@@ -1903,6 +1915,21 @@ async function cloudLoad() {
                 btn.innerText = 'PLAY';
             }
         }
+
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            const m = document.getElementById('bgMusic');
+            const src = document.getElementById('bgMusicSource');
+            src.src = playlist[currentTrackIndex].src;
+            src.type = playlist[currentTrackIndex].type;
+            m.load();
+            updateTrackName();
+            const btn = document.getElementById('playBtn');
+            if (btn.innerText === 'PAUSE') { // If it was playing
+                m.play().catch(e => console.log('Audio error:', e));
+            }
+        }
+        updateTrackName();
     </script>
 </body>
 </html>
