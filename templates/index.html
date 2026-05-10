@@ -1802,13 +1802,13 @@ async function cloudLoad() {
             const grid = document.getElementById('memoryGrid');
             grid.innerHTML = '';
             cards.forEach((c, index) => {
-                grid.innerHTML += \`
+                grid.innerHTML += `
                     <div class="nes-container is-dark is-rounded memory-card text-center cursor-pointer select-none" 
                          style="padding: 1rem 0.5rem; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 10px; transition: 0.2s;"
-                         data-id="\${c.id}" data-index="\${index}" onclick="flipMemoryCard(this)">
-                         <span style="opacity: 0;">\${c.text}</span>
+                         data-id="${c.id}" data-index="${index}" onclick="flipMemoryCard(this)">
+                         <span style="opacity: 0;">${c.text}</span>
                     </div>
-                \`;
+                `;
             });
 
             clearInterval(memoryTimer);
@@ -1817,7 +1817,7 @@ async function cloudLoad() {
                 document.getElementById('memoryTimer').innerText = memoryTimeLeft;
                 if(memoryTimeLeft <= 0) {
                     clearInterval(memoryTimer);
-                    alert(\`Time's Up! You matched \${memoryMatched} pairs. +\${memoryMatched * 5} XP\`);
+                    alert(`Time's Up! You matched ${memoryMatched} pairs. +${memoryMatched * 5} XP`);
                     grantXP(memoryMatched * 5);
                     document.getElementById('memoryGameContainer').classList.add('hidden');
                     document.getElementById('memoryEndBtn').style.display = 'none';
@@ -1853,7 +1853,7 @@ async function cloudLoad() {
                             clearInterval(memoryTimer);
                             const bonus = memoryTimeLeft;
                             const totalXP = 50 + bonus;
-                            alert(\`You Win! 6 Matches! Time Bonus: \${bonus}s. Total: +\${totalXP} XP\`);
+                            alert(`You Win! 6 Matches! Time Bonus: ${bonus}s. Total: +${totalXP} XP`);
                             grantXP(totalXP);
                             document.getElementById('memoryGameContainer').classList.add('hidden');
                             document.getElementById('memoryEndBtn').style.display = 'none';
@@ -1874,7 +1874,7 @@ async function cloudLoad() {
         }
 
         function showLevelUpModal() {
-            document.getElementById('levelUpRankName').innerText = \`LEVEL \${xpLevel}\`;
+            document.getElementById('levelUpRankName').innerText = `LEVEL ${xpLevel}`;
             document.getElementById('levelUpOverlay').style.display = 'flex';
         }
 
