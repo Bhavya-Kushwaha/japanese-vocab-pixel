@@ -181,12 +181,11 @@
 
     <!-- Floating Pixel Radio -->
     <div class="fixed top-4 right-4 z-50">
-        <div class="nes-container is-dark is-rounded p-2 flex flex-col items-center gap-2" style="max-width: 180px;">
-            <div class="flex items-center gap-2">
-                <i class="nes-icon music is-small"></i>
-                <span style="font-size: 7px;" id="trackName">Lofi Track</span>
-            </div>
-            <audio id="bgMusic" loop><source id="musicSource" src="/static/bg-music.webm" type="audio/webm"></audio>
+        <div class="nes-container is-dark with-title mb-6" style="padding: 10px;">
+            <p class="title" style="margin-bottom: -10px;">BGM</p>
+            <audio id="bgMusic" loop>
+                <source src="/static/bg_music.ogg" type="audio/ogg">
+            </audio>
             <div class="flex gap-1 w-full justify-center">
                 <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 8px; width: 100%;">PLAY</button>
             </div>
@@ -207,7 +206,17 @@
                         <progress id="xpBar" class="nes-progress is-xp" value="0" max="100"></progress>
                     </div>
                 </div>
-                <div id="streakBadge">🔥 <span id="streakCount">0</span> DAY STREAK</div>
+                <div class="flex flex-col gap-2 items-end">
+                    <div id="streakBadge">🔥 <span id="streakCount">0</span> DAY STREAK</div>
+                    <div id="coinsBadge" class="nes-text is-warning" style="font-size: 12px; margin-top: 8px;">🪙 Coins: <span id="coinsCount">0</span></div>
+                </div>
+            </div>
+            
+            <div id="questBoard" class="mt-4 pt-4" style="border-top: 2px dashed #4b5563;">
+                <p class="nes-text is-primary mb-2 text-center" style="font-size: 10px;">📜 DAILY QUESTS</p>
+                <div id="questList" class="flex flex-col gap-2" style="font-size: 8px;">
+                    <!-- Quests populated here -->
+                </div>
             </div>
         </div>
 
@@ -236,15 +245,17 @@
         <div class="flex justify-between items-center mb-6">
             <div class="flex flex-wrap gap-2 justify-center" id="tabBar">
                 <button class="nes-btn tab-btn is-active is-small" onclick="showTab('ALL')">ALL</button>
-                <button class="nes-btn tab-btn is-small" onclick="showTab('REVIEW')">REVIEW</button>
+                <button class="nes-btn tab-btn is-small" onclick="showTab('REVIEW')">QUEST</button>
                 <button class="nes-btn tab-btn is-small" style="background:#a855f7;color:#fff;" onclick="showTab('BANK')">📖 BANK</button>
+                <button class="nes-btn tab-btn is-small is-warning" onclick="showTab('SHOP')">SHOP</button>
+                <button class="nes-btn tab-btn is-small is-error" onclick="showTab('MINIGAMES')">MINIGAMES</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N5')">N5</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N4')">N4</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N3')">N3</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N2')">N2</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N1')">N1</button>
             </div>
-            <button onclick="exportToCSV()" class="nes-btn is-primary is-small">EXPORT</button>
+            <button onclick="exportToCSV()" class="nes-btn is-primary is-small hidden md:block">EXPORT</button>
         </div>
 
         <!-- Search Bar -->
@@ -300,6 +311,7 @@
                             <option value="quiz">Mode: Quiz (Fun)</option>
                             <option value="typing">Mode: Hardcore Typing</option>
                             <option value="boss">Mode: Boss Battle ⚔️ (Time Attack)</option>
+                            <option value="audio">Mode: Blind Audio 🎧</option>
                         </select>
                     </div>
                     <!-- Source selector (My Vocab vs JLPT Bank) -->
@@ -347,6 +359,107 @@
             </div>
         </div>
         
+        <div id="tab-SHOP" class="tab-content hidden max-w-2xl mx-auto mt-4">
+            <h2 class="text-xl mb-4 text-center nes-text is-warning">ITEM SHOP</h2>
+            <p class="text-center text-xs mb-6 nes-text is-disabled">Spend your hard-earned Coins here!</p>
+            
+            <div class="flex flex-col gap-4">
+                <div class="nes-container is-dark is-rounded flex justify-between items-center p-2">
+                    <div>
+                        <p class="text-sm nes-text is-primary">Theme: Cyberpunk</p>
+                        <p class="text-xs text-gray-400">Unlock retro neon styling.</p>
+                    </div>
+                    <button class="nes-btn is-warning text-xs" onclick="buyItem('theme_cyberpunk', 500)" id="buy-theme_cyberpunk">500 🪙</button>
+                </div>
+                
+                <div class="nes-container is-dark is-rounded flex justify-between items-center p-2">
+                    <div>
+                        <p class="text-sm nes-text is-success">Theme: Gameboy</p>
+                        <p class="text-xs text-gray-400">Classic green monochrome.</p>
+                    </div>
+                    <button class="nes-btn is-warning text-xs" onclick="buyItem('theme_gameboy', 500)" id="buy-theme_gameboy">500 🪙</button>
+                </div>
+
+                <div class="nes-container is-dark is-rounded flex justify-between items-center p-2">
+                    <div>
+                        <p class="text-sm nes-text is-error">Music: Lofi Beats</p>
+                        <p class="text-xs text-gray-400">Alternative study track.</p>
+                    </div>
+                    <button class="nes-btn is-warning text-xs" onclick="buyItem('music_lofi', 300)" id="buy-music_lofi">300 🪙</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-MINIGAMES" class="tab-content hidden max-w-2xl mx-auto mt-4 text-center">
+            <h2 class="text-xl mb-4 text-center nes-text is-error">MINIGAMES</h2>
+            <p class="text-xs mb-6 nes-text is-disabled">Take a break and play to earn XP!</p>
+            
+            <div class="nes-container is-dark is-rounded flex flex-col items-center p-4">
+                <p class="text-lg nes-text is-primary mb-2">Memory Match</p>
+                <p class="text-xs text-gray-400 mb-4">Match the Kanji with its meaning!</p>
+                <button class="nes-btn is-primary" onclick="startMemoryGame()">PLAY NOW</button>
+            </div>
+
+            <div id="memoryGameContainer" class="mt-8 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="nes-text is-error">Time: <span id="memoryTimer">60</span>s</span>
+                    <span class="nes-text is-success">Matches: <span id="memoryScore">0</span>/6</span>
+                </div>
+                <div id="memoryGrid" class="grid grid-cols-3 md:grid-cols-4 gap-2"></div>
+            </div>
+        </div>
+        
+        <div id="tab-SHOP" class="tab-content hidden max-w-2xl mx-auto mt-4">
+            <h2 class="text-xl mb-4 text-center nes-text is-warning">ITEM SHOP</h2>
+            <p class="text-center text-xs mb-6 nes-text is-disabled">Spend your hard-earned Coins here!</p>
+            
+            <div class="flex flex-col gap-4">
+                <div class="nes-container is-dark is-rounded flex justify-between items-center p-2">
+                    <div>
+                        <p class="text-sm nes-text is-primary">Theme: Cyberpunk</p>
+                        <p class="text-xs text-gray-400">Unlock retro neon styling.</p>
+                    </div>
+                    <button class="nes-btn is-warning text-xs" onclick="buyItem('theme_cyberpunk', 500)" id="buy-theme_cyberpunk">500 🪙</button>
+                </div>
+                
+                <div class="nes-container is-dark is-rounded flex justify-between items-center p-2">
+                    <div>
+                        <p class="text-sm nes-text is-success">Theme: Gameboy</p>
+                        <p class="text-xs text-gray-400">Classic green monochrome.</p>
+                    </div>
+                    <button class="nes-btn is-warning text-xs" onclick="buyItem('theme_gameboy', 500)" id="buy-theme_gameboy">500 🪙</button>
+                </div>
+
+                <div class="nes-container is-dark is-rounded flex justify-between items-center p-2">
+                    <div>
+                        <p class="text-sm nes-text is-error">Music: Lofi Beats</p>
+                        <p class="text-xs text-gray-400">Alternative study track.</p>
+                    </div>
+                    <button class="nes-btn is-warning text-xs" onclick="buyItem('music_lofi', 300)" id="buy-music_lofi">300 🪙</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-MINIGAMES" class="tab-content hidden max-w-2xl mx-auto mt-4 text-center">
+            <h2 class="text-xl mb-4 text-center nes-text is-error">MINIGAMES</h2>
+            <p class="text-xs mb-6 nes-text is-disabled">Take a break and play to earn XP!</p>
+            
+            <div class="nes-container is-dark is-rounded flex flex-col items-center p-4">
+                <p class="text-lg nes-text is-primary mb-2">Memory Match</p>
+                <p class="text-xs text-gray-400 mb-4">Match the Kanji with its meaning!</p>
+                <button class="nes-btn is-primary" onclick="startMemoryGame()">PLAY NOW</button>
+            </div>
+
+            <div id="memoryGameContainer" class="mt-8 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="nes-text is-error">Time: <span id="memoryTimer">60</span>s</span>
+                    <span class="nes-text is-success">Matches: <span id="memoryScore">0</span>/6</span>
+                </div>
+                <div id="memoryGrid" class="grid grid-cols-3 md:grid-cols-4 gap-2"></div>
+                <button class="nes-btn is-error w-full mt-6" onclick="document.getElementById('memoryGameContainer').classList.add('hidden')" style="display:none;" id="memoryEndBtn">EXIT</button>
+            </div>
+        </div>
+
         <button onclick="clearStorage()" class="nes-btn is-error is-small mt-10 w-full">RESET ALL DATA</button>
     </div>
 
@@ -415,6 +528,11 @@ async function cloudLoad() {
         let streakCount   = parseInt(localStorage.getItem('streakCount') || '0');
         let lastStudyDate = localStorage.getItem('lastStudyDate') || '';
         let unlockedAchievements = JSON.parse(localStorage.getItem('unlockedAchievements') || '[]');
+        let coins         = parseInt(localStorage.getItem('coins') || '0');
+        let inventory     = JSON.parse(localStorage.getItem('inventory') || '[]');
+        let dailyQuests   = JSON.parse(localStorage.getItem('dailyQuests') || 'null');
+        let lastQuestDate = localStorage.getItem('lastQuestDate') || '';
+
         let quizScore     = { correct: 0, wrong: 0, xpGained: 0 };
         let previousRank  = '';
 
@@ -441,18 +559,23 @@ async function cloudLoad() {
             localStorage.setItem('streakCount', streakCount);
             localStorage.setItem('lastStudyDate', lastStudyDate);
             localStorage.setItem('unlockedAchievements', JSON.stringify(unlockedAchievements));
+            localStorage.setItem('coins', coins);
+            localStorage.setItem('inventory', JSON.stringify(inventory));
         }
 
         function grantXP(amount) {
             totalXP += amount;
+            coins += amount;
             // Level up check (every XP_PER_LEVEL * level XP)
             const xpNeeded = xpLevel * XP_PER_LEVEL;
             if (totalXP >= xpNeeded) {
                 totalXP -= xpNeeded;
                 xpLevel++;
+                showLevelUpModal();
             }
             saveGamificationData();
             updateXPBar();
+            updateQuestProgress('xp', amount);
         }
 
         function updateXPBar() {
@@ -698,6 +821,9 @@ async function cloudLoad() {
                                 <button onclick="playWord(${item.id})" class="nes-btn is-primary flex justify-center items-center" style="padding: 2px 6px; min-height: auto;">
                                     <span id="speaker-icon-${item.id}" style="font-size: 12px; line-height: 1;">🔊</span>
                                 </button>
+                                <a href="https://jisho.org/search/${item.kanji}%20%23kanji" target="_blank" class="nes-btn is-warning flex justify-center items-center" style="padding: 2px 6px; min-height: auto;" title="View Stroke Order">
+                                    <span style="font-size: 12px; line-height: 1;">✍️</span>
+                                </a>
                             </div>
                             <span class="text-xs text-gray-400 mt-1">${item.reading}</span>
                             <div class="flex gap-1 mt-2 flex-wrap cursor-pointer" onclick="addTag(${item.id})" title="Click to add tag">
@@ -1012,6 +1138,8 @@ async function cloudLoad() {
                 renderTypingCard();
             } else if (mode === "boss") {
                 renderBossCard();
+            } else if (mode === "audio") {
+                renderAudioCard();
             } else {
                 renderQuiz();
             }
@@ -1471,6 +1599,308 @@ async function cloudLoad() {
                 // INSTANT LOSS IF WRONG OR TIMEOUT
                 quizSessionScore.wrong++;
                 setTimeout(() => { currentReviewIndex = reviewQueue.length; renderBossCard(); }, 1500);
+            }
+        }
+        // --- GAMIFICATION / SHOP LOGIC ---
+        function applyInventoryState() {
+            inventory.forEach(item => {
+                const btn = document.getElementById(`buy-${item}`);
+                if (btn) {
+                    btn.innerText = "OWNED";
+                    btn.classList.replace('is-warning', 'is-success');
+                    btn.disabled = true;
+                }
+            });
+            
+            // Apply themes dynamically if owned
+            if (inventory.includes('theme_cyberpunk')) {
+                document.body.style.backgroundColor = "#000000";
+                document.documentElement.style.setProperty('--nes-primary', '#f0f');
+            } else if (inventory.includes('theme_gameboy')) {
+                document.body.style.backgroundColor = "#8bac0f";
+                document.documentElement.style.setProperty('--nes-primary', '#0f380f');
+            }
+        }
+
+        function buyItem(itemId, cost) {
+            if (inventory.includes(itemId)) return;
+            if (coins >= cost) {
+                coins -= cost;
+                inventory.push(itemId);
+                saveGamificationData();
+                updateXPBar();
+                alert(`Purchased ${itemId}! 🎉`);
+            } else {
+                alert(`Not enough Coins! You need ${cost - coins} more 🪙.`);
+            }
+        }
+
+        // --- QUEST LOGIC ---
+        const QUEST_TYPES = [
+            { id: 'xp', desc: 'Earn {target} XP', target: [50, 100, 200] },
+            { id: 'words', desc: 'Add {target} new words', target: [5, 10, 20] },
+            { id: 'quiz', desc: 'Answer {target} questions correctly', target: [10, 25, 50] }
+        ];
+
+        function generateQuests() {
+            const todayDate = new Date().toDateString();
+            if (lastQuestDate !== todayDate || !dailyQuests) {
+                lastQuestDate = todayDate;
+                dailyQuests = [];
+                // Pick 3 random quests
+                for (let i = 0; i < 3; i++) {
+                    const qType = QUEST_TYPES[Math.floor(Math.random() * QUEST_TYPES.length)];
+                    const target = qType.target[Math.floor(Math.random() * qType.target.length)];
+                    dailyQuests.push({
+                        id: qType.id + '_' + i,
+                        type: qType.id,
+                        desc: qType.desc.replace('{target}', target),
+                        target: target,
+                        progress: 0,
+                        completed: false,
+                        reward: target // Reward coins/XP equal to target
+                    });
+                }
+                saveGamificationData();
+            }
+        }
+
+        function renderQuests() {
+            generateQuests();
+            const list = document.getElementById('questList');
+            if(!list) return;
+            list.innerHTML = '';
+            let totalCompleted = 0;
+            dailyQuests.forEach(q => {
+                const percent = Math.min(100, (q.progress / q.target) * 100);
+                if(q.completed) totalCompleted++;
+                list.innerHTML += `
+                    <div class="mb-2">
+                        <div class="flex justify-between items-center ${q.completed ? 'nes-text is-success' : ''}">
+                            <span>${q.completed ? '✅ ' : '🔸 '}${q.desc}</span>
+                            <span>${q.progress}/${q.target}</span>
+                        </div>
+                        <progress class="nes-progress ${q.completed ? 'is-success' : 'is-primary'} mt-1" value="${percent}" max="100" style="height:10px;"></progress>
+                    </div>
+                `;
+            });
+            const qBar = document.getElementById('questBar');
+            if(qBar) {
+                qBar.value = totalCompleted;
+                qBar.max = dailyQuests.length;
+            }
+        }
+
+        function updateQuestProgress(type, amount) {
+            if(!dailyQuests) return;
+            let updated = false;
+            dailyQuests.forEach(q => {
+                if (q.type === type && !q.completed) {
+                    q.progress += amount;
+                    if (q.progress >= q.target) {
+                        q.progress = q.target;
+                        q.completed = true;
+                        grantXP(q.reward);
+                        alert(`Quest Completed: ${q.desc}! +${q.reward} 🪙`);
+                    }
+                    updated = true;
+                }
+            });
+            if (updated) {
+                saveGamificationData();
+                renderQuests();
+            }
+        }
+
+        // --- AUDIO MODE LOGIC ---
+        function renderAudioCard() {
+            if (currentReviewIndex >= reviewQueue.length) {
+                document.getElementById('reviewContainer').innerHTML = '<p class="nes-text is-success text-center">Audio Session Complete! 🎧</p><button class="nes-btn is-primary w-full mt-4" onclick="showTab(\'REVIEW\')">Back to Setup</button>';
+                return;
+            }
+            
+            const item = reviewQueue[currentReviewIndex];
+            
+            // Audio mode always asks for Meaning or Kanji given the Audio
+            let targetProperty = sessionConfig.dir === "M2K" ? 'meaning' : 'kanji'; 
+            
+            const correctAnswer = item[targetProperty];
+            let pool = myVocab.filter(w => w.id !== item.id);
+            pool.sort(() => Math.random() - 0.5);
+            const distractors = pool.slice(0, 3).map(w => w[targetProperty]);
+
+            let options = [correctAnswer, ...distractors].sort(() => Math.random() - 0.5);
+
+            let optionsHtml = options.map(opt => {
+                const isCorrect = opt === correctAnswer;
+                const escapedKanji = item.kanji.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                return `<button class="nes-btn w-full mb-2" style="font-size: 0.9rem; text-align: left;" data-correct="${isCorrect}" onclick="handleAudioAnswer(this, ${isCorrect}, '${escapedKanji}')">${opt}</button>`;
+            }).join('');
+
+            const html = `
+                <div class="nes-container is-dark is-rounded flashcard text-center w-full" style="padding: 1.5rem;">
+                    <p class="nes-text is-primary mb-2" style="font-size:8px;">BLIND AUDIO 🎧</p>
+                    <div class="mb-6 flex justify-center">
+                        <button class="nes-btn is-success is-rounded" style="padding: 20px;" onclick="playWord(${item.id})">
+                            <span style="font-size: 40px;">🔊</span>
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">Listen and select the correct ${targetProperty}</p>
+                    <div class="flex flex-col gap-2">${optionsHtml}</div>
+                </div>
+            `;
+            document.getElementById('reviewContainer').innerHTML = html;
+            playWord(item.id);
+        }
+
+        function handleAudioAnswer(btn, isCorrect, kanji) {
+            const allBtns = document.getElementById('reviewContainer').querySelectorAll('button');
+            allBtns.forEach(b => {
+                b.disabled = true;
+                if (b.getAttribute('data-correct') === "true") b.classList.replace('nes-btn', 'nes-btn is-success');
+                else if (b === btn && !isCorrect) b.classList.replace('nes-btn', 'nes-btn is-error');
+            });
+
+            if (isCorrect) {
+                quizSessionScore.correct++;
+                quizSessionScore.xpGained += 15;
+                updateQuestProgress('quiz', 1);
+                grantXP(15);
+                setTimeout(() => { currentReviewIndex++; renderAudioCard(); }, 1000);
+            } else {
+                quizSessionScore.wrong++;
+                setTimeout(() => { currentReviewIndex++; renderAudioCard(); }, 2000);
+            }
+        }
+
+        // --- MEMORY MATCH MINIGAME ---
+        let memoryTimer;
+        let memoryTimeLeft = 60;
+        let memoryMatched = 0;
+        let flippedCards = [];
+
+        function startMemoryGame() {
+            if(myVocab.length < 6) return alert("You need at least 6 words to play Memory Match!");
+            document.getElementById('memoryGameContainer').classList.remove('hidden');
+            document.getElementById('memoryEndBtn').style.display = 'block';
+            
+            memoryTimeLeft = 60;
+            memoryMatched = 0;
+            flippedCards = [];
+            document.getElementById('memoryTimer').innerText = memoryTimeLeft;
+            document.getElementById('memoryScore').innerText = memoryMatched;
+            
+            // Pick 6 random words
+            let pool = [...myVocab].sort(() => Math.random() - 0.5).slice(0, 6);
+            let cards = [];
+            pool.forEach(w => {
+                cards.push({ id: w.id, text: w.kanji, type: 'kanji' });
+                cards.push({ id: w.id, text: w.meaning, type: 'meaning' });
+            });
+            cards.sort(() => Math.random() - 0.5); // Shuffle
+            
+            const grid = document.getElementById('memoryGrid');
+            grid.innerHTML = '';
+            cards.forEach((c, index) => {
+                grid.innerHTML += \`
+                    <div class="nes-container is-dark is-rounded memory-card text-center cursor-pointer select-none" 
+                         style="padding: 1rem 0.5rem; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 10px; transition: 0.2s;"
+                         data-id="\${c.id}" data-index="\${index}" onclick="flipMemoryCard(this)">
+                         <span style="opacity: 0;">\${c.text}</span>
+                    </div>
+                \`;
+            });
+
+            clearInterval(memoryTimer);
+            memoryTimer = setInterval(() => {
+                memoryTimeLeft--;
+                document.getElementById('memoryTimer').innerText = memoryTimeLeft;
+                if(memoryTimeLeft <= 0) {
+                    clearInterval(memoryTimer);
+                    alert(\`Time's Up! You matched \${memoryMatched} pairs. +\${memoryMatched * 5} XP\`);
+                    grantXP(memoryMatched * 5);
+                    document.getElementById('memoryGameContainer').classList.add('hidden');
+                    document.getElementById('memoryEndBtn').style.display = 'none';
+                }
+            }, 1000);
+        }
+
+        function flipMemoryCard(cardEl) {
+            if(flippedCards.length >= 2 || cardEl.classList.contains('matched') || cardEl.classList.contains('flipped')) return;
+            
+            cardEl.classList.add('flipped');
+            cardEl.style.backgroundColor = '#209cee';
+            cardEl.querySelector('span').style.opacity = '1';
+            
+            flippedCards.push(cardEl);
+            
+            if(flippedCards.length === 2) {
+                const id1 = flippedCards[0].getAttribute('data-id');
+                const id2 = flippedCards[1].getAttribute('data-id');
+                
+                if(id1 === id2) {
+                    // Match!
+                    setTimeout(() => {
+                        flippedCards.forEach(c => {
+                            c.classList.replace('is-dark', 'is-success');
+                            c.classList.add('matched');
+                            c.style.backgroundColor = '#92cc41';
+                        });
+                        flippedCards = [];
+                        memoryMatched++;
+                        document.getElementById('memoryScore').innerText = memoryMatched;
+                        if(memoryMatched >= 6) {
+                            clearInterval(memoryTimer);
+                            const bonus = memoryTimeLeft;
+                            const totalXP = 50 + bonus;
+                            alert(\`You Win! 6 Matches! Time Bonus: \${bonus}s. Total: +\${totalXP} XP\`);
+                            grantXP(totalXP);
+                            document.getElementById('memoryGameContainer').classList.add('hidden');
+                            document.getElementById('memoryEndBtn').style.display = 'none';
+                        }
+                    }, 500);
+                } else {
+                    // No Match
+                    setTimeout(() => {
+                        flippedCards.forEach(c => {
+                            c.classList.remove('flipped');
+                            c.style.backgroundColor = '';
+                            c.querySelector('span').style.opacity = '0';
+                        });
+                        flippedCards = [];
+                    }, 1000);
+                }
+            }
+        }
+
+        function showLevelUpModal() {
+            document.getElementById('levelUpRankName').innerText = \`LEVEL \${xpLevel}\`;
+            document.getElementById('levelUpOverlay').style.display = 'flex';
+        }
+
+        function closeLevelUp() {
+            document.getElementById('levelUpOverlay').style.display = 'none';
+        }
+        
+        // Initializer overrides
+        const oldRenderAll = renderAll;
+        renderAll = function() {
+            oldRenderAll();
+            applyInventoryState();
+            renderQuests();
+        }
+        
+        // Ensure UI updates immediately on load
+        setTimeout(renderAll, 500);
+
+        function toggleMusic() {
+            const m = document.getElementById('bgMusic');
+            const btn = document.getElementById('playBtn');
+            if (m.paused) {
+                m.play().then(() => btn.innerText = 'PAUSE').catch(e => console.log('Audio error:', e));
+            } else {
+                m.pause();
+                btn.innerText = 'PLAY';
             }
         }
     </script>
