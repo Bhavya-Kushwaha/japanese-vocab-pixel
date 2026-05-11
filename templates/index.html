@@ -180,16 +180,17 @@
 <body class="p-4 md:p-10">
 
     <!-- Floating Pixel Radio -->
-    <div class="fixed top-4 right-4 z-50">
-        <div class="nes-container is-dark with-title mb-6" style="padding: 10px; text-align: center;">
-            <p class="title" style="margin-bottom: -10px;">BGM</p>
-            <p id="trackName" style="font-size: 6px; margin-bottom: 5px; color: #a855f7;">Track 1/2</p>
+    <div class="fixed top-4 right-4 z-50 flex flex-col items-center" style="width: 140px;">
+        <img src="/static/boombox.png" alt="Radio" onerror="this.src='https://placehold.co/120x80/222/ff0044?text=BOOMBOX'" style="width: 120px; image-rendering: pixelated; filter: drop-shadow(0px 4px 0px rgba(0,0,0,0.5)); margin-bottom: 8px; cursor: pointer;" onclick="toggleMusic()" title="Click to Play/Pause">
+        
+        <div class="nes-container is-dark" style="padding: 6px; text-align: center; width: 100%; border-image-outset: 0; background: #222; border-color: #666;">
+            <p id="trackName" style="font-size: 8px; margin-bottom: 6px; color: #ff0044; text-shadow: 1px 1px 0px #000; letter-spacing: 1px;">Track 1/2</p>
             <audio id="bgMusic" loop>
                 <source id="bgMusicSource" src="/static/bg_music.ogg" type="audio/ogg">
             </audio>
             <div class="flex gap-1 w-full justify-center">
-                <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-primary p-1" style="font-size: 8px; flex: 1;">PLAY</button>
-                <button onclick="nextTrack()" class="nes-btn is-warning p-1" style="font-size: 8px; flex: 1;">NEXT</button>
+                <button onclick="toggleMusic()" id="playBtn" class="nes-btn is-error" style="font-size: 8px; padding: 2px 4px; flex: 1; border-image-width: 2;">▶ PLAY</button>
+                <button onclick="nextTrack()" class="nes-btn is-dark" style="font-size: 8px; padding: 2px 4px; flex: 1; border-color: #9ca3af; border-image-width: 2;">⏭ NEXT</button>
             </div>
         </div>
     </div>
@@ -1966,10 +1967,10 @@ async function cloudLoad() {
             const m = document.getElementById('bgMusic');
             const btn = document.getElementById('playBtn');
             if (m.paused) {
-                m.play().then(() => btn.innerText = 'PAUSE').catch(e => console.log('Audio error:', e));
+                m.play().then(() => btn.innerText = '⏸ PAUSE').catch(e => console.log('Audio error:', e));
             } else {
                 m.pause();
-                btn.innerText = 'PLAY';
+                btn.innerText = '▶ PLAY';
             }
         }
 
@@ -1982,7 +1983,7 @@ async function cloudLoad() {
             m.load();
             updateTrackName();
             const btn = document.getElementById('playBtn');
-            if (btn.innerText === 'PAUSE') { // If it was playing
+            if (btn.innerText === '⏸ PAUSE') { // If it was playing
                 m.play().catch(e => console.log('Audio error:', e));
             }
         }
