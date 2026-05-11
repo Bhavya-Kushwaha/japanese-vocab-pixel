@@ -739,8 +739,7 @@ async function cloudLoad() {
         function clearStorage() {
             if(confirm("Delete all your progress?")) {
                 localStorage.clear();
-                myVocab = [];
-                renderAll();
+                location.reload();
             }
         }
 
