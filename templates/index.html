@@ -14,6 +14,7 @@
     
     <!-- Vercel Web Analytics -->
     <script>
+
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
@@ -140,6 +141,32 @@
     .toast-body { font-size: 9px; color: #fff; }
     .toast-xp { font-size: 7px; color: #facc15; margin-top: 4px; }
 
+    /* Generic Toasts */
+    #toastContainer {
+        position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+        display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+        align-items: flex-end;
+    }
+    .retro-toast {
+        background: rgba(15,15,25,0.97); border: 2px solid;
+        padding: 10px 14px; font-size: 8px; font-family: 'Press Start 2P', monospace;
+        animation: slideInRight 0.3s cubic-bezier(0.34,1.56,0.64,1) forwards, fadeOut 0.3s ease 2.7s forwards;
+    }
+    .retro-toast.success { border-color: #22c55e; color: #22c55e; }
+    .retro-toast.error { border-color: #ef4444; color: #ef4444; }
+    .retro-toast.info { border-color: #3b82f6; color: #3b82f6; }
+    .retro-toast.warning { border-color: #facc15; color: #facc15; }
+    @keyframes slideInRight { 0% { transform: translateX(120%); } 100% { transform: translateX(0); } }
+    @keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+    /* Floating Popups */
+    .floating-popup {
+        position: fixed; pointer-events: none; font-size: 10px; font-weight: bold;
+        animation: floatUp 1s ease-out forwards; z-index: 10000;
+        text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    }
+    @keyframes floatUp { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-40px); } }
+
     /* Level-Up Overlay */
     #levelUpOverlay {
         position: fixed; inset: 0; z-index: 9998; display: none;
@@ -178,6 +205,8 @@
 </style>
 </head>
 <body class="p-4 md:p-10">
+
+    <div id="toastContainer"></div>
 
     <!-- Floating Pixel Radio -->
     <div class="fixed top-4 right-4 z-50 flex flex-col items-center" style="width: 140px;">
@@ -252,6 +281,7 @@
                 <button class="nes-btn tab-btn is-small" style="background:#a855f7;color:#fff;" onclick="showTab('BANK')">📖 BANK</button>
                 <button class="nes-btn tab-btn is-small is-warning" onclick="showTab('SHOP')">SHOP</button>
                 <button class="nes-btn tab-btn is-small is-error" onclick="showTab('MINIGAMES')">MINIGAMES</button>
+                <button class="nes-btn tab-btn is-small is-success" onclick="showTab('ACHIEVEMENTS')">🏆 BADGES</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N5')">N5</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N4')">N4</button>
                 <button class="nes-btn tab-btn is-small" onclick="showTab('N3')">N3</button>
@@ -413,6 +443,33 @@
                 <div id="memoryGrid" class="grid grid-cols-3 md:grid-cols-4 gap-2"></div>
                 <button class="nes-btn is-error w-full mt-6" onclick="document.getElementById('memoryGameContainer').classList.add('hidden')" style="display:none;" id="memoryEndBtn">EXIT</button>
             </div>
+            <div class="nes-container is-dark is-rounded flex flex-col items-center p-4 mt-6">
+                <p class="text-lg nes-text is-warning mb-2">Speed Run Quiz</p>
+                <p class="text-xs text-gray-400 mb-4">60 seconds to answer as many as possible!</p>
+                <button class="nes-btn is-warning" onclick="startSpeedRunGame()">PLAY NOW</button>
+            </div>
+
+            <div id="speedRunContainer" class="mt-8 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="nes-text is-error">Time: <span id="speedRunTimer">60</span>s</span>
+                    <span class="nes-text is-warning">Score: <span id="speedRunScore">0</span></span>
+                </div>
+                <div class="nes-container is-dark text-center mb-4">
+                    <p id="speedRunKanji" style="font-size: 2.5rem; margin-bottom: 10px;"></p>
+                    <p id="speedRunReading" style="color: #9ca3af; font-size: 0.8rem;"></p>
+                </div>
+                <div id="speedRunOptions" class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                </div>
+                <button class="nes-btn is-error w-full mt-6" onclick="endSpeedRunGame()" style="display:none;" id="speedRunEndBtn">EXIT</button>
+            </div>
+        </div>
+
+        <div id="ACHIEVEMENTS" class="tab-content hidden max-w-2xl mx-auto mt-4">
+            <h2 class="text-xl mb-4 text-center nes-text is-success">TROPHY ROOM</h2>
+            <p class="text-center text-xs mb-6 nes-text is-disabled">Unlock badges to earn huge XP bonuses!</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="badgesGrid">
+                <!-- Badges rendered via JS -->
+            </div>
         </div>
 
         <button onclick="clearStorage()" class="nes-btn is-error is-small mt-10 w-full">RESET ALL DATA</button>
@@ -439,9 +496,33 @@
     </div>
 
     <script>
+
+        function showToast(msg, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            const toast = document.createElement('div');
+            toast.className = `retro-toast ${type}`;
+            toast.innerText = msg;
+            container.appendChild(toast);
+            setTimeout(() => {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 3000);
+        }
+
+        function showFloatingText(text, x, y, color = '#facc15') {
+            const el = document.createElement('div');
+            el.className = 'floating-popup';
+            el.style.left = x + 'px';
+            el.style.top = y + 'px';
+            el.style.color = color;
+            el.innerText = text;
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 1000);
+        }
+
         async function cloudBackup() {
     const email = document.getElementById('userEmail').value;
-    if(!email || !email.includes('@')) return alert("Please enter a valid email!");
+    if(!email || !email.includes('@')) return showToast("Please enter a valid email!", 'error');
 
     const formData = new URLSearchParams();
     formData.append('email', email);
@@ -449,13 +530,13 @@
 
     const res = await fetch('/sync', { method: 'POST', body: formData });
     const result = await res.json();
-    if(result.success) alert("Quest data synced to cloud! ☁️");
-    else alert("Error: " + result.error);
+    if(result.success) showToast("Quest data synced to cloud! ☁️");
+    else showToast("Error: " + result.error, 'error');
 }
 
 async function cloudLoad() {
     const email = document.getElementById('userEmail').value;
-    if(!email) return alert("Enter email to load backup!");
+    if(!email) return showToast("Enter email to load backup!", 'error');
 
     const formData = new URLSearchParams();
     formData.append('email', email);
@@ -467,9 +548,9 @@ async function cloudLoad() {
         myVocab = JSON.parse(result.data);
         saveData(); // Updates LocalStorage
         renderAll(); // Updates UI
-        alert("Quest progress restored! 📥");
+        showToast("Quest progress restored! 📥");
     } else {
-        alert("No backup found for this email.");
+        showToast("No backup found for this email.");
     }
 }
         // --- 1. DATA INITIALIZATION ---
@@ -526,6 +607,16 @@ async function cloudLoad() {
         function grantXP(amount) {
             totalXP += amount;
             coins += amount;
+            
+            const xpBarWrap = document.querySelector('.xp-bar-wrap');
+            if (xpBarWrap) {
+                const rect = xpBarWrap.getBoundingClientRect();
+                const rX = rect.left + 20 + Math.random() * 40;
+                const rY = rect.top - 10 - Math.random() * 20;
+                showFloatingText(`+${amount} XP`, rX, rY, '#a855f7');
+                setTimeout(() => showFloatingText(`+${amount} 🪙`, rX + 40, rY + 10, '#facc15'), 200);
+            }
+
             // Level up check (every XP_PER_LEVEL * level XP)
             const xpNeeded = xpLevel * XP_PER_LEVEL;
             if (totalXP >= xpNeeded) {
@@ -591,6 +682,7 @@ async function cloudLoad() {
                     saveGamificationData();
                     grantXP(a.xp);
                     showAchievementToast(a.label, a.desc, a.xp);
+                    renderTrophyRoom();
                 }
             });
         }
@@ -600,7 +692,30 @@ async function cloudLoad() {
             const inner = toast.querySelector('.toast-inner');
             document.getElementById('toastBody').innerText = label + ' — ' + desc;
             document.getElementById('toastXp').innerText   = xp > 0 ? '+' + xp + ' XP' : '';
-            // Warning style for duplicates, purple for achievements
+            
+        function renderTrophyRoom() {
+            const grid = document.getElementById('badgesGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            
+            ACHIEVEMENTS.forEach(a => {
+                const isUnlocked = unlockedAchievements.includes(a.id);
+                const cls = isUnlocked ? 'is-dark' : '';
+                const titleColor = isUnlocked ? 'is-warning' : 'is-disabled';
+                const opacity = isUnlocked ? '1' : '0.4';
+                const icon = isUnlocked ? '🏆' : '🔒';
+                
+                grid.innerHTML += `
+                    <div class="nes-container ${cls} is-rounded p-2 text-center" style="opacity: ${opacity}">
+                        <div style="font-size: 2rem; margin-bottom: 5px;">${icon}</div>
+                        <p class="nes-text ${titleColor}" style="font-size: 8px; margin-bottom: 5px;">${a.label}</p>
+                        <p class="text-gray-400" style="font-size: 6px;">${a.desc}</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Warning style for duplicates, purple for achievements
             inner.style.borderColor = label.includes('⚠️') ? '#f97316' : '#a855f7';
             toast.classList.add('show');
             clearTimeout(toastTimer);
@@ -992,7 +1107,7 @@ async function cloudLoad() {
         // ===== END JLPT BANK LOGIC =====
 
         function exportToCSV() {
-            if(myVocab.length === 0) return alert("No data to export!");
+            if(myVocab.length === 0) return showToast("No data to export!", 'error');
             let csv = "Kanji,Reading,Meaning,Level\n";
             myVocab.forEach(i => csv += `"${i.kanji}","${i.reading}","${i.meaning}","${i.level}"\n`);
             const blob = new Blob([csv], { type: 'text/csv' });
@@ -1029,7 +1144,7 @@ async function cloudLoad() {
                 const levels = level === 'ALL' ? ['N5','N4','N3','N2','N1'] : [level];
                 const allData = (await Promise.all(levels.map(l => loadBankLevel(l)))).flat();
                 if (allData.length === 0) {
-                    alert('No words available in the JLPT Bank for that level yet!');
+                    showToast('No words available in the JLPT Bank for that level yet!');
                     return;
                 }
                 pool = allData.map((w, i) => ({
@@ -1076,7 +1191,7 @@ async function cloudLoad() {
             }
 
             if (reviewQueue.length === 0) {
-                alert("Not enough words collected for this criteria!");
+                showToast("Not enough words collected for this criteria!", 'error');
                 return;
             }
 
@@ -1588,9 +1703,9 @@ async function cloudLoad() {
                 inventory.push(itemId);
                 saveGamificationData();
                 updateXPBar();
-                alert(`Purchased ${itemId}! 🎉`);
+                showToast(`Purchased ${itemId}! 🎉`);
             } else {
-                alert(`Not enough Coins! You need ${cost - coins} more 🪙.`);
+                showToast(`Not enough Coins! You need ${cost - coins} more 🪙.`, 'error');
             }
         }
 
@@ -1660,7 +1775,7 @@ async function cloudLoad() {
                         q.progress = q.target;
                         q.completed = true;
                         grantXP(q.reward);
-                        alert(`Quest Completed: ${q.desc}! +${q.reward} 🪙`);
+                        showToast(`Quest Completed: ${q.desc}! +${q.reward} 🪙`);
                     }
                     updated = true;
                 }
@@ -1668,6 +1783,7 @@ async function cloudLoad() {
             if (updated) {
                 saveGamificationData();
                 renderQuests();
+            renderTrophyRoom();
             }
         }
 
@@ -1739,7 +1855,7 @@ async function cloudLoad() {
         let flippedCards = [];
 
         function startMemoryGame() {
-            if(myVocab.length < 6) return alert("You need at least 6 words to play Memory Match!");
+            if(myVocab.length < 6) return showToast("You need at least 6 words to play Memory Match!", 'error');
             document.getElementById('memoryGameContainer').classList.remove('hidden');
             
             memoryTimeLeft = 60;
@@ -1775,7 +1891,7 @@ async function cloudLoad() {
                 document.getElementById('memoryTimer').innerText = memoryTimeLeft;
                 if(memoryTimeLeft <= 0) {
                     clearInterval(memoryTimer);
-                    alert(`Time's Up! You matched ${memoryMatched} pairs. +${memoryMatched * 5} XP`);
+                    showToast(`Time's Up! You matched ${memoryMatched} pairs. +${memoryMatched * 5} XP`);
                     grantXP(memoryMatched * 5);
                     document.getElementById('memoryGameContainer').classList.add('hidden');
                 }
@@ -1810,7 +1926,7 @@ async function cloudLoad() {
                             clearInterval(memoryTimer);
                             const bonus = memoryTimeLeft;
                             const totalXP = 50 + bonus;
-                            alert(`You Win! 6 Matches! Time Bonus: ${bonus}s. Total: +${totalXP} XP`);
+                            showToast(`You Win! 6 Matches! Time Bonus: ${bonus}s. Total: +${totalXP} XP`);
                             grantXP(totalXP);
                             document.getElementById('memoryGameContainer').classList.add('hidden');
                         }
@@ -1844,6 +1960,7 @@ async function cloudLoad() {
             oldRenderAll();
             applyInventoryState();
             renderQuests();
+            renderTrophyRoom();
         }
         
         // Ensure UI updates immediately on load
@@ -1851,18 +1968,18 @@ async function cloudLoad() {
 
         function buyItem(itemId, cost) {
             if (inventory.includes(itemId)) {
-                alert("You already own this item!");
+                showToast("You already own this item!");
                 return;
             }
             if (coins < cost) {
-                alert(`Not enough coins! You need ${cost} 🪙`);
+                showToast(`Not enough coins! You need ${cost} 🪙`, 'error');
                 return;
             }
             coins -= cost;
             inventory.push(itemId);
             saveGamificationData();
             applyInventoryState();
-            alert("Item purchased successfully!");
+            showToast("Item purchased successfully!");
         }
 
         let activeTheme = localStorage.getItem('activeTheme') || 'default';
@@ -1987,6 +2104,97 @@ async function cloudLoad() {
             }
         }
         updateTrackName();
+
+        // ===== SPEED RUN QUIZ =====
+        let speedRunTimer;
+        let speedRunTimeLeft = 60;
+        let speedRunScore = 0;
+        let currentSpeedRunWord = null;
+
+        function startSpeedRunGame() {
+            if (myVocab.length < 4) {
+                return showToast("You need at least 4 collected words to play!", 'warning');
+            }
+            document.getElementById('speedRunContainer').classList.remove('hidden');
+            document.getElementById('speedRunEndBtn').style.display = 'block';
+            speedRunTimeLeft = 60;
+            speedRunScore = 0;
+            document.getElementById('speedRunTimer').innerText = speedRunTimeLeft;
+            document.getElementById('speedRunScore').innerText = speedRunScore;
+            
+            clearInterval(speedRunTimer);
+            speedRunTimer = setInterval(() => {
+                speedRunTimeLeft--;
+                document.getElementById('speedRunTimer').innerText = speedRunTimeLeft;
+                if (speedRunTimeLeft <= 0) {
+                    endSpeedRunGame(true);
+                }
+            }, 1000);
+            
+            nextSpeedRunQuestion();
+        }
+
+        function endSpeedRunGame(timeUp = false) {
+            clearInterval(speedRunTimer);
+            document.getElementById('speedRunContainer').classList.add('hidden');
+            document.getElementById('speedRunEndBtn').style.display = 'none';
+            if (timeUp) {
+                const xpEarned = speedRunScore * 10;
+                showToast(`Time's Up! You scored ${speedRunScore}. +${xpEarned} XP!`, 'info');
+                if(xpEarned > 0) grantXP(xpEarned);
+            }
+        }
+
+        function nextSpeedRunQuestion() {
+            const pool = myVocab;
+            const target = pool[Math.floor(Math.random() * pool.length)];
+            currentSpeedRunWord = target;
+            
+            document.getElementById('speedRunKanji').innerText = target.kanji || target.reading;
+            document.getElementById('speedRunReading').innerText = target.kanji ? target.reading : '';
+            
+            let options = new Set([target.meaning]);
+            while(options.size < 4 && options.size < pool.length) {
+                options.add(pool[Math.floor(Math.random() * pool.length)].meaning);
+            }
+            
+            const shuffledOptions = Array.from(options).sort(() => Math.random() - 0.5);
+            const optionsContainer = document.getElementById('speedRunOptions');
+            optionsContainer.innerHTML = '';
+            
+            shuffledOptions.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'nes-btn w-full text-xs';
+                btn.innerText = opt;
+                btn.onclick = () => handleSpeedRunAnswer(btn, opt === target.meaning);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function handleSpeedRunAnswer(btn, isCorrect) {
+            // Disable all buttons briefly
+            const buttons = document.getElementById('speedRunOptions').querySelectorAll('button');
+            buttons.forEach(b => b.disabled = true);
+            
+            if (isCorrect) {
+                btn.classList.add('is-success');
+                speedRunScore++;
+                document.getElementById('speedRunScore').innerText = speedRunScore;
+                speedRunTimeLeft = Math.min(speedRunTimeLeft + 2, 60); // Bonus time up to 60s
+                document.getElementById('speedRunTimer').innerText = speedRunTimeLeft;
+                setTimeout(nextSpeedRunQuestion, 200);
+            } else {
+                btn.classList.add('is-error');
+                speedRunTimeLeft = Math.max(0, speedRunTimeLeft - 3); // Penalty
+                document.getElementById('speedRunTimer').innerText = speedRunTimeLeft;
+                if (speedRunTimeLeft === 0) {
+                    endSpeedRunGame(true);
+                } else {
+                    setTimeout(nextSpeedRunQuestion, 400);
+                }
+            }
+        }
+
     </script>
 </body>
 </html>
