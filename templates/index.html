@@ -1865,20 +1865,65 @@ async function cloudLoad() {
             alert("Item purchased successfully!");
         }
 
+        let activeTheme = localStorage.getItem('activeTheme') || 'default';
+
+        function toggleTheme(themeId) {
+            if (activeTheme === themeId) {
+                activeTheme = 'default';
+            } else {
+                activeTheme = themeId;
+            }
+            localStorage.setItem('activeTheme', activeTheme);
+            applyInventoryState();
+        }
+
+        let playlist = [
+            { src: '/static/bg_music.ogg', type: 'audio/ogg' },
+            { src: '/static/bg-music.webm', type: 'audio/webm' }
+        ];
+        let currentTrackIndex = 0;
+
         function applyInventoryState() {
             // Update shop UI
             const shopItems = ['theme_cyberpunk', 'theme_gameboy', 'music_lofi'];
             shopItems.forEach(id => {
                 const btn = document.getElementById('buy-' + id);
                 if (btn && inventory.includes(id)) {
-                    btn.innerText = "OWNED";
-                    btn.disabled = true;
-                    btn.classList.replace('is-warning', 'is-success');
+                    if (id.startsWith('theme_')) {
+                        if (activeTheme === id) {
+                            btn.innerText = "EQUIPPED (UNEQUIP)";
+                            btn.classList.replace('is-warning', 'is-success');
+                        } else {
+                            btn.innerText = "EQUIP THEME";
+                            btn.classList.replace('is-success', 'is-warning');
+                        }
+                        btn.disabled = false;
+                        btn.onclick = () => toggleTheme(id);
+                    } else {
+                        btn.innerText = "OWNED";
+                        btn.disabled = true;
+                        btn.classList.replace('is-warning', 'is-success');
+                    }
                 }
             });
             
-            // Apply theme
-            if (inventory.includes('theme_cyberpunk')) {
+            // Reset theme
+            document.body.style.backgroundColor = "";
+            document.body.style.color = "";
+            document.documentElement.style.removeProperty('--nes-primary');
+            document.querySelectorAll('.nes-container').forEach(el => {
+                el.style.backgroundColor = "";
+                el.style.borderColor = "";
+                el.style.boxShadow = "";
+                el.style.color = "";
+                if (el.getAttribute('data-was-dark') === 'true') {
+                    el.classList.add('is-dark');
+                    el.removeAttribute('data-was-dark');
+                }
+            });
+            
+            // Apply active theme
+            if (activeTheme === 'theme_cyberpunk') {
                 document.body.style.backgroundColor = "#2b0038";
                 document.documentElement.style.setProperty('--nes-primary', '#ff00ff');
                 // Cyberpunk aesthetics
@@ -1887,28 +1932,34 @@ async function cloudLoad() {
                     el.style.borderColor = '#ff00ff';
                     el.style.boxShadow = '0 0 10px #ff00ff';
                 });
-            } else if (inventory.includes('theme_gameboy')) {
+            } else if (activeTheme === 'theme_gameboy') {
                 document.body.style.backgroundColor = "#8bac0f";
                 document.documentElement.style.setProperty('--nes-primary', '#0f380f');
                 document.body.style.color = "#0f380f";
                 // Gameboy aesthetics
                 document.querySelectorAll('.nes-container.is-dark').forEach(el => {
+                    el.setAttribute('data-was-dark', 'true');
                     el.style.backgroundColor = '#9bbc0f';
                     el.style.borderColor = '#0f380f';
                     el.style.color = '#0f380f';
                     el.classList.remove('is-dark');
                 });
             }
+
+            // Update playlist
+            playlist = [
+                { src: '/static/bg_music.ogg', type: 'audio/ogg' },
+                { src: '/static/bg-music.webm', type: 'audio/webm' }
+            ];
+            if (inventory.includes('music_lofi')) {
+                playlist.push({ src: 'https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3', type: 'audio/mpeg' });
+            }
+            updateTrackName();
         }
 
-        const playlist = [
-            { src: '/static/bg_music.ogg', type: 'audio/ogg' },
-            { src: '/static/bg-music.webm', type: 'audio/webm' }
-        ];
-        let currentTrackIndex = 0;
-
         function updateTrackName() {
-            document.getElementById('trackName').innerText = `Track ${currentTrackIndex + 1}/${playlist.length}`;
+            const trackEl = document.getElementById('trackName');
+            if (trackEl) trackEl.innerText = `Track ${currentTrackIndex + 1}/${playlist.length}`;
         }
 
         function toggleMusic() {
