@@ -1809,7 +1809,7 @@ async function cloudLoad() {
             let optionsHtml = options.map(opt => {
                 const isCorrect = opt === correctAnswer;
                 const escapedKanji = item.kanji.replace(/'/g, "\\'").replace(/"/g, "&quot;");
-                return `<button class="nes-btn w-full mb-2" style="font-size: 0.9rem; text-align: left;" data-correct="${isCorrect}" onclick="handleAudioAnswer(this, ${isCorrect}, '${escapedKanji}')">${opt}</button>`;
+                return `<button class="nes-btn w-full mb-2 audio-option" style="font-size: 0.9rem; text-align: left;" data-correct="${isCorrect}" onclick="handleAudioAnswer(this, ${isCorrect}, '${escapedKanji}')">${opt}</button>`;
             }).join('');
 
             const html = `
@@ -1829,11 +1829,11 @@ async function cloudLoad() {
         }
 
         function handleAudioAnswer(btn, isCorrect, kanji) {
-            const allBtns = document.getElementById('reviewContainer').querySelectorAll('button');
+            const allBtns = document.getElementById('reviewContainer').querySelectorAll('.audio-option');
             allBtns.forEach(b => {
                 b.disabled = true;
-                if (b.getAttribute('data-correct') === "true") b.classList.replace('nes-btn', 'nes-btn is-success');
-                else if (b === btn && !isCorrect) b.classList.replace('nes-btn', 'nes-btn is-error');
+                if (b.getAttribute('data-correct') === "true") b.classList.add('is-success');
+                else if (b === btn && !isCorrect) b.classList.add('is-error');
             });
 
             if (isCorrect) {
