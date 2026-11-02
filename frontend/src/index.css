@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    /* 1. REPLACE THE GRAY WITH THE PAGODA GARDEN */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('/static/background.gif');
+    
+    /* 2. PIXEL-PERFECT SCALING */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+
+    /* 3. KEEP YOUR ORIGINAL SETTINGS */
+    font-family: 'Press Start 2P', cursive; 
+    color: white; 
+    scroll-behavior: smooth; 
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Custom NES.css styles from original app */
+.nes-container.is-dark {
+    background-color: rgba(33, 37, 41, 0.85) !important;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+.pixel-card { margin-top: 15px; transition: transform 0.2s; position: relative; }
+.pixel-card:hover { transform: scale(1.01); }
+.nes-btn.is-active { background-color: #209cee; color: white; }
+.nes-progress.is-maroon::-webkit-progress-value { background-color: #8b0000; }
+.nes-progress.is-maroon::-moz-progress-bar { background-color: #8b0000; }
+.nes-progress.is-maroon::-ms-fill { background-color: #8b0000; }
+.nes-text.is-maroon { color: #8b0000 !important; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #212529; }
+::-webkit-scrollbar-thumb { background: #fff; border: 2px solid #212529; }
